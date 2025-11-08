@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - TechSafi</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        // Initialize AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            });
+        });
+
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'pulse-slow': 'pulse 3s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'gradient': 'gradient 15s ease infinite',
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        gradient: {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            },
+                        },
+                        blob: {
+                            '0%': {
+                                transform: 'translate(0px, 0px) scale(1)',
+                            },
+                            '33%': {
+                                transform: 'translate(30px, -50px) scale(1.1)',
+                            },
+                            '66%': {
+                                transform: 'translate(-20px, 20px) scale(0.9)',
+                            },
+                            '100%': {
+                                transform: 'translate(0px, 0px) scale(1)',
+                            },
+                        }
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        dark: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                            600: '#475569',
+                        }
+                    },
+                },
+            },
+        }
+
+        // Toggle dark mode
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+        }
+
+        // Check for saved user preference or system preference
+        if (localStorage.getItem('darkMode') === 'true' || 
+            (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    <style type="text/css">
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(-45deg, #0ea5e9, #3b82f6, #8b5cf6, #06b6d4);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        .dark .hero-gradient {
+            background: linear-gradient(-45deg, #1e40af, #1e3a8a, #3730a3, #0e7490);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .dark .glass-effect {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #0ea5e9, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 1.5rem;
+            top: 3rem;
+            height: calc(100% - 1rem);
+            width: 2px;
+            background: linear-gradient(to bottom, #0ea5e9, #3b82f6);
+            z-index: 0;
+        }
+        
+        .dark .timeline-item:not(:last-child)::after {
+            background: linear-gradient(to bottom, #1e40af, #3730a3);
+        }
+        
+        .team-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .team-card:hover .team-image {
+            transform: scale(1.05);
+        }
+        
+        .team-image {
+            transition: transform 0.5s ease;
+        }
+        
+        .value-card {
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .value-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover .value-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .blob {
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.7;
+        }
+        
+        .dark .blob {
+            opacity: 0.3;
+        }
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 0.5rem;
+            min-width: 240px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 50;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-item {
+            transition: all 0.2s ease;
+        }
+        
+        .dropdown-item:hover {
+            transform: translateX(5px);
+        }
+        
+        /* Navbar scroll effect */
+        .navbar-scrolled {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }dropdown-item {
+            transition: all 0.2s ease;
+        }
+        
+        .dropdown-item:hover {
+            transform: translateX(5px);
+        }
+        
+        /* Navbar scroll effect */
+        .navbar-scrolled {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-dark-900 text-gray-800 dark:text-gray-200 transition-colors duration-300 font-inter">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full bg-white/95 dark:bg-dark-900/95 backdrop-blur-md z-50 shadow-sm border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-primary-600 dark:text-primary-400 flex items-center group">
+                        <img src="images/logo/logo1.png" alt="TechSafi Logo" class="h-14 w-auto mr-2 transition-transform duration-300 group-hover:scale-110">
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-1">
+                    <!-- Home -->
+                    <a href="index.html" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition relative group rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+                        <i class="fas fa-home mr-2"></i>Home
+                    </a>
+                    
+                    <!-- About Dropdown (Active) -->
+                    <div class="dropdown">
+                        <button class="px-4 py-2 text-primary-600 dark:text-primary-400 font-semibold hover:text-primary-800 dark:hover:text-primary-200 transition relative group rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 flex items-center">
+                            <i class="fas fa-info-circle mr-2"></i>About
+                            <i class="fas fa-chevron-down ml-2 text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary-600 scale-x-100 transition-transform duration-300"></span>
+                        </button>
+                        <div class="dropdown-menu bg-white dark:bg-dark-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+                            <a href="about.html" class="dropdown-item flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400">
+                                <i class="fas fa-building w-5 mr-3 text-primary-600"></i>
+                                <div>
+                                    <div class="font-semibold">Company</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">Learn about us</div>
+                                </div>
+                            </a>
+                            <a href="portfolio.html" class="dropdown-item flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400 border-t border-gray-100 dark:border-gray-700">
+                                <i class="fas fa-briefcase w-5 mr-3 text-purple-600"></i>
+                                <div>
+                                    <div class="font-semibold">Portfolio</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">View our work</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Services Dropdown -->
+                    <div class="dropdown">
+                        <button class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition relative group rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 flex items-center">
+                            <i class="fas fa-cogs mr-2"></i>Services
+                            <i class="fas fa-chevron-down ml-2 text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="dropdown-menu bg-white dark:bg-dark-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+                            <a href="services.html" class="dropdown-item flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400">
+                                <i class="fas fa-code w-5 mr-3 text-blue-600"></i>
+                                <div>
+                                    <div class="font-semibold">All Services</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">Web, Mobile & More</div>
+                                </div>
+                            </a>
+                            <a href="ai-solutions.html" class="dropdown-item flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400 border-t border-gray-100 dark:border-gray-700">
+                                <i class="fas fa-robot w-5 mr-3 text-purple-600"></i>
+                                <div>
+                                    <div class="font-semibold">AI Solutions</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">AI-powered development</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Pricing -->
+                    <a href="pricing.html" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition relative group rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+                        <i class="fas fa-tag mr-2"></i>Pricing
+                    </a>
+                    
+                    <!-- Careers -->
+                    <a href="careers.html" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition relative group rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+                        <i class="fas fa-briefcase mr-2"></i>Careers
+                    </a>
+                </div>
+                
+                <!-- Right Side Actions -->
+                <div class="hidden lg:flex items-center space-x-3">
+                    <!-- Search Button -->
+                    <button onclick="toggleSearch()" class="p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition text-gray-600 dark:text-gray-300" title="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    
+                    <!-- Dark Mode Toggle -->
+                    <button onclick="toggleDarkMode()" class="p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition" title="Toggle Dark Mode">
+                        <i class="fas fa-moon dark:hidden text-gray-600"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+                    
+                    <!-- Contact CTA -->
+                    <a href="contact.html" class="inline-flex items-center bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-6 py-2.5 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Contact Us
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center space-x-2">
+                    <button onclick="toggleDarkMode()" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                        <i class="fas fa-moon dark:hidden text-gray-600"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+                    <button id="mobile-menu-button" class="text-gray-600 dark:text-gray-300 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Search Bar (Hidden by default) -->
+        <div id="search-bar" class="hidden bg-white dark:bg-dark-800 border-t border-gray-200 dark:border-gray-700">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <div class="relative">
+                    <input type="text" placeholder="Search services, solutions, or pages..." class="w-full px-5 py-3 pl-12 pr-12 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-dark-900 text-gray-900 dark:text-gray-100 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 transition">
+                    <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    <button onclick="toggleSearch()" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-dark-800 border-t border-gray-200 dark:border-gray-700 max-h-screen overflow-y-auto">
+            <div class="px-4 py-3 space-y-1">
+                <a href="index.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
+                    <i class="fas fa-home w-5 mr-3"></i>Home
+                </a>
+                
+                <!-- About Section -->
+                <div class="border-t border-gray-100 dark:border-gray-700 pt-2 mt-2">
+                    <div class="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">About</div>
+                    <a href="about.html" class="flex items-center px-4 py-3 text-primary-600 dark:text-primary-400 font-semibold rounded-lg bg-primary-50 dark:bg-primary-900/20">
+                        <i class="fas fa-building w-5 mr-3 text-primary-600"></i>Company
+                    </a>
+                    <a href="portfolio.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
+                        <i class="fas fa-briefcase w-5 mr-3 text-purple-600"></i>Portfolio
+                    </a>
+                </div>
+                
+                <!-- Services Section -->
+                <div class="border-t border-gray-100 dark:border-gray-700 pt-2 mt-2">
+                    <div class="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Services</div>
+                    <a href="services.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
+                        <i class="fas fa-code w-5 mr-3 text-blue-600"></i>All Services
+                    </a>
+                    <a href="ai-solutions.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
+                        <i class="fas fa-robot w-5 mr-3 text-purple-600"></i>AI Solutions
+                    </a>
+                </div>
+                
+                <!-- Other Links -->
+                <div class="border-t border-gray-100 dark:border-gray-700 pt-2 mt-2">
+                    <a href="pricing.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
+                        <i class="fas fa-tag w-5 mr-3 text-green-600"></i>Pricing
+                    </a>
+                    <a href="careers.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
+                        <i class="fas fa-briefcase w-5 mr-3 text-orange-600"></i>Careers
+                    </a>
+                </div>
+                
+                <!-- Contact CTA -->
+                <div class="pt-4 pb-2">
+                    <a href="contact.html" class="flex items-center justify-center bg-gradient-to-r from-primary-600 to-primary-700 text-white px-6 py-3 rounded-lg font-semibold shadow-lg">
+                        <i class="fas fa-paper-plane mr-2"></i>Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="pt-32 pb-20 text-white relative overflow-hidden min-h-[500px] flex items-center">
+        <!-- GIF Background -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3cm01b281aWhvN3NsdnoxNGYxbHhkcGV4eXJyNmFiNnFwZXhyOWhwaSZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/Pm9bQeR51FQS4OL3bU/giphy.gif" 
+                 alt="Tech Background" 
+                 class="w-full h-full object-cover object-center"
+                 style="filter: brightness(0.3);">
+        </div>
+        
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-purple-900/85 to-pink-900/90"></div>
+        
+        <!-- Animated background elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-30">
+            <div class="absolute top-1/4 -left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+            <div class="absolute top-1/3 -right-10 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-8 left-20 w-80 h-80 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="absolute top-10 right-10 w-20 h-20 border-2 border-white/20 rounded-lg rotate-12 animate-pulse"></div>
+        <div class="absolute bottom-20 left-10 w-16 h-16 border-2 border-purple-300/30 rounded-full animate-bounce" style="animation-duration: 3s;"></div>
+        <div class="absolute top-1/2 right-1/4 w-12 h-12 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-lg rotate-45 animate-pulse" style="animation-delay: 1s;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <!-- Badge -->
+            <div class="inline-flex items-center mb-6 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/30 shadow-xl animate-fade-in">
+                <i class="fas fa-rocket text-yellow-300 mr-2 animate-pulse"></i>
+                <span class="text-sm font-semibold tracking-wider">ESTABLISHED 2024</span>
+            </div>
+            
+            <!-- Main Heading with Gradient -->
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 animate-fade-in" style="animation-delay: 0.2s;">
+                <span class="inline-block">About</span>
+                <span class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 animate-pulse" style="animation-duration: 3s;">
+                    TechSafi
+                </span>
+            </h1>
+            
+            <!-- Subtitle with Animation -->
+            <p class="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed mb-8 animate-fade-in" style="animation-delay: 0.4s;">
+                <span class="font-semibold text-white">Empowering businesses</span> through 
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300 font-semibold">innovative technology solutions</span> 
+                that drive growth, efficiency, and digital transformation.
+            </p>
+
+            <!-- Stats Row -->
+            <div class="flex flex-wrap justify-center gap-8 mt-10 animate-fade-in" style="animation-delay: 0.6s;">
+                <div class="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-users text-blue-300 text-xl"></i>
+                    <div class="text-left">
+                        <div class="text-2xl font-bold text-white">50+</div>
+                        <div class="text-xs text-blue-200">Team Members</div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-project-diagram text-purple-300 text-xl"></i>
+                    <div class="text-left">
+                        <div class="text-2xl font-bold text-white">500+</div>
+                        <div class="text-xs text-purple-200">Projects Done</div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-star text-yellow-300 text-xl"></i>
+                    <div class="text-left">
+                        <div class="text-2xl font-bold text-white">98%</div>
+                        <div class="text-xs text-yellow-200">Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Our Story -->
+    <section class="py-20 bg-white dark:bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-12 lg:mb-0" data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">Our <span class="gradient-text">Story</span></h2>
+                    <div class="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+                        <p class="text-lg">
+                            Founded in 2024, <span class="font-semibold text-blue-600 dark:text-blue-400">TechSafi</span> was born out of resilience and ambition. After finishing college and facing the tough reality of unemployment, we decided to turn our skills into solutions. Building a software company that could create opportunities not just for us, but for others too.
+                        </p>
+                        <p>
+                            What started as a small group of passionate tech enthusiasts has evolved into a full-fledged technology company providing innovative digital solutions for individuals, businesses, and enterprises. From custom web applications to intelligent automation systems, we focus on delivering clean, scalable, and impactful technology that drives real results.
+                        </p>
+                        <p>
+                            Our journey is guided by innovation, integrity, and a deep belief that technology can empower growth. Today, TechSafi continues to help clients transform their operations, enhance their digital presence, and unlock their full potential in an ever-evolving digital world.
+                        </p>
+                    </div>
+
+
+                    <div class="mt-8 grid grid-cols-3 gap-6 text-center">
+                        <div>
+                            <div class="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">500+</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Projects Completed</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">50+</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Team Members</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">15+</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Countries Served</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+                    <div class="rounded-2xl overflow-hidden h-64 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Our Team" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+                    <div class="rounded-2xl overflow-hidden h-64 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1522071901873-411886a10004?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Our Office" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+                    <div class="rounded-2xl overflow-hidden h-64 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Team Collaboration" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+                    <div class="rounded-2xl overflow-hidden h-64 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Company Culture" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-20 bg-gray-50 dark:bg-dark-800 relative overflow-hidden">
+        <!-- Background elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10">
+            <div class="absolute top-40 left-10 w-72 h-72 bg-primary-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+            <div class="absolute top-0 right-10 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute bottom-20 left-1/2 w-80 h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Our <span class="gradient-text">Core Values</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-700 mx-auto rounded-full"></div>
+                <p class="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    These principles guide everything we do, from client interactions to product development and team collaboration.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Value 1 -->
+                <div class="value-card bg-white dark:bg-dark-700 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-600" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl flex items-center justify-center mx-auto mb-6 value-icon shadow-lg">
+                        <i class="fas fa-lightbulb text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white text-center">Innovation</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-center">
+                        We embrace creativity and continuously seek new ways to solve problems and deliver exceptional value to our clients.
+                    </p>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="value-card bg-white dark:bg-dark-700 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-600" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center mx-auto mb-6 value-icon shadow-lg">
+                        <i class="fas fa-handshake text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white text-center">Integrity</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-center">
+                        We conduct our business with honesty, transparency, and the highest ethical standards in all our interactions.
+                    </p>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="value-card bg-white dark:bg-dark-700 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-600" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mx-auto mb-6 value-icon shadow-lg">
+                        <i class="fas fa-users text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white text-center">Collaboration</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-center">
+                        We believe in the power of teamwork and work closely with our clients to achieve shared success and mutual growth.
+                    </p>
+                </div>
+
+                <!-- Value 4 -->
+                <div class="value-card bg-white dark:bg-dark-700 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-600" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-2xl flex items-center justify-center mx-auto mb-6 value-icon shadow-lg">
+                        <i class="fas fa-trophy text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white text-center">Excellence</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-center">
+                        We're committed to delivering exceptional quality in everything we do, from strategy to execution and beyond.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="py-20 bg-white dark:bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Meet Our <span class="gradient-text">Leadership Team</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-700 mx-auto rounded-full"></div>
+                <p class="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    Our leadership team brings together decades of combined experience in technology, business strategy, and innovation.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="team-card bg-white dark:bg-dark-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=761&q=80" 
+                             alt="Sarah Johnson" 
+                             class="w-full h-full object-cover team-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">Sarah Johnson</h3>
+                        <p class="text-primary-600 dark:text-primary-400 font-medium mb-3">CEO & Founder</p>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                            With over 15 years of experience in technology leadership, Sarah founded TechSafi with a vision to bridge the gap between business and technology.
+                        </p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition">
+                                <i class="fab fa-linkedin-in text-sm"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition">
+                                <i class="fab fa-twitter text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="team-card bg-white dark:bg-dark-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" 
+                             alt="Michael Chen" 
+                             class="w-full h-full object-cover team-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">Michael Chen</h3>
+                        <p class="text-primary-600 dark:text-primary-400 font-medium mb-3">CTO</p>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                            A technology visionary with expertise in software architecture and emerging technologies, Michael leads our technical strategy and innovation initiatives.
+                        </p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition">
+                                <i class="fab fa-linkedin-in text-sm"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition">
+                                <i class="fab fa-github text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="team-card bg-white dark:bg-dark-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" 
+                             alt="Emily Rodriguez" 
+                             class="w-full h-full object-cover team-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">Emily Rodriguez</h3>
+                        <p class="text-primary-600 dark:text-primary-400 font-medium mb-3">Head of Design</p>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                            With a passion for user-centered design, Emily leads our design team in creating intuitive and beautiful digital experiences that delight users.
+                        </p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition">
+                                <i class="fab fa-linkedin-in text-sm"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition">
+                                <i class="fab fa-dribbble text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="team-card bg-white dark:bg-dark-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="400">
+                    <div class="h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
+                             alt="David Kim" 
+                             class="w-full h-full object-cover team-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">David Kim</h3>
+                        <p class="text-primary-600 dark:text-primary-400 font-medium mb-3">VP of Engineering</p>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                            David oversees our engineering teams, ensuring we deliver high-quality, scalable solutions that meet our clients' most complex technical challenges.
+                        </p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition">
+                                <i class="fab fa-linkedin-in text-sm"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition">
+                                <i class="fab fa-github text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="py-20 bg-gray-50 dark:bg-dark-800 relative overflow-hidden">
+        <!-- Background elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10">
+            <div class="absolute top-40 left-10 w-72 h-72 bg-primary-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+            <div class="absolute top-0 right-10 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute bottom-20 left-1/2 w-80 h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Our <span class="gradient-text">Journey</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-700 mx-auto rounded-full"></div>
+                <p class="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    A timeline of our growth, achievements, and milestones over the years
+                </p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <!-- Timeline Item 1 -->
+                <div class="relative pl-16 pb-12 timeline-item" data-aos="fade-right">
+                    <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-primary-500 to-primary-700 text-white shadow-lg z-10">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="bg-white dark:bg-dark-700 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-600">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">2015 - Foundation</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            TechSafi was founded with a small team of 5 people working out of a shared office space. Our first client project was a web application for a local startup.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative pl-16 pb-12 timeline-item" data-aos="fade-right" data-aos-delay="100">
+                    <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-lg z-10">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="bg-white dark:bg-dark-700 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-600">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">2017 - First Major Milestone</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Reached 25 employees and moved to our first dedicated office. Launched our mobile app development service, which quickly became one of our most popular offerings.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="relative pl-16 pb-12 timeline-item" data-aos="fade-right" data-aos-delay="200">
+                    <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-yellow-500 to-yellow-700 text-white shadow-lg z-10">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="bg-white dark:bg-dark-700 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-600">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">2019 - Recognition</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Named "Fastest Growing Tech Company" by Tech Magazine. Expanded our services to include AI and machine learning solutions, opening up new opportunities in enterprise markets.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="relative pl-16 pb-12 timeline-item" data-aos="fade-right" data-aos-delay="300">
+                    <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-green-500 to-green-700 text-white shadow-lg z-10">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="bg-white dark:bg-dark-700 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-600">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">2021 - Global Expansion</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Opened our first international office in London, UK. Our team grew to over 100 employees across three continents, serving clients in 15+ countries.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 5 -->
+                <div class="relative pl-16 timeline-item" data-aos="fade-right" data-aos-delay="400">
+                    <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-pink-700 text-white shadow-lg z-10">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="bg-white dark:bg-dark-700 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-600">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">2023 - Today</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Recognized as a leader in digital transformation services. Continuing to innovate and expand our service offerings while maintaining our commitment to excellence and client success.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary-600 to-primary-800 text-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+            <div class="absolute -top-40 -left-40 w-80 h-80 bg-white rounded-full opacity-10"></div>
+            <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-white rounded-full opacity-10"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
+            <p class="text-xl text-primary-100 mb-10 max-w-2xl mx-auto">
+                Join the growing list of businesses that trust TechSafi for their technology needs. Let's build something amazing together.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="contact.html" class="bg-white text-primary-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold text-lg transition duration-300 transform hover:scale-105 shadow-lg">
+                    Get in Touch
+                </a>
+                <a href="services.html" class="bg-transparent border-2 border-white hover:bg-white/10 px-8 py-4 rounded-xl font-semibold text-lg transition duration-300">
+                    Our Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 text-gray-300 pt-20 pb-8 relative overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary-500 rounded-full filter blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Newsletter Section -->
+            <div class="bg-gradient-to-r from-primary-600 to-purple-600 rounded-2xl p-8 md:p-12 mb-16 shadow-2xl">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">Stay Updated!</h3>
+                        <p class="text-primary-100">Subscribe to our newsletter for the latest tech insights and exclusive offers.</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input type="email" placeholder="Enter your email" class="flex-1 px-6 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 transition">
+                        <button class="px-8 py-4 bg-white text-primary-600 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap">
+                            <i class="fas fa-paper-plane mr-2"></i>Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+                <!-- Company Info with Logo -->
+                <div class="lg:col-span-2">
+                    <a href="index.html" class="inline-block mb-6 group">
+                        <img src="images/logo/logo1.png" alt="TechSafi Logo" class="h-16 w-auto transition-transform duration-300 group-hover:scale-110">
+                    </a>
+                    <p class="mb-6 text-gray-400 leading-relaxed">
+                        Empowering businesses across Kenya and beyond with innovative technology solutions. We transform ideas into digital reality through cutting-edge development and strategic consulting.
+                    </p>
+                    
+                    <!-- Social Media Links -->
+                    <div class="mb-6">
+                        <h5 class="text-white font-semibold mb-4 flex items-center">
+                            <i class="fas fa-share-alt mr-2 text-primary-400"></i>
+                            Connect With Us
+                        </h5>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-700 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-blue-500/50 transform hover:-translate-y-1" title="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-sky-500 hover:to-sky-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-sky-500/50 transform hover:-translate-y-1" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-800 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-blue-700/50 transform hover:-translate-y-1" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-pink-600 hover:to-purple-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-pink-500/50 transform hover:-translate-y-1" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-gray-700 hover:to-gray-900 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-gray-700/50 transform hover:-translate-y-1" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-green-600 hover:to-green-700 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-green-500/50 transform hover:-translate-y-1" title="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="flex flex-wrap gap-4 items-center">
+                        <div class="flex items-center space-x-2 text-sm">
+                            <i class="fas fa-shield-alt text-green-400"></i>
+                            <span class="text-gray-400">SSL Secured</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-sm">
+                            <i class="fas fa-award text-yellow-400"></i>
+                            <span class="text-gray-400">ISO Certified</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6 flex items-center">
+                        <span class="w-1 h-6 bg-gradient-to-b from-primary-500 to-purple-500 rounded-full mr-3"></span>
+                        Quick Links
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Home</span></a></li>
+                        <li><a href="about.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">About Us</span></a></li>
+                        <li><a href="services.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Services</span></a></li>
+                        <li><a href="portfolio.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Portfolio</span></a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Pricing</span></a></li>
+                        <li><a href="careers.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Careers</span></a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Contact</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6 flex items-center">
+                        <span class="w-1 h-6 bg-gradient-to-b from-primary-500 to-purple-500 rounded-full mr-3"></span>
+                        Our Services
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="services.html#web-development" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Web Development</span></a></li>
+                        <li><a href="services.html#mobile-app" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Mobile Apps</span></a></li>
+                        <li><a href="services.html#ui-ux" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">UI/UX Design</span></a></li>
+                        <li><a href="ai-solutions.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">AI Solutions</span></a></li>
+                        <li><a href="services.html#cloud" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Cloud Solutions</span></a></li>
+                        <li><a href="services.html#seo" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Digital Marketing</span></a></li>
+                        <li><a href="services.html#consulting" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">IT Consulting</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6 flex items-center">
+                        <span class="w-1 h-6 bg-gradient-to-b from-primary-500 to-purple-500 rounded-full mr-3"></span>
+                        Get In Touch
+                    </h4>
+                    <address class="not-italic space-y-4">
+                        <!-- Location -->
+                        <div class="flex items-start group">
+                            <div class="w-10 h-10 rounded-lg bg-primary-600/10 flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-primary-600/20 transition-colors">
+                                <i class="fas fa-map-marker-alt text-primary-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">Location</p>
+                                <p class="text-gray-300 hover:text-white transition-colors">Nairobi, Kenya</p>
+                            </div>
+                        </div>
+
+                        <!-- Phone Numbers -->
+                        <div class="flex items-start group">
+                            <div class="w-10 h-10 rounded-lg bg-green-600/10 flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-green-600/20 transition-colors">
+                                <i class="fas fa-phone-alt text-green-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">Call Us</p>
+                                <a href="tel:+254751380948" class="text-gray-300 hover:text-white transition-colors block">+254 751 380 948</a>
+                                <a href="tel:+254110046523" class="text-gray-300 hover:text-white transition-colors block">+254 110 046 523</a>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start group">
+                            <div class="w-10 h-10 rounded-lg bg-purple-600/10 flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-purple-600/20 transition-colors">
+                                <i class="fas fa-envelope text-purple-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">Email Us</p>
+                                <a href="mailto:info@techsafi.com" class="text-gray-300 hover:text-white transition-colors">info@techsafi.com</a>
+                            </div>
+                        </div>
+
+                        <!-- Working Hours -->
+                        <div class="flex items-start group">
+                            <div class="w-10 h-10 rounded-lg bg-blue-600/10 flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-blue-600/20 transition-colors">
+                                <i class="fas fa-clock text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">Working Hours</p>
+                                <p class="text-gray-300">Mon - Fri: 8AM - 6PM</p>
+                                <p class="text-gray-300">Sat: 9AM - 2PM</p>
+                            </div>
+                        </div>
+                    </address>
+
+                    <!-- CTA Button -->
+                    <div class="mt-6">
+                        <a href="contact.html" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-600 to-purple-600 hover:from-primary-700 hover:to-purple-700 text-white rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Message
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                    <!-- Copyright -->
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-copyright text-primary-400"></i>
+                        <p class="text-gray-400">
+                            <span class="font-semibold text-white">2025 TechSafi</span> - All rights reserved. 
+                            <span class="hidden sm:inline">Crafted with <i class="fas fa-heart text-red-500 mx-1"></i> in Kenya</span>
+                        </p>
+                    </div>
+
+                    <!-- Footer Links -->
+                    <div class="flex flex-wrap justify-center gap-6">
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors text-sm font-medium">Privacy Policy</a>
+                        <span class="text-gray-700">|</span>
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors text-sm font-medium">Terms of Service</a>
+                        <span class="text-gray-700">|</span>
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors text-sm font-medium">Cookie Policy</a>
+                        <span class="text-gray-700">|</span>
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors text-sm font-medium">Sitemap</a>
+                    </div>
+                </div>
+
+                <!-- Made with love badge -->
+                <div class="text-center mt-6">
+                    <p class="text-xs text-gray-500">
+                        Powered by innovation • Driven by excellence • Built for the future
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-gradient-to-r from-primary-600 to-primary-700 text-white p-4 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:from-primary-700 hover:to-primary-800 z-40">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        if (backToTopButton) {
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Adjust for fixed header
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Add animation classes when elements come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('animate-fade-in');
+                }
+            });
+        };
+
+        // Run once on page load
+        document.addEventListener('DOMContentLoaded', animateOnScroll);
+        
+        // Run on scroll
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>

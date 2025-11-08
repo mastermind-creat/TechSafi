@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - TechSafi | Our Success Stories</title>
+    <meta name="description" content="Explore our portfolio of successful projects. Custom software, web applications, mobile apps, and AI-powered solutions delivered for clients worldwide.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        dark: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+        }
+
+        if (localStorage.getItem('darkMode') === 'true' || 
+            (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .filter-btn.active {
+            background: linear-gradient(to right, #2563eb, #7c3aed);
+            color: white;
+        }
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 0.5rem;
+            min-width: 240px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 50;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-item {
+            transition: all 0.2s ease;
+        }
+        
+        .dropdown-item:hover {
+            transform: translateX(5px);
+        }
+        
+        /* Navbar scroll effect */
+        .navbar-scrolled {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }dropdown-item {
+            transition: all 0.2s ease;
+        }
+        
+        .dropdown-item:hover {
+            transform: translateX(5px);
+        }
+        
+        /* Navbar scroll effect */
+        .navbar-scrolled {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-dark-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full bg-white/95 dark:bg-dark-900/95 backdrop-blur-md z-50 shadow-sm border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-primary-600 dark:text-primary-400 flex items-center group">
+                        <img src="images/logo/logo1.png" alt="TechSafi Logo" class="h-14 w-auto mr-2 transition-transform duration-300 group-hover:scale-110">
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-1">
+                    <!-- Home -->
+                    <a href="index.html" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition relative group rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+                        <i class="fas fa-home mr-2"></i>Home
+                    </a>
+                    
+                    <!-- About Dropdown (Active) -->
+                    <div class="dropdown">
+                        <button class="px-4 py-2 text-primary-600 dark:text-primary-400 font-semibold hover:text-primary-800 dark:hover:text-primary-200 transition relative group rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 flex items-center">
+                            <i class="fas fa-info-circle mr-2"></i>About
+                            <i class="fas fa-chevron-down ml-2 text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary-600 scale-x-100 transition-transform duration-300"></span>
+                        </button>
+                        <div class="dropdown-menu bg-white dark:bg-dark-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+                            <a href="about.html" class="dropdown-item flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400">
+                                <i class="fas fa-building w-5 mr-3 text-primary-600"></i>
+                                <div>
+                                    <div class="font-semibold">Company</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">Learn about us</div>
+                                </div>
+                            </a>
+                            <a href="portfolio.html" class="dropdown-item flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400 border-t border-gray-100 dark:border-gray-700">
+                                <i class="fas fa-briefcase w-5 mr-3 text-purple-600"></i>
+                                <div>
+                                    <div class="font-semibold">Portfolio</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">View our work</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Services Dropdown -->
+                    <div class="dropdown">
+                        <button class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition relative group rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 flex items-center">
+                            <i class="fas fa-cogs mr-2"></i>Services
+                            <i class="fas fa-chevron-down ml-2 text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="dropdown-menu bg-white dark:bg-dark-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+                            <a href="services.html" class="dropdown-item flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400">
+                                <i class="fas fa-code w-5 mr-3 text-blue-600"></i>
+                                <div>
+                                    <div class="font-semibold">All Services</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">Web, Mobile & More</div>
+                                </div>
+                            </a>
+                            <a href="ai-solutions.html" class="dropdown-item flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400 border-t border-gray-100 dark:border-gray-700">
+                                <i class="fas fa-robot w-5 mr-3 text-purple-600"></i>
+                                <div>
+                                    <div class="font-semibold">AI Solutions</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">AI-powered development</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Pricing -->
+                    <a href="pricing.html" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition relative group rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+                        <i class="fas fa-tag mr-2"></i>Pricing
+                    </a>
+                    
+                    <!-- Careers -->
+                    <a href="careers.html" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition relative group rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+                        <i class="fas fa-briefcase mr-2"></i>Careers
+                    </a>
+                </div>
+                
+                <!-- Right Side Actions -->
+                <div class="hidden lg:flex items-center space-x-3">
+                    <!-- Search Button -->
+                    <button onclick="toggleSearch()" class="p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition text-gray-600 dark:text-gray-300" title="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    
+                    <!-- Dark Mode Toggle -->
+                    <button onclick="toggleDarkMode()" class="p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition" title="Toggle Dark Mode">
+                        <i class="fas fa-moon dark:hidden text-gray-600"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+                    
+                    <!-- Contact CTA -->
+                    <a href="contact.html" class="inline-flex items-center bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-6 py-2.5 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Contact Us
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center space-x-2">
+                    <button onclick="toggleDarkMode()" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                        <i class="fas fa-moon dark:hidden text-gray-600"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+                    <button id="mobile-menu-button" class="text-gray-600 dark:text-gray-300 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Search Bar (Hidden by default) -->
+        <div id="search-bar" class="hidden bg-white dark:bg-dark-800 border-t border-gray-200 dark:border-gray-700">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <div class="relative">
+                    <input type="text" placeholder="Search services, solutions, or pages..." class="w-full px-5 py-3 pl-12 pr-12 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-dark-900 text-gray-900 dark:text-gray-100 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 transition">
+                    <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    <button onclick="toggleSearch()" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-dark-800 border-t border-gray-200 dark:border-gray-700 max-h-screen overflow-y-auto">
+            <div class="px-4 py-3 space-y-1">
+                <a href="index.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
+                    <i class="fas fa-home w-5 mr-3"></i>Home
+                </a>
+                
+                <!-- About Section -->
+                <div class="border-t border-gray-100 dark:border-gray-700 pt-2 mt-2">
+                    <div class="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">About</div>
+                    <a href="about.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
+                        <i class="fas fa-building w-5 mr-3 text-primary-600"></i>Company
+                    </a>
+                    <a href="portfolio.html" class="flex items-center px-4 py-3 text-primary-600 dark:text-primary-400 font-semibold rounded-lg bg-primary-50 dark:bg-primary-900/20">
+                        <i class="fas fa-briefcase w-5 mr-3 text-purple-600"></i>Portfolio
+                    </a>
+                </div>
+                
+                <!-- Services Section -->
+                <div class="border-t border-gray-100 dark:border-gray-700 pt-2 mt-2">
+                    <div class="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Services</div>
+                    <a href="services.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
+                        <i class="fas fa-code w-5 mr-3 text-blue-600"></i>All Services
+                    </a>
+                    <a href="ai-solutions.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
+                        <i class="fas fa-robot w-5 mr-3 text-purple-600"></i>AI Solutions
+                    </a>
+                </div>
+                
+                <!-- Other Links -->
+                <div class="border-t border-gray-100 dark:border-gray-700 pt-2 mt-2">
+                    <a href="pricing.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
+                        <i class="fas fa-tag w-5 mr-3 text-green-600"></i>Pricing
+                    </a>
+                    <a href="careers.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
+                        <i class="fas fa-briefcase w-5 mr-3 text-orange-600"></i>Careers
+                    </a>
+                </div>
+                
+                <!-- Contact CTA -->
+                <div class="pt-4 pb-2">
+                    <a href="contact.html" class="flex items-center justify-center bg-gradient-to-r from-primary-600 to-primary-700 text-white px-6 py-3 rounded-lg font-semibold shadow-lg">
+                        <i class="fas fa-paper-plane mr-2"></i>Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-800 mb-6">
+                    <i class="fas fa-briefcase text-purple-600 dark:text-purple-400 mr-2"></i>
+                    <span class="text-sm font-semibold text-purple-600 dark:text-purple-400 tracking-wider">OUR WORK</span>
+                </div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 dark:text-white mb-6">
+                    Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">Portfolio</span>
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12">
+                    Explore our collection of successful projects. From startups to enterprises, we've delivered custom software solutions that drive real business results.
+                </p>
+
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-3">
+                    <button class="filter-btn active px-6 py-3 rounded-xl font-semibold transition-all duration-300 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700" data-filter="all">
+                        All Projects
+                    </button>
+                    <button class="filter-btn px-6 py-3 rounded-xl font-semibold transition-all duration-300 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700" data-filter="web">
+                        Web Apps
+                    </button>
+                    <button class="filter-btn px-6 py-3 rounded-xl font-semibold transition-all duration-300 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700" data-filter="mobile">
+                        Mobile Apps
+                    </button>
+                    <button class="filter-btn px-6 py-3 rounded-xl font-semibold transition-all duration-300 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700" data-filter="ai">
+                        AI Solutions
+                    </button>
+                    <button class="filter-btn px-6 py-3 rounded-xl font-semibold transition-all duration-300 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700" data-filter="enterprise">
+                        Enterprise
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="py-20 bg-white dark:bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="portfolio-item group bg-white dark:bg-dark-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300" data-category="web ai">
+                    <div class="relative h-64 bg-gradient-to-br from-blue-500 to-purple-600 overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-shopping-cart text-white text-6xl opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-blue-600">
+                            E-Commerce
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">StyleHub Fashion Store</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            AI-powered e-commerce platform with smart recommendations and automated inventory management.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-xs font-medium">React</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full text-xs font-medium">Node.js</span>
+                            <span class="px-3 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 rounded-full text-xs font-medium">AI/ML</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-green-600 dark:text-green-400 font-semibold">
+                                <i class="fas fa-chart-line mr-1"></i> 150% Revenue ↑
+                            </span>
+                            <a href="#" onclick="openProjectModal('project1'); return false;" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline cursor-pointer">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="portfolio-item group bg-white dark:bg-dark-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300" data-category="enterprise ai">
+                    <div class="relative h-64 bg-gradient-to-br from-green-500 to-teal-600 overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-hospital text-white text-6xl opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-green-600">
+                            Healthcare
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">MediCare Patient Portal</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            HIPAA-compliant healthcare platform with AI appointment scheduling and telemedicine.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full text-xs font-medium">Vue.js</span>
+                            <span class="px-3 py-1 bg-teal-100 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 rounded-full text-xs font-medium">Python</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-xs font-medium">AI Chatbot</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-green-600 dark:text-green-400 font-semibold">
+                                <i class="fas fa-users mr-1"></i> 10K+ Users
+                            </span>
+                            <a href="#" onclick="openProjectModal('project2'); return false;" class="text-green-600 dark:text-green-400 font-semibold hover:underline cursor-pointer">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="portfolio-item group bg-white dark:bg-dark-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300" data-category="mobile">
+                    <div class="relative h-64 bg-gradient-to-br from-purple-500 to-pink-600 overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-mobile-alt text-white text-6xl opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-purple-600">
+                            Mobile App
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">FitTrack Fitness App</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Cross-platform fitness tracking app with AI workout recommendations and nutrition planning.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full text-xs font-medium">React Native</span>
+                            <span class="px-3 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 rounded-full text-xs font-medium">Firebase</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-xs font-medium">ML Kit</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-green-600 dark:text-green-400 font-semibold">
+                                <i class="fas fa-download mr-1"></i> 50K+ Downloads
+                            </span>
+                            <a href="#" onclick="openProjectModal('project3'); return false;" class="text-purple-600 dark:text-purple-400 font-semibold hover:underline cursor-pointer">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="portfolio-item group bg-white dark:bg-dark-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300" data-category="enterprise">
+                    <div class="relative h-64 bg-gradient-to-br from-yellow-500 to-orange-600 overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-chart-bar text-white text-6xl opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-yellow-600">
+                            Finance
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">FinanceFlow CRM</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Enterprise CRM with predictive analytics for financial services and client management.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 rounded-full text-xs font-medium">Angular</span>
+                            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-full text-xs font-medium">.NET</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-xs font-medium">Power BI</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-green-600 dark:text-green-400 font-semibold">
+                                <i class="fas fa-dollar-sign mr-1"></i> 60% Cost ↓
+                            </span>
+                            <a href="#" onclick="openProjectModal('project4'); return false;" class="text-yellow-600 dark:text-yellow-400 font-semibold hover:underline cursor-pointer">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="portfolio-item group bg-white dark:bg-dark-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300" data-category="web">
+                    <div class="relative h-64 bg-gradient-to-br from-red-500 to-pink-600 overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-utensils text-white text-6xl opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-red-600">
+                            Food & Beverage
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">FoodieHub Delivery</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Multi-restaurant food delivery platform with real-time tracking and smart routing.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-full text-xs font-medium">Next.js</span>
+                            <span class="px-3 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 rounded-full text-xs font-medium">MongoDB</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-xs font-medium">Maps API</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-green-600 dark:text-green-400 font-semibold">
+                                <i class="fas fa-shopping-bag mr-1"></i> 5K+ Orders/Day
+                            </span>
+                            <a href="#" onclick="openProjectModal('project5'); return false;" class="text-red-600 dark:text-red-400 font-semibold hover:underline cursor-pointer">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="portfolio-item group bg-white dark:bg-dark-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300" data-category="ai enterprise">
+                    <div class="relative h-64 bg-gradient-to-br from-indigo-500 to-blue-600 overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-robot text-white text-6xl opacity-20"></i>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-indigo-600">
+                            AI Automation
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">AutoBot HR Assistant</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            AI-powered HR automation system with intelligent resume screening and interview scheduling.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-full text-xs font-medium">Python</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-xs font-medium">TensorFlow</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full text-xs font-medium">NLP</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-green-600 dark:text-green-400 font-semibold">
+                                <i class="fas fa-clock mr-1"></i> 80% Time Saved
+                            </span>
+                            <a href="#" onclick="openProjectModal('project6'); return false;" class="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline cursor-pointer">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Start Your Project?</h2>
+            <p class="text-xl text-blue-100 mb-10">
+                Let's build something amazing together. Get in touch to discuss your custom software needs.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-xl">
+                    Start Your Project
+                </a>
+                <a href="pricing.html" class="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300">
+                    View Pricing
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-dark-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl transform transition-all duration-300 scale-95 opacity-0" id="modal-content">
+            <!-- Modal Header -->
+            <div class="sticky top-0 bg-white dark:bg-dark-800 border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex items-center justify-between z-10">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white" id="modal-title">Project Details</h2>
+                <button onclick="closeModal()" class="w-10 h-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center justify-center transition-colors">
+                    <i class="fas fa-times text-gray-600 dark:text-gray-300 text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-6">
+                <!-- Project Image/Banner -->
+                <div class="relative h-64 rounded-xl overflow-hidden mb-6" id="modal-banner">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i class="fas fa-image text-white text-6xl opacity-20" id="modal-icon"></i>
+                    </div>
+                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold" id="modal-category">
+                        Category
+                    </div>
+                </div>
+
+                <!-- Project Description -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Project Overview</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed" id="modal-description">
+                        Project description will appear here.
+                    </p>
+                </div>
+
+                <!-- Technologies -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Technologies Used</h3>
+                    <div class="flex flex-wrap gap-2" id="modal-technologies">
+                        <!-- Technologies will be inserted here -->
+                    </div>
+                </div>
+
+                <!-- Key Features -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Key Features</h3>
+                    <ul class="space-y-2" id="modal-features">
+                        <!-- Features will be inserted here -->
+                    </ul>
+                </div>
+
+                <!-- Results/Impact -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Results & Impact</h3>
+                    <div class="grid md:grid-cols-3 gap-4" id="modal-results">
+                        <!-- Results will be inserted here -->
+                    </div>
+                </div>
+
+                <!-- Client Testimonial (if available) -->
+                <div class="mb-6 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-700 dark:to-gray-700 p-6 rounded-xl" id="modal-testimonial-section">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Client Feedback</h3>
+                    <div class="flex items-start">
+                        <i class="fas fa-quote-left text-blue-600 dark:text-blue-400 text-2xl mr-4 mt-1"></i>
+                        <div>
+                            <p class="text-gray-700 dark:text-gray-300 italic mb-3" id="modal-testimonial">
+                                Client testimonial will appear here.
+                            </p>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold mr-3" id="modal-client-avatar">
+                                    JD
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900 dark:text-white" id="modal-client-name">Client Name</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400" id="modal-client-role">Role, Company</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Timeline -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">Project Timeline</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-calendar-alt text-blue-600 dark:text-blue-400 mr-3"></i>
+                            <div>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Duration</p>
+                                <p class="font-semibold text-gray-900 dark:text-white" id="modal-duration">6 months</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-3"></i>
+                            <div>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Completion</p>
+                                <p class="font-semibold text-gray-900 dark:text-white" id="modal-completion">2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-3 pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <a href="contact.html" class="flex-1 inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Start Similar Project
+                    </a>
+                    <button onclick="closeModal()" class="flex-1 inline-flex items-center justify-center bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-xl font-semibold transition-all duration-300">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 text-gray-300 pt-20 pb-8 relative overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary-500 rounded-full filter blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Newsletter Section -->
+            <div class="bg-gradient-to-r from-primary-600 to-purple-600 rounded-2xl p-8 md:p-12 mb-16 shadow-2xl">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">Stay Updated!</h3>
+                        <p class="text-primary-100">Subscribe to our newsletter for the latest tech insights and exclusive offers.</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input type="email" placeholder="Enter your email" class="flex-1 px-6 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 transition">
+                        <button class="px-8 py-4 bg-white text-primary-600 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap">
+                            <i class="fas fa-paper-plane mr-2"></i>Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+                <!-- Company Info with Logo -->
+                <div class="lg:col-span-2">
+                    <a href="index.html" class="inline-block mb-6 group">
+                        <img src="images/logo/logo1.png" alt="TechSafi Logo" class="h-16 w-auto transition-transform duration-300 group-hover:scale-110">
+                    </a>
+                    <p class="mb-6 text-gray-400 leading-relaxed">
+                        Empowering businesses across Kenya and beyond with innovative technology solutions. We transform ideas into digital reality through cutting-edge development and strategic consulting.
+                    </p>
+                    
+                    <!-- Social Media Links -->
+                    <div class="mb-6">
+                        <h5 class="text-white font-semibold mb-4 flex items-center">
+                            <i class="fas fa-share-alt mr-2 text-primary-400"></i>
+                            Connect With Us
+                        </h5>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-700 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-blue-500/50 transform hover:-translate-y-1" title="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-sky-500 hover:to-sky-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-sky-500/50 transform hover:-translate-y-1" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-800 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-blue-700/50 transform hover:-translate-y-1" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-pink-600 hover:to-purple-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-pink-500/50 transform hover:-translate-y-1" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-gray-700 hover:to-gray-900 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-gray-700/50 transform hover:-translate-y-1" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-green-600 hover:to-green-700 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-green-500/50 transform hover:-translate-y-1" title="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="flex flex-wrap gap-4 items-center">
+                        <div class="flex items-center space-x-2 text-sm">
+                            <i class="fas fa-shield-alt text-green-400"></i>
+                            <span class="text-gray-400">SSL Secured</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-sm">
+                            <i class="fas fa-award text-yellow-400"></i>
+                            <span class="text-gray-400">ISO Certified</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6 flex items-center">
+                        <span class="w-1 h-6 bg-gradient-to-b from-primary-500 to-purple-500 rounded-full mr-3"></span>
+                        Quick Links
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Home</span></a></li>
+                        <li><a href="about.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">About Us</span></a></li>
+                        <li><a href="services.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Services</span></a></li>
+                        <li><a href="portfolio.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Portfolio</span></a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Pricing</span></a></li>
+                        <li><a href="careers.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Careers</span></a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Contact</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6 flex items-center">
+                        <span class="w-1 h-6 bg-gradient-to-b from-primary-500 to-purple-500 rounded-full mr-3"></span>
+                        Our Services
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="services.html#web-development" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Web Development</span></a></li>
+                        <li><a href="services.html#mobile-app" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Mobile Apps</span></a></li>
+                        <li><a href="services.html#ui-ux" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">UI/UX Design</span></a></li>
+                        <li><a href="ai-solutions.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">AI Solutions</span></a></li>
+                        <li><a href="services.html#cloud" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Cloud Solutions</span></a></li>
+                        <li><a href="services.html#seo" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Digital Marketing</span></a></li>
+                        <li><a href="services.html#consulting" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">IT Consulting</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6 flex items-center">
+                        <span class="w-1 h-6 bg-gradient-to-b from-primary-500 to-purple-500 rounded-full mr-3"></span>
+                        Get In Touch
+                    </h4>
+                    <address class="not-italic space-y-4">
+                        <!-- Location -->
+                        <div class="flex items-start group">
+                            <div class="w-10 h-10 rounded-lg bg-primary-600/10 flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-primary-600/20 transition-colors">
+                                <i class="fas fa-map-marker-alt text-primary-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">Location</p>
+                                <p class="text-gray-300 hover:text-white transition-colors">Nairobi, Kenya</p>
+                            </div>
+                        </div>
+
+                        <!-- Phone Numbers -->
+                        <div class="flex items-start group">
+                            <div class="w-10 h-10 rounded-lg bg-green-600/10 flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-green-600/20 transition-colors">
+                                <i class="fas fa-phone-alt text-green-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">Call Us</p>
+                                <a href="tel:+254751380948" class="text-gray-300 hover:text-white transition-colors block">+254 751 380 948</a>
+                                <a href="tel:+254110046523" class="text-gray-300 hover:text-white transition-colors block">+254 110 046 523</a>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start group">
+                            <div class="w-10 h-10 rounded-lg bg-purple-600/10 flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-purple-600/20 transition-colors">
+                                <i class="fas fa-envelope text-purple-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">Email Us</p>
+                                <a href="mailto:info@techsafi.com" class="text-gray-300 hover:text-white transition-colors">info@techsafi.com</a>
+                            </div>
+                        </div>
+
+                        <!-- Working Hours -->
+                        <div class="flex items-start group">
+                            <div class="w-10 h-10 rounded-lg bg-blue-600/10 flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-blue-600/20 transition-colors">
+                                <i class="fas fa-clock text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">Working Hours</p>
+                                <p class="text-gray-300">Mon - Fri: 8AM - 6PM</p>
+                                <p class="text-gray-300">Sat: 9AM - 2PM</p>
+                            </div>
+                        </div>
+                    </address>
+
+                    <!-- CTA Button -->
+                    <div class="mt-6">
+                        <a href="contact.html" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-600 to-purple-600 hover:from-primary-700 hover:to-purple-700 text-white rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Message
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                    <!-- Copyright -->
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-copyright text-primary-400"></i>
+                        <p class="text-gray-400">
+                            <span class="font-semibold text-white">2025 TechSafi</span> - All rights reserved. 
+                            <span class="hidden sm:inline">Crafted with <i class="fas fa-heart text-red-500 mx-1"></i> in Kenya</span>
+                        </p>
+                    </div>
+
+                    <!-- Footer Links -->
+                    <div class="flex flex-wrap justify-center gap-6">
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors text-sm font-medium">Privacy Policy</a>
+                        <span class="text-gray-700">|</span>
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors text-sm font-medium">Terms of Service</a>
+                        <span class="text-gray-700">|</span>
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors text-sm font-medium">Cookie Policy</a>
+                        <span class="text-gray-700">|</span>
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors text-sm font-medium">Sitemap</a>
+                    </div>
+                </div>
+
+                <!-- Made with love badge -->
+                <div class="text-center mt-6">
+                    <p class="text-xs text-gray-500">
+                        Powered by innovation • Driven by excellence • Built for the future
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Portfolio filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+                
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Filter items
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category').includes(filter)) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.9)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Project data
+        const projectData = {
+            project1: {
+                title: 'StyleHub Fashion Store',
+                category: 'E-Commerce',
+                categoryColor: 'text-blue-600',
+                bannerGradient: 'bg-gradient-to-br from-blue-500 to-purple-600',
+                icon: 'fa-shopping-cart',
+                description: 'StyleHub is a comprehensive AI-powered e-commerce platform designed for modern fashion retailers. The platform features intelligent product recommendations, automated inventory management, and a seamless shopping experience across all devices. Built with scalability in mind, it handles thousands of concurrent users while maintaining lightning-fast performance.',
+                technologies: [
+                    { name: 'React', color: 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' },
+                    { name: 'Node.js', color: 'bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400' },
+                    { name: 'AI/ML', color: 'bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400' },
+                    { name: 'PostgreSQL', color: 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' },
+                    { name: 'Redis', color: 'bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400' }
+                ],
+                features: [
+                    'AI-powered product recommendations based on user behavior',
+                    'Real-time inventory management with automated reordering',
+                    'Multi-currency and multi-language support',
+                    'Advanced analytics dashboard for business insights',
+                    'Integrated payment gateway with fraud detection',
+                    'Mobile-responsive design with PWA capabilities'
+                ],
+                results: [
+                    { icon: 'fa-chart-line', label: 'Revenue Increase', value: '150%', color: 'text-green-600 dark:text-green-400' },
+                    { icon: 'fa-users', label: 'Active Users', value: '25K+', color: 'text-blue-600 dark:text-blue-400' },
+                    { icon: 'fa-shopping-bag', label: 'Daily Orders', value: '500+', color: 'text-purple-600 dark:text-purple-400' }
+                ],
+                testimonial: 'TechSafi transformed our business with this incredible platform. The AI recommendations increased our average order value by 40%, and the automated inventory system saved us countless hours. Exceptional work!',
+                clientName: 'Sarah Martinez',
+                clientRole: 'Founder, StyleHub Fashion',
+                clientAvatar: 'SM',
+                duration: '6 months',
+                completion: '2024'
+            },
+            project2: {
+                title: 'MediCare Patient Portal',
+                category: 'Healthcare',
+                categoryColor: 'text-green-600',
+                bannerGradient: 'bg-gradient-to-br from-green-500 to-teal-600',
+                icon: 'fa-hospital',
+                description: 'MediCare is a HIPAA-compliant healthcare platform that revolutionizes patient care through technology. The system enables seamless appointment scheduling, telemedicine consultations, electronic health records management, and AI-powered symptom checking. Security and privacy are at the core of every feature.',
+                technologies: [
+                    { name: 'Vue.js', color: 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400' },
+                    { name: 'Python', color: 'bg-teal-100 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400' },
+                    { name: 'AI Chatbot', color: 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' },
+                    { name: 'WebRTC', color: 'bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400' },
+                    { name: 'MongoDB', color: 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400' }
+                ],
+                features: [
+                    'HIPAA-compliant data encryption and storage',
+                    'AI-powered appointment scheduling and reminders',
+                    'High-quality video telemedicine consultations',
+                    'Electronic health records with doctor access',
+                    'Prescription management and pharmacy integration',
+                    'Multi-language support for diverse patient base'
+                ],
+                results: [
+                    { icon: 'fa-users', label: 'Active Patients', value: '10K+', color: 'text-green-600 dark:text-green-400' },
+                    { icon: 'fa-video', label: 'Consultations', value: '2K/month', color: 'text-blue-600 dark:text-blue-400' },
+                    { icon: 'fa-clock', label: 'Wait Time', value: '-70%', color: 'text-purple-600 dark:text-purple-400' }
+                ],
+                testimonial: 'The MediCare platform has transformed how we deliver healthcare. Our patients love the convenience of telemedicine, and the AI chatbot handles routine inquiries efficiently. Patient satisfaction scores have never been higher.',
+                clientName: 'Dr. Michael Chen',
+                clientRole: 'Medical Director, MediCare Clinic',
+                clientAvatar: 'MC',
+                duration: '8 months',
+                completion: '2024'
+            },
+            project3: {
+                title: 'FitTrack Fitness App',
+                category: 'Mobile App',
+                categoryColor: 'text-purple-600',
+                bannerGradient: 'bg-gradient-to-br from-purple-500 to-pink-600',
+                icon: 'fa-mobile-alt',
+                description: 'FitTrack is a comprehensive cross-platform fitness application that helps users achieve their health goals through personalized workout plans, nutrition tracking, and AI-powered recommendations. The app integrates with popular wearables and provides detailed analytics to track progress over time.',
+                technologies: [
+                    { name: 'React Native', color: 'bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400' },
+                    { name: 'Firebase', color: 'bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400' },
+                    { name: 'ML Kit', color: 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' },
+                    { name: 'HealthKit', color: 'bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400' },
+                    { name: 'Google Fit', color: 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400' }
+                ],
+                features: [
+                    'AI-generated personalized workout plans',
+                    'Nutrition tracking with barcode scanning',
+                    'Integration with Apple Health and Google Fit',
+                    'Social features for community motivation',
+                    'Progress tracking with detailed analytics',
+                    'Offline mode for workouts without internet'
+                ],
+                results: [
+                    { icon: 'fa-download', label: 'Downloads', value: '50K+', color: 'text-purple-600 dark:text-purple-400' },
+                    { icon: 'fa-star', label: 'App Rating', value: '4.8/5', color: 'text-yellow-600 dark:text-yellow-400' },
+                    { icon: 'fa-users', label: 'Active Users', value: '15K', color: 'text-blue-600 dark:text-blue-400' }
+                ],
+                testimonial: 'FitTrack has been a game-changer for our fitness business. The AI recommendations keep users engaged, and the social features create a strong community. Our retention rate increased by 60% after launch.',
+                clientName: 'James Wilson',
+                clientRole: 'CEO, FitLife Studios',
+                clientAvatar: 'JW',
+                duration: '5 months',
+                completion: '2024'
+            },
+            project4: {
+                title: 'FinanceFlow CRM',
+                category: 'Finance',
+                categoryColor: 'text-yellow-600',
+                bannerGradient: 'bg-gradient-to-br from-yellow-500 to-orange-600',
+                icon: 'fa-chart-bar',
+                description: 'FinanceFlow is an enterprise-grade CRM system specifically designed for financial services companies. It combines powerful client management tools with predictive analytics to help financial advisors make data-driven decisions and provide better service to their clients.',
+                technologies: [
+                    { name: 'Angular', color: 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400' },
+                    { name: '.NET', color: 'bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400' },
+                    { name: 'Power BI', color: 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' },
+                    { name: 'SQL Server', color: 'bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400' },
+                    { name: 'Azure', color: 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' }
+                ],
+                features: [
+                    'Comprehensive client portfolio management',
+                    'Predictive analytics for investment opportunities',
+                    'Automated compliance reporting',
+                    'Real-time market data integration',
+                    'Secure document management system',
+                    'Custom Power BI dashboards'
+                ],
+                results: [
+                    { icon: 'fa-dollar-sign', label: 'Cost Reduction', value: '60%', color: 'text-green-600 dark:text-green-400' },
+                    { icon: 'fa-users', label: 'Clients Managed', value: '5K+', color: 'text-blue-600 dark:text-blue-400' },
+                    { icon: 'fa-chart-line', label: 'Efficiency', value: '+85%', color: 'text-purple-600 dark:text-purple-400' }
+                ],
+                testimonial: 'FinanceFlow has revolutionized our operations. The predictive analytics help us identify opportunities early, and the automated reporting saves our team hours every week. ROI was achieved in just 4 months.',
+                clientName: 'Michael Park',
+                clientRole: 'CTO, FinanceFlow Inc',
+                clientAvatar: 'MP',
+                duration: '10 months',
+                completion: '2024'
+            },
+            project5: {
+                title: 'FoodieHub Delivery',
+                category: 'Food & Beverage',
+                categoryColor: 'text-red-600',
+                bannerGradient: 'bg-gradient-to-br from-red-500 to-pink-600',
+                icon: 'fa-utensils',
+                description: 'FoodieHub is a multi-restaurant food delivery platform that connects hungry customers with their favorite local restaurants. The platform features real-time order tracking, smart routing for delivery drivers, and an intuitive interface for both customers and restaurant partners.',
+                technologies: [
+                    { name: 'Next.js', color: 'bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400' },
+                    { name: 'MongoDB', color: 'bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400' },
+                    { name: 'Maps API', color: 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' },
+                    { name: 'Socket.io', color: 'bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400' },
+                    { name: 'Stripe', color: 'bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400' }
+                ],
+                features: [
+                    'Real-time order tracking with live map',
+                    'Smart routing algorithm for optimal delivery',
+                    'Multi-restaurant ordering in single cart',
+                    'Restaurant dashboard for order management',
+                    'Customer ratings and review system',
+                    'Push notifications for order updates'
+                ],
+                results: [
+                    { icon: 'fa-shopping-bag', label: 'Daily Orders', value: '5K+', color: 'text-red-600 dark:text-red-400' },
+                    { icon: 'fa-store', label: 'Restaurants', value: '200+', color: 'text-blue-600 dark:text-blue-400' },
+                    { icon: 'fa-motorcycle', label: 'Drivers', value: '500+', color: 'text-purple-600 dark:text-purple-400' }
+                ],
+                testimonial: 'FoodieHub has become the go-to platform in our city. The real-time tracking and smart routing ensure fast deliveries, and our restaurant partners love the easy-to-use dashboard. Customer satisfaction is at an all-time high.',
+                clientName: 'Lisa Anderson',
+                clientRole: 'Founder, FoodieHub',
+                clientAvatar: 'LA',
+                duration: '7 months',
+                completion: '2024'
+            },
+            project6: {
+                title: 'AutoBot HR Assistant',
+                category: 'AI Automation',
+                categoryColor: 'text-indigo-600',
+                bannerGradient: 'bg-gradient-to-br from-indigo-500 to-blue-600',
+                icon: 'fa-robot',
+                description: 'AutoBot is an AI-powered HR automation system that streamlines the entire recruitment process. From intelligent resume screening to automated interview scheduling, AutoBot helps HR teams focus on what matters most - connecting with the right candidates.',
+                technologies: [
+                    { name: 'Python', color: 'bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400' },
+                    { name: 'TensorFlow', color: 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' },
+                    { name: 'NLP', color: 'bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400' },
+                    { name: 'FastAPI', color: 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400' },
+                    { name: 'Docker', color: 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' }
+                ],
+                features: [
+                    'AI-powered resume parsing and screening',
+                    'Automated interview scheduling with calendar integration',
+                    'Candidate ranking based on job requirements',
+                    'Chatbot for answering candidate queries',
+                    'Automated email communications',
+                    'Analytics dashboard for recruitment metrics'
+                ],
+                results: [
+                    { icon: 'fa-clock', label: 'Time Saved', value: '80%', color: 'text-green-600 dark:text-green-400' },
+                    { icon: 'fa-users', label: 'Resumes Processed', value: '10K+', color: 'text-blue-600 dark:text-blue-400' },
+                    { icon: 'fa-chart-line', label: 'Hire Quality', value: '+45%', color: 'text-purple-600 dark:text-purple-400' }
+                ],
+                testimonial: 'AutoBot has transformed our recruitment process. What used to take weeks now takes days. The AI screening is incredibly accurate, and our HR team can now focus on building relationships with top candidates instead of sorting through resumes.',
+                clientName: 'Robert Taylor',
+                clientRole: 'HR Director, TechCorp Global',
+                clientAvatar: 'RT',
+                duration: '4 months',
+                completion: '2024'
+            }
+        };
+
+        // Modal functions
+        function openProjectModal(projectId) {
+            const project = projectData[projectId];
+            if (!project) return;
+
+            // Update modal content
+            document.getElementById('modal-title').textContent = project.title;
+            document.getElementById('modal-category').textContent = project.category;
+            document.getElementById('modal-category').className = `absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold ${project.categoryColor}`;
+            document.getElementById('modal-banner').className = `relative h-64 rounded-xl overflow-hidden mb-6 ${project.bannerGradient}`;
+            document.getElementById('modal-icon').className = `fas ${project.icon} text-white text-6xl opacity-20`;
+            document.getElementById('modal-description').textContent = project.description;
+
+            // Technologies
+            const techContainer = document.getElementById('modal-technologies');
+            techContainer.innerHTML = project.technologies.map(tech => 
+                `<span class="px-3 py-1 ${tech.color} rounded-full text-xs font-medium">${tech.name}</span>`
+            ).join('');
+
+            // Features
+            const featuresContainer = document.getElementById('modal-features');
+            featuresContainer.innerHTML = project.features.map(feature => 
+                `<li class="flex items-start text-gray-600 dark:text-gray-300">
+                    <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-3 mt-1"></i>
+                    <span>${feature}</span>
+                </li>`
+            ).join('');
+
+            // Results
+            const resultsContainer = document.getElementById('modal-results');
+            resultsContainer.innerHTML = project.results.map(result => 
+                `<div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-xl text-center">
+                    <i class="fas ${result.icon} ${result.color} text-3xl mb-2"></i>
+                    <p class="text-2xl font-bold text-gray-900 dark:text-white">${result.value}</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">${result.label}</p>
+                </div>`
+            ).join('');
+
+            // Testimonial
+            document.getElementById('modal-testimonial').textContent = project.testimonial;
+            document.getElementById('modal-client-name').textContent = project.clientName;
+            document.getElementById('modal-client-role').textContent = project.clientRole;
+            document.getElementById('modal-client-avatar').textContent = project.clientAvatar;
+
+            // Timeline
+            document.getElementById('modal-duration').textContent = project.duration;
+            document.getElementById('modal-completion').textContent = project.completion;
+
+            // Show modal with animation
+            const modal = document.getElementById('project-modal');
+            const modalContent = document.getElementById('modal-content');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('project-modal');
+            const modalContent = document.getElementById('modal-content');
+            
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('project-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

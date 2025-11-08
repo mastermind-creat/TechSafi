@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - TechSafi</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        // Initialize AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            });
+        });
+
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'pulse-slow': 'pulse 3s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'gradient': 'gradient 15s ease infinite',
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        gradient: {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            },
+                        },
+                        blob: {
+                            '0%': {
+                                transform: 'translate(0px, 0px) scale(1)',
+                            },
+                            '33%': {
+                                transform: 'translate(30px, -50px) scale(1.1)',
+                            },
+                            '66%': {
+                                transform: 'translate(-20px, 20px) scale(0.9)',
+                            },
+                            '100%': {
+                                transform: 'translate(0px, 0px) scale(1)',
+                            },
+                        }
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        dark: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                            600: '#475569',
+                        }
+                    },
+                },
+            },
+        }
+
+        // Toggle dark mode
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+        }
+
+        // Check for saved user preference or system preference
+        if (localStorage.getItem('darkMode') === 'true' || 
+            (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+
+        // Toggle billing period
+        function toggleBilling() {
+            const monthlyPrices = document.querySelectorAll('.price-monthly');
+            const annualPrices = document.querySelectorAll('.price-annual');
+            const toggle = document.getElementById('billing-toggle');
+            
+            monthlyPrices.forEach(price => {
+                price.classList.toggle('hidden', toggle.checked);
+            });
+            
+            annualPrices.forEach(price => {
+                price.classList.toggle('hidden', !toggle.checked);
+            });
+        }
+    </script>
+    <style type="text/css">
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(-45deg, #0ea5e9, #3b82f6, #8b5cf6, #06b6d4);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        .dark .hero-gradient {
+            background: linear-gradient(-45deg, #1e40af, #1e3a8a, #3730a3, #0e7490);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .dark .glass-effect {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #0ea5e9, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            padding: 0.625rem 2rem;
+            border-radius: 9999px;
+            box-shadow: 0 10px 25px -5px rgba(102, 126, 234, 0.5), 0 8px 10px -6px rgba(118, 75, 162, 0.4);
+            z-index: 10;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 10px 25px -5px rgba(102, 126, 234, 0.5), 0 8px 10px -6px rgba(118, 75, 162, 0.4), 0 0 0 0 rgba(102, 126, 234, 0.7);
+            }
+            50% {
+                box-shadow: 0 10px 25px -5px rgba(102, 126, 234, 0.6), 0 8px 10px -6px rgba(118, 75, 162, 0.5), 0 0 0 8px rgba(102, 126, 234, 0);
+            }
+        }
+        
+        .feature-list li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .feature-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .blob {
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.7;
+        }
+        
+        .dark .blob {
+            opacity: 0.3;
+        }
+        
+        .pricing-toggle {
+            background: linear-gradient(90deg, #0ea5e9, #3b82f6);
+        }
+        
+        .pricing-section {
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-section:hover {
+            transform: translateY(-5px);
+        }
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 0.5rem;
+            min-width: 240px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 50;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-item {
+            transition: all 0.2s ease;
+        }
+        
+        .dropdown-item:hover {
+            transform: translateX(5px);
+        }
+        
+        /* Navbar scroll effect */
+        .navbar-scrolled {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }dropdown-item {
+            transition: all 0.2s ease;
+        }
+        
+        .dropdown-item:hover {
+            transform: translateX(5px);
+        }
+        
+        /* Navbar scroll effect */
+        .navbar-scrolled {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-dark-900 text-gray-800 dark:text-gray-200 transition-colors duration-300 font-inter">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full bg-white/95 dark:bg-dark-900/95 backdrop-blur-md z-50 shadow-sm border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-primary-600 dark:text-primary-400 flex items-center group">
+                        <img src="images/logo/logo1.png" alt="TechSafi Logo" class="h-14 w-auto mr-2 transition-transform duration-300 group-hover:scale-110">
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-1">
+                    <!-- Home -->
+                    <a href="index.html" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition relative group rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+                        <i class="fas fa-home mr-2"></i>Home
+                    </a>
+                    
+                    <!-- About Dropdown -->
+                    <div class="dropdown">
+                        <button class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition relative group rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 flex items-center">
+                            <i class="fas fa-info-circle mr-2"></i>About
+                            <i class="fas fa-chevron-down ml-2 text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="dropdown-menu bg-white dark:bg-dark-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+                            <a href="about.html" class="dropdown-item flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400">
+                                <i class="fas fa-building w-5 mr-3 text-primary-600"></i>
+                                <div>
+                                    <div class="font-semibold">Company</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">Learn about us</div>
+                                </div>
+                            </a>
+                            <a href="portfolio.html" class="dropdown-item flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400 border-t border-gray-100 dark:border-gray-700">
+                                <i class="fas fa-briefcase w-5 mr-3 text-purple-600"></i>
+                                <div>
+                                    <div class="font-semibold">Portfolio</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">View our work</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Services Dropdown -->
+                    <div class="dropdown">
+                        <button class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition relative group rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 flex items-center">
+                            <i class="fas fa-cogs mr-2"></i>Services
+                            <i class="fas fa-chevron-down ml-2 text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="dropdown-menu bg-white dark:bg-dark-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+                            <a href="services.html" class="dropdown-item flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400">
+                                <i class="fas fa-code w-5 mr-3 text-blue-600"></i>
+                                <div>
+                                    <div class="font-semibold">All Services</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">Web, Mobile & More</div>
+                                </div>
+                            </a>
+                            <a href="ai-solutions.html" class="dropdown-item flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400 border-t border-gray-100 dark:border-gray-700">
+                                <i class="fas fa-robot w-5 mr-3 text-purple-600"></i>
+                                <div>
+                                    <div class="font-semibold">AI Solutions</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">AI-powered development</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Pricing (Active) -->
+                    <a href="pricing.html" class="px-4 py-2 text-primary-600 dark:text-primary-400 font-semibold hover:text-primary-800 dark:hover:text-primary-200 transition relative group rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20">
+                        <i class="fas fa-tag mr-2"></i>Pricing
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary-600 scale-x-100 transition-transform duration-300"></span>
+                    </a>
+                    
+                    <!-- Careers -->
+                    <a href="careers.html" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition relative group rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+                        <i class="fas fa-briefcase mr-2"></i>Careers
+                    </a>
+                </div>
+                
+                <!-- Right Side Actions -->
+                <div class="hidden lg:flex items-center space-x-3">
+                    <!-- Search Button -->
+                    <button onclick="toggleSearch()" class="p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition text-gray-600 dark:text-gray-300" title="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    
+                    <!-- Dark Mode Toggle -->
+                    <button onclick="toggleDarkMode()" class="p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition" title="Toggle Dark Mode">
+                        <i class="fas fa-moon dark:hidden text-gray-600"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+                    
+                    <!-- Contact CTA -->
+                    <a href="contact.html" class="inline-flex items-center bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-6 py-2.5 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Contact Us
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center space-x-2">
+                    <button onclick="toggleDarkMode()" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                        <i class="fas fa-moon dark:hidden text-gray-600"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+                    <button id="mobile-menu-button" class="text-gray-600 dark:text-gray-300 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Search Bar (Hidden by default) -->
+        <div id="search-bar" class="hidden bg-white dark:bg-dark-800 border-t border-gray-200 dark:border-gray-700">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <div class="relative">
+                    <input type="text" placeholder="Search services, solutions, or pages..." class="w-full px-5 py-3 pl-12 pr-12 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-dark-900 text-gray-900 dark:text-gray-100 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 transition">
+                    <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    <button onclick="toggleSearch()" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-dark-800 border-t border-gray-200 dark:border-gray-700 max-h-screen overflow-y-auto">
+            <div class="px-4 py-3 space-y-1">
+                <a href="index.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
+                    <i class="fas fa-home w-5 mr-3"></i>Home
+                </a>
+                
+                <!-- About Section -->
+                <div class="border-t border-gray-100 dark:border-gray-700 pt-2 mt-2">
+                    <div class="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">About</div>
+                    <a href="about.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
+                        <i class="fas fa-building w-5 mr-3 text-primary-600"></i>Company
+                    </a>
+                    <a href="portfolio.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
+                        <i class="fas fa-briefcase w-5 mr-3 text-purple-600"></i>Portfolio
+                    </a>
+                </div>
+                
+                <!-- Services Section -->
+                <div class="border-t border-gray-100 dark:border-gray-700 pt-2 mt-2">
+                    <div class="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Services</div>
+                    <a href="services.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
+                        <i class="fas fa-code w-5 mr-3 text-blue-600"></i>All Services
+                    </a>
+                    <a href="ai-solutions.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
+                        <i class="fas fa-robot w-5 mr-3 text-purple-600"></i>AI Solutions
+                    </a>
+                </div>
+                
+                <!-- Other Links -->
+                <div class="border-t border-gray-100 dark:border-gray-700 pt-2 mt-2">
+                    <a href="pricing.html" class="flex items-center px-4 py-3 text-primary-600 dark:text-primary-400 font-semibold rounded-lg bg-primary-50 dark:bg-primary-900/20">
+                        <i class="fas fa-tag w-5 mr-3 text-green-600"></i>Pricing
+                    </a>
+                    <a href="careers.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
+                        <i class="fas fa-briefcase w-5 mr-3 text-orange-600"></i>Careers
+                    </a>
+                </div>
+                
+                <!-- Contact CTA -->
+                <div class="pt-4 pb-2">
+                    <a href="contact.html" class="flex items-center justify-center bg-gradient-to-r from-primary-600 to-primary-700 text-white px-6 py-3 rounded-lg font-semibold shadow-lg">
+                        <i class="fas fa-paper-plane mr-2"></i>Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="pt-32 pb-20 text-white dark:text-gray-100 relative overflow-hidden min-h-[550px] flex items-center">
+        <!-- GIF Background -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3bXVwYmR2ODNiaXhhcXZlbTF1NXY2M2JvNHk3anQ5N2t5NGpnN2QyNSZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/doXBzUFJRxpaUbuaqz/giphy.gif" 
+                 alt="Pricing Background" 
+                 class="w-full h-full object-cover object-center"
+                 style="filter: brightness(0.25);">
+        </div>
+        
+        <!-- Gradient Overlay - Light/Dark Theme -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/95 via-purple-900/90 to-pink-900/95 dark:from-blue-950/95 dark:via-purple-950/90 dark:to-pink-950/95"></div>
+        
+        <!-- Animated background elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 dark:opacity-30">
+            <div class="absolute top-1/4 -left-10 w-72 h-72 bg-blue-400 dark:bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob"></div>
+            <div class="absolute top-1/3 -right-10 w-96 h-96 bg-purple-400 dark:bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-8 left-20 w-80 h-80 bg-pink-400 dark:bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-4000"></div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="absolute top-20 right-20 w-16 h-16 border-2 border-white/20 dark:border-white/30 rounded-full animate-pulse"></div>
+        <div class="absolute bottom-32 left-20 w-20 h-20 border-2 border-purple-300/30 dark:border-purple-200/40 rounded-lg rotate-45 animate-bounce" style="animation-duration: 3s;"></div>
+        <div class="absolute top-1/2 right-1/4 w-12 h-12 bg-gradient-to-br from-blue-400/20 to-purple-400/20 dark:from-blue-300/30 dark:to-purple-300/30 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+        
+        <!-- Floating Price Tags -->
+        <div class="absolute top-24 left-1/4 animate-float">
+            <div class="bg-white/10 dark:bg-white/15 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/20">
+                <span class="text-2xl font-bold text-blue-300">$</span>
+            </div>
+        </div>
+        <div class="absolute bottom-24 right-1/3 animate-float" style="animation-delay: 1s;">
+            <div class="bg-white/10 dark:bg-white/15 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
+                <span class="text-xl font-bold text-purple-300">💰</span>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <!-- Badge -->
+            <div class="inline-flex items-center mb-6 px-6 py-3 rounded-full bg-white/10 dark:bg-white/15 backdrop-blur-md border border-white/30 dark:border-white/40 shadow-xl animate-fade-in">
+                <i class="fas fa-tag text-blue-300 dark:text-blue-200 mr-2 animate-pulse"></i>
+                <span class="text-sm font-semibold tracking-wider text-white dark:text-gray-100">TRANSPARENT PRICING</span>
+            </div>
+            
+            <!-- Main Heading with Gradient -->
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 animate-fade-in" style="animation-delay: 0.2s;">
+                <span class="inline-block text-white dark:text-gray-100">Simple,</span>
+                <span class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 dark:from-blue-200 dark:via-purple-200 dark:to-pink-200 animate-pulse" style="animation-duration: 3s;">
+                    Affordable
+                </span>
+                <span class="inline-block text-white dark:text-gray-100">Pricing</span>
+            </h1>
+            
+            <!-- Subtitle with Animation -->
+            <p class="text-xl md:text-2xl text-blue-100 dark:text-blue-200 max-w-4xl mx-auto leading-relaxed mb-8 animate-fade-in" style="animation-delay: 0.4s;">
+                Perfect for <span class="font-semibold text-white dark:text-gray-100">startups, portfolios, and growing businesses</span>. 
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300 dark:from-yellow-200 dark:to-orange-200 font-semibold">No hidden fees</span>, cancel anytime.
+            </p>
+
+            <!-- Value Props -->
+            <div class="flex flex-wrap justify-center gap-4 mb-10 animate-fade-in" style="animation-delay: 0.5s;">
+                <div class="flex items-center bg-white/10 dark:bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 dark:border-white/30">
+                    <i class="fas fa-check-circle text-blue-300 dark:text-blue-200 mr-2"></i>
+                    <span class="text-sm font-medium text-white dark:text-gray-100">Money-back guarantee</span>
+                </div>
+                <div class="flex items-center bg-white/10 dark:bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 dark:border-white/30">
+                    <i class="fas fa-check-circle text-purple-300 dark:text-purple-200 mr-2"></i>
+                    <span class="text-sm font-medium text-white dark:text-gray-100">Flexible payment plans</span>
+                </div>
+                <div class="flex items-center bg-white/10 dark:bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 dark:border-white/30">
+                    <i class="fas fa-check-circle text-pink-300 dark:text-pink-200 mr-2"></i>
+                    <span class="text-sm font-medium text-white dark:text-gray-100">24/7 support included</span>
+                </div>
+            </div>
+            
+            <!-- Billing Toggle -->
+            <div class="mt-8 inline-flex items-center justify-center space-x-4 bg-white/10 dark:bg-white/15 backdrop-blur-md rounded-full p-2 border border-white/20 dark:border-white/30 shadow-xl animate-fade-in" style="animation-delay: 0.6s;">
+                <span class="px-5 py-2.5 rounded-full text-white dark:text-gray-100 font-semibold transition-all duration-300" id="monthly-label">Monthly</span>
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" id="billing-toggle" class="sr-only peer" onchange="toggleBilling()">
+                    <div class="w-16 h-8 bg-gray-300 dark:bg-gray-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-gradient-to-r peer-checked:from-blue-500 peer-checked:to-purple-600"></div>
+                </label>
+                <span class="px-5 py-2.5 rounded-full text-white dark:text-gray-100 font-semibold flex items-center transition-all duration-300" id="annual-label">
+                    Annual 
+                    <span class="ml-2 px-2 py-1 bg-blue-500 dark:bg-blue-600 text-white text-xs font-bold rounded-full animate-pulse">Save 20%</span>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Web Development Pricing -->
+    <section class="py-20 bg-white dark:bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Web Development <span class="gradient-text">Packages</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-700 mx-auto rounded-full"></div>
+                <p class="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    From simple portfolios to complex web applications, we have the perfect solution for your needs.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Portfolio Package -->
+                <div class="pricing-card bg-white dark:bg-dark-800 rounded-2xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-8">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Portfolio Website</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Perfect for freelancers & creatives</p>
+                        </div>
+                        
+                        <div class="text-center mb-6">
+                            <div class="price-monthly">
+                                <span class="text-4xl font-bold text-gray-900 dark:text-white">$499</span>
+                                <span class="text-gray-600 dark:text-gray-400">one-time</span>
+                            </div>
+                            <div class="price-annual hidden">
+                                <span class="text-4xl font-bold text-gray-900 dark:text-white">$399</span>
+                                <span class="text-gray-600 dark:text-gray-400">one-time</span>
+                            </div>
+                        </div>
+                        
+                        <a href="contact.html?package=portfolio" class="block w-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-center text-gray-800 dark:text-white font-medium py-3 px-4 rounded-lg transition duration-200">
+                            Get Started
+                        </a>
+                    </div>
+                    
+                    <div class="border-t border-gray-200 dark:border-gray-700 px-6 py-6">
+                        <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-4 text-center">WHAT'S INCLUDED</h4>
+                        <ul class="space-y-3 feature-list">
+                            <li class="text-gray-600 dark:text-gray-300">Custom designed portfolio website</li>
+                            <li class="text-gray-600 dark:text-gray-300">Up to 5 pages</li>
+                            <li class="text-gray-600 dark:text-gray-300">Mobile-responsive design</li>
+                            <li class="text-gray-600 dark:text-gray-300">Contact form integration</li>
+                            <li class="text-gray-600 dark:text-gray-300">Basic SEO optimization</li>
+                            <li class="text-gray-600 dark:text-gray-300">1 month free support</li>
+                            <li class="text-gray-600 dark:text-gray-300">2 rounds of revisions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Business Package (Popular) -->
+                <div class="pricing-card relative bg-white dark:bg-dark-800 rounded-2xl shadow-xl overflow-hidden border-2 border-primary-600 transform scale-105" data-aos="fade-up" data-aos-delay="200">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <div class="p-8">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Business Website</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Ideal for small businesses</p>
+                        </div>
+                        
+                        <div class="text-center mb-6">
+                            <div class="price-monthly">
+                                <span class="text-4xl font-bold text-gray-900 dark:text-white">$1,299</span>
+                                <span class="text-gray-600 dark:text-gray-400">one-time</span>
+                            </div>
+                            <div class="price-annual hidden">
+                                <span class="text-4xl font-bold text-gray-900 dark:text-white">$1,039</span>
+                                <span class="text-gray-600 dark:text-gray-400">one-time</span>
+                            </div>
+                        </div>
+                        
+                        <a href="contact.html?package=business" class="block w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white text-center font-medium py-3 px-4 rounded-lg transition duration-200">
+                            Get Started
+                        </a>
+                    </div>
+                    
+                    <div class="border-t border-gray-200 dark:border-gray-700 px-6 py-6">
+                        <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-4 text-center">EVERYTHING IN PORTFOLIO, PLUS</h4>
+                        <ul class="space-y-3 feature-list">
+                            <li class="text-gray-600 dark:text-gray-300">Up to 10 custom pages</li>
+                            <li class="text-gray-600 dark:text-gray-300">CMS integration (WordPress)</li>
+                            <li class="text-gray-600 dark:text-gray-300">Blog setup</li>
+                            <li class="text-gray-600 dark:text-gray-300">Advanced contact forms</li>
+                            <li class="text-gray-600 dark:text-gray-300">Google Analytics setup</li>
+                            <li class="text-gray-600 dark:text-gray-300">3 months free support</li>
+                            <li class="text-gray-600 dark:text-gray-300">Social media integration</li>
+                            <li class="text-gray-600 dark:text-gray-300">Basic e-commerce functionality</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- E-commerce Package -->
+                <div class="pricing-card bg-white dark:bg-dark-800 rounded-2xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="300">
+                    <div class="p-8">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">E-commerce Store</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Complete online store solution</p>
+                        </div>
+                        
+                        <div class="text-center mb-6">
+                            <div class="price-monthly">
+                                <span class="text-4xl font-bold text-gray-900 dark:text-white">$2,499</span>
+                                <span class="text-gray-600 dark:text-gray-400">one-time</span>
+                            </div>
+                            <div class="price-annual hidden">
+                                <span class="text-4xl font-bold text-gray-900 dark:text-white">$1,999</span>
+                                <span class="text-gray-600 dark:text-gray-400">one-time</span>
+                            </div>
+                        </div>
+                        
+                        <a href="contact.html?package=ecommerce" class="block w-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-center text-gray-800 dark:text-white font-medium py-3 px-4 rounded-lg transition duration-200">
+                            Get Started
+                        </a>
+                    </div>
+                    
+                    <div class="border-t border-gray-200 dark:border-gray-700 px-6 py-6">
+                        <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-4 text-center">EVERYTHING IN BUSINESS, PLUS</h4>
+                        <ul class="space-y-3 feature-list">
+                            <li class="text-gray-600 dark:text-gray-300">Full e-commerce functionality</li>
+                            <li class="text-gray-600 dark:text-gray-300">Product catalog setup</li>
+                            <li class="text-gray-600 dark:text-gray-300">Shopping cart & checkout</li>
+                            <li class="text-gray-600 dark:text-gray-300">Payment gateway integration</li>
+                            <li class="text-gray-600 dark:text-gray-300">Inventory management</li>
+                            <li class="text-gray-600 dark:text-gray-300">6 months free support</li>
+                            <li class="text-gray-600 dark:text-gray-300">Order tracking system</li>
+                            <li class="text-gray-600 dark:text-gray-300">Customer account management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile App Development Pricing -->
+    <section class="py-20 bg-gray-50 dark:bg-dark-800 relative overflow-hidden">
+        <!-- Background elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10">
+            <div class="absolute top-40 left-10 w-72 h-72 bg-primary-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+            <div class="absolute top-0 right-10 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute bottom-20 left-1/2 w-80 h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Mobile App <span class="gradient-text">Development</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-700 mx-auto rounded-full"></div>
+                <p class="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    Native and cross-platform mobile applications for iOS and Android.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Basic App -->
+                <div class="pricing-card bg-white dark:bg-dark-800 rounded-2xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700" data-aos="fade-right">
+                    <div class="p-8">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Basic Mobile App</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Simple utility or content apps</p>
+                        </div>
+                        
+                        <div class="text-center mb-6">
+                            <div class="text-4xl font-bold text-gray-900 dark:text-white">$3,999</div>
+                            <div class="text-gray-600 dark:text-gray-400">one-time</div>
+                        </div>
+                        
+                        <a href="contact.html?package=basic-app" class="block w-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-center text-gray-800 dark:text-white font-medium py-3 px-4 rounded-lg transition duration-200">
+                            Get Quote
+                        </a>
+                    </div>
+                    
+                    <div class="border-t border-gray-200 dark:border-gray-700 px-6 py-6">
+                        <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-4 text-center">FEATURES</h4>
+                        <ul class="space-y-3 feature-list">
+                            <li class="text-gray-600 dark:text-gray-300">Cross-platform development (iOS & Android)</li>
+                            <li class="text-gray-600 dark:text-gray-300">Up to 5 main screens</li>
+                            <li class="text-gray-600 dark:text-gray-300">Basic UI/UX design</li>
+                            <li class="text-gray-600 dark:text-gray-300">Simple backend integration</li>
+                            <li class="text-gray-600 dark:text-gray-300">App store submission assistance</li>
+                            <li class="text-gray-600 dark:text-gray-300">2 months free support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Advanced App -->
+                <div class="pricing-card bg-white dark:bg-dark-800 rounded-2xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700" data-aos="fade-left">
+                    <div class="p-8">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Advanced Mobile App</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Feature-rich applications</p>
+                        </div>
+                        
+                        <div class="text-center mb-6">
+                            <div class="text-4xl font-bold text-gray-900 dark:text-white">$7,999</div>
+                            <div class="text-gray-600 dark:text-gray-400">one-time</div>
+                        </div>
+                        
+                        <a href="contact.html?package=advanced-app" class="block w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white text-center font-medium py-3 px-4 rounded-lg transition duration-200">
+                            Get Quote
+                        </a>
+                    </div>
+                    
+                    <div class="border-t border-gray-200 dark:border-gray-700 px-6 py-6">
+                        <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-4 text-center">EVERYTHING IN BASIC, PLUS</h4>
+                        <ul class="space-y-3 feature-list">
+                            <li class="text-gray-600 dark:text-gray-300">Native iOS & Android development</li>
+                            <li class="text-gray-600 dark:text-gray-300">Complex UI/UX with animations</li>
+                            <li class="text-gray-600 dark:text-gray-300">Custom backend development</li>
+                            <li class="text-gray-600 dark:text-gray-300">Third-party API integrations</li>
+                            <li class="text-gray-600 dark:text-gray-300">Push notifications</li>
+                            <li class="text-gray-600 dark:text-gray-300">In-app purchases</li>
+                            <li class="text-gray-600 dark:text-gray-300">6 months free support</li>
+                            <li class="text-gray-600 dark:text-gray-300">Advanced analytics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monthly Services -->
+    <section class="py-20 bg-white dark:bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Monthly <span class="gradient-text">Services</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-700 mx-auto rounded-full"></div>
+                <p class="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    Ongoing services to keep your digital presence optimized and secure.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Maintenance Plan -->
+                <div class="pricing-section bg-white dark:bg-dark-800 rounded-2xl shadow-lg p-8 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-tools text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Website Maintenance</h3>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <div class="price-monthly">
+                            <span class="text-3xl font-bold text-gray-900 dark:text-white">$99</span>
+                            <span class="text-gray-600 dark:text-gray-400">/month</span>
+                        </div>
+                        <div class="price-annual hidden">
+                            <span class="text-3xl font-bold text-gray-900 dark:text-white">$79</span>
+                            <span class="text-gray-600 dark:text-gray-400">/month</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="space-y-3 feature-list mb-6">
+                        <li class="text-gray-600 dark:text-gray-300">Regular updates & security patches</li>
+                        <li class="text-gray-600 dark:text-gray-300">Daily backups</li>
+                        <li class="text-gray-600 dark:text-gray-300">Uptime monitoring</li>
+                        <li class="text-gray-600 dark:text-gray-300">Performance optimization</li>
+                        <li class="text-gray-600 dark:text-gray-300">Content updates (up to 2 hours/month)</li>
+                    </ul>
+                    
+                    <a href="contact.html?service=maintenance" class="block w-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-center text-gray-800 dark:text-white font-medium py-2 px-4 rounded-lg transition duration-200">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- SEO Plan -->
+                <div class="pricing-section bg-white dark:bg-dark-800 rounded-2xl shadow-lg p-8 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-chart-line text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">SEO Optimization</h3>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <div class="price-monthly">
+                            <span class="text-3xl font-bold text-gray-900 dark:text-white">$299</span>
+                            <span class="text-gray-600 dark:text-gray-400">/month</span>
+                        </div>
+                        <div class="price-annual hidden">
+                            <span class="text-3xl font-bold text-gray-900 dark:text-white">$239</span>
+                            <span class="text-gray-600 dark:text-gray-400">/month</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="space-y-3 feature-list mb-6">
+                        <li class="text-gray-600 dark:text-gray-300">Keyword research & strategy</li>
+                        <li class="text-gray-600 dark:text-gray-300">On-page optimization</li>
+                        <li class="text-gray-600 dark:text-gray-300">Technical SEO audit</li>
+                        <li class="text-gray-600 dark:text-gray-300">Content optimization</li>
+                        <li class="text-gray-600 dark:text-gray-300">Monthly performance reports</li>
+                        <li class="text-gray-600 dark:text-gray-300">Backlink building strategy</li>
+                    </ul>
+                    
+                    <a href="contact.html?service=seo" class="block w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white text-center font-medium py-2 px-4 rounded-lg transition duration-200">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Custom Plan -->
+                <div class="pricing-section bg-white dark:bg-dark-800 rounded-2xl shadow-lg p-8 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-star text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Custom Development</h3>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <div class="text-3xl font-bold text-gray-900 dark:text-white">Custom</div>
+                        <div class="text-gray-600 dark:text-gray-400">Tailored to your needs</div>
+                    </div>
+                    
+                    <ul class="space-y-3 feature-list mb-6">
+                        <li class="text-gray-600 dark:text-gray-300">Dedicated development team</li>
+                        <li class="text-gray-600 dark:text-gray-300">Custom web applications</li>
+                        <li class="text-gray-600 dark:text-gray-300">API development</li>
+                        <li class="text-gray-600 dark:text-gray-300">Database design</li>
+                        <li class="text-gray-600 dark:text-gray-300">Third-party integrations</li>
+                        <li class="text-gray-600 dark:text-gray-300">Ongoing support & maintenance</li>
+                    </ul>
+                    
+                    <a href="contact.html?service=custom" class="block w-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-center text-gray-800 dark:text-white font-medium py-2 px-4 rounded-lg transition duration-200">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50 dark:bg-dark-800 relative overflow-hidden">
+        <!-- Background elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10">
+            <div class="absolute top-40 left-10 w-72 h-72 bg-primary-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+            <div class="absolute top-0 right-10 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute bottom-20 left-1/2 w-80 h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        </div>
+        
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Frequently Asked <span class="gradient-text">Questions</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-700 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white dark:bg-dark-700 rounded-xl p-6 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                    <button class="flex justify-between items-center w-full text-left" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">Do you offer payment plans for larger projects?</h3>
+                        <svg class="h-5 w-5 text-gray-500 dark:text-gray-400 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="mt-4 text-gray-600 dark:text-gray-300 hidden">
+                        Yes, we offer flexible payment plans for projects over $2,000. Typically, we require a 50% deposit to start the project, with the remaining balance due upon completion. For larger enterprise projects, we can create custom payment schedules.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white dark:bg-dark-700 rounded-xl p-6 shadow-sm" data-aos="fade-up" data-aos-delay="150">
+                    <button class="flex justify-between items-center w-full text-left" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">How long does a typical website project take?</h3>
+                        <svg class="h-5 w-5 text-gray-500 dark:text-gray-400 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="mt-4 text-gray-600 dark:text-gray-300 hidden">
+                        Project timelines vary based on complexity:
+                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                            <li>Portfolio websites: 2-3 weeks</li>
+                            <li>Business websites: 3-5 weeks</li>
+                            <li>E-commerce stores: 4-8 weeks</li>
+                            <li>Custom web applications: 6+ weeks</li>
+                        </ul>
+                        We provide detailed project timelines during our initial consultation.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white dark:bg-dark-700 rounded-xl p-6 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                    <button class="flex justify-between items-center w-full text-left" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">Do I own the website after it's completed?</h3>
+                        <svg class="h-5 w-5 text-gray-500 dark:text-gray-400 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="mt-4 text-gray-600 dark:text-gray-300 hidden">
+                        Yes, once the final payment is made, you own all rights to the website design and code. We provide you with all source files and documentation. The only exceptions are any third-party assets or licensed components we may have used.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white dark:bg-dark-700 rounded-xl p-6 shadow-sm" data-aos="fade-up" data-aos-delay="250">
+                    <button class="flex justify-between items-center w-full text-left" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">What if I need changes after the project is complete?</h3>
+                        <svg class="h-5 w-5 text-gray-500 dark:text-gray-400 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="mt-4 text-gray-600 dark:text-gray-300 hidden">
+                        We include a specific number of revision rounds in each package. After that, we offer ongoing maintenance plans or charge hourly for additional changes. Most clients find our maintenance plans to be the most cost-effective solution for ongoing updates.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary-600 to-primary-800 text-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+            <div class="absolute -top-40 -left-40 w-80 h-80 bg-white rounded-full opacity-10"></div>
+            <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-white rounded-full opacity-10"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
+            <p class="text-xl text-primary-100 mb-10 max-w-2xl mx-auto">
+                Let's discuss your project requirements and create a custom solution that fits your budget and timeline.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="contact.html" class="inline-flex items-center justify-center bg-white text-primary-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold text-lg transition duration-300 transform hover:scale-105 shadow-lg">
+                    <i class="fas fa-calendar-check mr-2"></i>
+                    Schedule a Free Consultation
+                </a>
+                <a href="tel:+15551234567" class="inline-flex items-center justify-center bg-transparent border-2 border-white hover:bg-white/10 px-8 py-4 rounded-xl font-semibold text-lg transition duration-300">
+                    <i class="fas fa-phone-alt mr-2"></i>
+                    Call Us Now
+                </a>
+            </div>
+            <p class="mt-6 text-primary-200">
+                All consultations include a free project estimate and timeline.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 text-gray-300 pt-20 pb-8 relative overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary-500 rounded-full filter blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Newsletter Section -->
+            <div class="bg-gradient-to-r from-primary-600 to-purple-600 rounded-2xl p-8 md:p-12 mb-16 shadow-2xl">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">Stay Updated!</h3>
+                        <p class="text-primary-100">Subscribe to our newsletter for the latest tech insights and exclusive offers.</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input type="email" placeholder="Enter your email" class="flex-1 px-6 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 transition">
+                        <button class="px-8 py-4 bg-white text-primary-600 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap">
+                            <i class="fas fa-paper-plane mr-2"></i>Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+                <!-- Company Info with Logo -->
+                <div class="lg:col-span-2">
+                    <a href="index.html" class="inline-block mb-6 group">
+                        <img src="images/logo/logo1.png" alt="TechSafi Logo" class="h-16 w-auto transition-transform duration-300 group-hover:scale-110">
+                    </a>
+                    <p class="mb-6 text-gray-400 leading-relaxed">
+                        Empowering businesses across Kenya and beyond with innovative technology solutions. We transform ideas into digital reality through cutting-edge development and strategic consulting.
+                    </p>
+                    
+                    <!-- Social Media Links -->
+                    <div class="mb-6">
+                        <h5 class="text-white font-semibold mb-4 flex items-center">
+                            <i class="fas fa-share-alt mr-2 text-primary-400"></i>
+                            Connect With Us
+                        </h5>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-700 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-blue-500/50 transform hover:-translate-y-1" title="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-sky-500 hover:to-sky-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-sky-500/50 transform hover:-translate-y-1" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-800 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-blue-700/50 transform hover:-translate-y-1" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-pink-600 hover:to-purple-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-pink-500/50 transform hover:-translate-y-1" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-gray-700 hover:to-gray-900 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-gray-700/50 transform hover:-translate-y-1" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-green-600 hover:to-green-700 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-green-500/50 transform hover:-translate-y-1" title="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="flex flex-wrap gap-4 items-center">
+                        <div class="flex items-center space-x-2 text-sm">
+                            <i class="fas fa-shield-alt text-green-400"></i>
+                            <span class="text-gray-400">SSL Secured</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-sm">
+                            <i class="fas fa-award text-yellow-400"></i>
+                            <span class="text-gray-400">ISO Certified</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6 flex items-center">
+                        <span class="w-1 h-6 bg-gradient-to-b from-primary-500 to-purple-500 rounded-full mr-3"></span>
+                        Quick Links
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Home</span></a></li>
+                        <li><a href="about.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">About Us</span></a></li>
+                        <li><a href="services.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Services</span></a></li>
+                        <li><a href="portfolio.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Portfolio</span></a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Pricing</span></a></li>
+                        <li><a href="careers.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Careers</span></a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Contact</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6 flex items-center">
+                        <span class="w-1 h-6 bg-gradient-to-b from-primary-500 to-purple-500 rounded-full mr-3"></span>
+                        Our Services
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="services.html#web-development" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Web Development</span></a></li>
+                        <li><a href="services.html#mobile-app" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Mobile Apps</span></a></li>
+                        <li><a href="services.html#ui-ux" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">UI/UX Design</span></a></li>
+                        <li><a href="ai-solutions.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">AI Solutions</span></a></li>
+                        <li><a href="services.html#cloud" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Cloud Solutions</span></a></li>
+                        <li><a href="services.html#seo" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Digital Marketing</span></a></li>
+                        <li><a href="services.html#consulting" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">IT Consulting</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-6 flex items-center">
+                        <span class="w-1 h-6 bg-gradient-to-b from-primary-500 to-purple-500 rounded-full mr-3"></span>
+                        Get In Touch
+                    </h4>
+                    <address class="not-italic space-y-4">
+                        <!-- Location -->
+                        <div class="flex items-start group">
+                            <div class="w-10 h-10 rounded-lg bg-primary-600/10 flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-primary-600/20 transition-colors">
+                                <i class="fas fa-map-marker-alt text-primary-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">Location</p>
+                                <p class="text-gray-300 hover:text-white transition-colors">Nairobi, Kenya</p>
+                            </div>
+                        </div>
+
+                        <!-- Phone Numbers -->
+                        <div class="flex items-start group">
+                            <div class="w-10 h-10 rounded-lg bg-green-600/10 flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-green-600/20 transition-colors">
+                                <i class="fas fa-phone-alt text-green-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">Call Us</p>
+                                <a href="tel:+254751380948" class="text-gray-300 hover:text-white transition-colors block">+254 751 380 948</a>
+                                <a href="tel:+254110046523" class="text-gray-300 hover:text-white transition-colors block">+254 110 046 523</a>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start group">
+                            <div class="w-10 h-10 rounded-lg bg-purple-600/10 flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-purple-600/20 transition-colors">
+                                <i class="fas fa-envelope text-purple-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">Email Us</p>
+                                <a href="mailto:info@techsafi.com" class="text-gray-300 hover:text-white transition-colors">info@techsafi.com</a>
+                            </div>
+                        </div>
+
+                        <!-- Working Hours -->
+                        <div class="flex items-start group">
+                            <div class="w-10 h-10 rounded-lg bg-blue-600/10 flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-blue-600/20 transition-colors">
+                                <i class="fas fa-clock text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-1">Working Hours</p>
+                                <p class="text-gray-300">Mon - Fri: 8AM - 6PM</p>
+                                <p class="text-gray-300">Sat: 9AM - 2PM</p>
+                            </div>
+                        </div>
+                    </address>
+
+                    <!-- CTA Button -->
+                    <div class="mt-6">
+                        <a href="contact.html" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-600 to-purple-600 hover:from-primary-700 hover:to-purple-700 text-white rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Message
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                    <!-- Copyright -->
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-copyright text-primary-400"></i>
+                        <p class="text-gray-400">
+                            <span class="font-semibold text-white">2025 TechSafi</span> - All rights reserved. 
+                            <span class="hidden sm:inline">Crafted with <i class="fas fa-heart text-red-500 mx-1"></i> in Kenya</span>
+                        </p>
+                    </div>
+
+                    <!-- Footer Links -->
+                    <div class="flex flex-wrap justify-center gap-6">
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors text-sm font-medium">Privacy Policy</a>
+                        <span class="text-gray-700">|</span>
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors text-sm font-medium">Terms of Service</a>
+                        <span class="text-gray-700">|</span>
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors text-sm font-medium">Cookie Policy</a>
+                        <span class="text-gray-700">|</span>
+                        <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors text-sm font-medium">Sitemap</a>
+                    </div>
+                </div>
+
+                <!-- Made with love badge -->
+                <div class="text-center mt-6">
+                    <p class="text-xs text-gray-500">
+                        Powered by innovation • Driven by excellence • Built for the future
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-gradient-to-r from-primary-600 to-primary-700 text-white p-4 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:from-primary-700 hover:to-primary-800 z-40">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        if (backToTopButton) {
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Adjust for fixed header
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
