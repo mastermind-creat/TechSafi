@@ -893,12 +893,26 @@
             </div>
 
             <div class="relative max-w-6xl mx-auto py-12">
-                <!-- Animated Vertical Line -->
-                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-green-500 via-blue-500 via-yellow-500 via-purple-500 to-pink-500 rounded-full shadow-lg"></div>
+                <!-- Animated Vertical Line - Hidden on mobile, shown on desktop -->
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-green-500 via-blue-500 via-yellow-500 via-purple-500 to-pink-500 rounded-full shadow-lg"></div>
+                
+                <!-- Mobile Vertical Line - Left aligned on mobile -->
+                <div class="md:hidden absolute left-8 top-0 h-full w-1 bg-gradient-to-b from-green-500 via-blue-500 via-yellow-500 via-purple-500 to-pink-500 rounded-full shadow-lg"></div>
 
                 <!-- 2024 - The Spark -->
-                <div class="relative mb-20 flex justify-start items-center w-full group" data-aos="fade-right" data-aos-delay="100">
-                    <div class="w-1/2 pr-12 text-right">
+                <div class="relative mb-12 md:mb-20 flex flex-col md:flex-row md:justify-start items-start md:items-center w-full group" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Mobile & Desktop Icon -->
+                    <div class="flex md:hidden absolute left-0 top-6">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-700 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
+                            <div class="relative flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-emerald-700 text-white shadow-2xl z-10">
+                                <i class="fas fa-lightbulb text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Content - Full width on mobile, half on desktop -->
+                    <div class="w-full md:w-1/2 pl-24 md:pl-0 md:pr-12 md:text-right">
                         <div class="bg-white dark:bg-dark-700 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-green-500/50 transform hover:-translate-y-1">
                             <div class="inline-block px-3 py-1 bg-green-100 dark:bg-green-900/30 rounded-full mb-3">
                                 <span class="text-xs font-bold text-green-600 dark:text-green-400">2024</span>
@@ -909,7 +923,9 @@
                             </p>
                         </div>
                     </div>
-                    <div class="w-1/2 flex justify-center">
+                    
+                    <!-- Desktop Icon -->
+                    <div class="hidden md:flex md:w-1/2 justify-center">
                         <div class="relative">
                             <div class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-700 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
                             <div class="relative flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-emerald-700 text-white shadow-2xl z-10 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
@@ -920,8 +936,19 @@
                 </div>
 
                 <!-- 2025 - Building the Foundation -->
-                <div class="relative mb-20 flex justify-end items-center w-full group" data-aos="fade-left" data-aos-delay="200">
-                    <div class="w-1/2 flex justify-center">
+                <div class="relative mb-12 md:mb-20 flex flex-col md:flex-row md:justify-end items-start md:items-center w-full group" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Mobile Icon -->
+                    <div class="flex md:hidden absolute left-0 top-6">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
+                            <div class="relative flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 text-white shadow-2xl z-10">
+                                <i class="fas fa-tools text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Desktop Icon (shown first for right-aligned layout) -->
+                    <div class="hidden md:flex md:w-1/2 justify-center md:order-1">
                         <div class="relative">
                             <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
                             <div class="relative flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 text-white shadow-2xl z-10 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
@@ -929,7 +956,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-1/2 pl-12 text-left">
+                    
+                    <!-- Content -->
+                    <div class="w-full md:w-1/2 pl-24 md:pl-12 md:text-left md:order-2">
                         <div class="bg-white dark:bg-dark-700 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-blue-500/50 transform hover:-translate-y-1">
                             <div class="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-3">
                                 <span class="text-xs font-bold text-blue-600 dark:text-blue-400">EARLY 2025</span>
@@ -943,8 +972,19 @@
                 </div>
 
                 <!-- Mid-2025 - Expanding Horizons -->
-                <div class="relative mb-20 flex justify-start items-center w-full group" data-aos="fade-right" data-aos-delay="300">
-                    <div class="w-1/2 pr-12 text-right">
+                <div class="relative mb-12 md:mb-20 flex flex-col md:flex-row md:justify-start items-start md:items-center w-full group" data-aos="fade-up" data-aos-delay="300">
+                    <!-- Mobile Icon -->
+                    <div class="flex md:hidden absolute left-0 top-6">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-amber-700 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
+                            <div class="relative flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-yellow-500 to-amber-700 text-white shadow-2xl z-10">
+                                <i class="fas fa-chart-line text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="w-full md:w-1/2 pl-24 md:pl-0 md:pr-12 md:text-right">
                         <div class="bg-white dark:bg-dark-700 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-yellow-500/50 transform hover:-translate-y-1">
                             <div class="inline-block px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 rounded-full mb-3">
                                 <span class="text-xs font-bold text-yellow-600 dark:text-yellow-400">MID 2025</span>
@@ -955,7 +995,9 @@
                             </p>
                         </div>
                     </div>
-                    <div class="w-1/2 flex justify-center">
+                    
+                    <!-- Desktop Icon -->
+                    <div class="hidden md:flex md:w-1/2 justify-center">
                         <div class="relative">
                             <div class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-amber-700 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
                             <div class="relative flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-yellow-500 to-amber-700 text-white shadow-2xl z-10 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
@@ -966,8 +1008,19 @@
                 </div>
 
                 <!-- Late-2025 - Establishing the Brand -->
-                <div class="relative mb-20 flex justify-end items-center w-full group" data-aos="fade-left" data-aos-delay="400">
-                    <div class="w-1/2 flex justify-center">
+                <div class="relative mb-12 md:mb-20 flex flex-col md:flex-row md:justify-end items-start md:items-center w-full group" data-aos="fade-up" data-aos-delay="400">
+                    <!-- Mobile Icon -->
+                    <div class="flex md:hidden absolute left-0 top-6">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-700 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
+                            <div class="relative flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-indigo-700 text-white shadow-2xl z-10">
+                                <i class="fas fa-rocket text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Desktop Icon -->
+                    <div class="hidden md:flex md:w-1/2 justify-center md:order-1">
                         <div class="relative">
                             <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-700 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
                             <div class="relative flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-indigo-700 text-white shadow-2xl z-10 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
@@ -975,7 +1028,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-1/2 pl-12 text-left">
+                    
+                    <!-- Content -->
+                    <div class="w-full md:w-1/2 pl-24 md:pl-12 md:text-left md:order-2">
                         <div class="bg-white dark:bg-dark-700 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-purple-500/50 transform hover:-translate-y-1">
                             <div class="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900/30 rounded-full mb-3">
                                 <span class="text-xs font-bold text-purple-600 dark:text-purple-400">LATE 2025</span>
@@ -989,8 +1044,19 @@
                 </div>
 
                 <!-- Beyond 2025 - The Vision Ahead -->
-                <div class="relative flex justify-start items-center w-full group" data-aos="fade-right" data-aos-delay="500">
-                    <div class="w-1/2 pr-12 text-right">
+                <div class="relative flex flex-col md:flex-row md:justify-start items-start md:items-center w-full group" data-aos="fade-up" data-aos-delay="500">
+                    <!-- Mobile Icon -->
+                    <div class="flex md:hidden absolute left-0 top-6">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-r from-pink-500 to-rose-700 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500 animate-pulse"></div>
+                            <div class="relative flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-pink-500 to-rose-700 text-white shadow-2xl z-10">
+                                <i class="fas fa-globe-africa text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="w-full md:w-1/2 pl-24 md:pl-0 md:pr-12 md:text-right">
                         <div class="bg-gradient-to-br from-pink-50 to-rose-50 dark:from-pink-900/20 dark:to-rose-900/20 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-pink-200 dark:border-pink-800 hover:border-pink-500/50 transform hover:-translate-y-1">
                             <div class="inline-block px-3 py-1 bg-pink-200 dark:bg-pink-900/50 rounded-full mb-3">
                                 <span class="text-xs font-bold text-pink-700 dark:text-pink-300">BEYOND 2025</span>
@@ -1001,7 +1067,9 @@
                             </p>
                         </div>
                     </div>
-                    <div class="w-1/2 flex justify-center">
+                    
+                    <!-- Desktop Icon -->
+                    <div class="hidden md:flex md:w-1/2 justify-center">
                         <div class="relative">
                             <div class="absolute inset-0 bg-gradient-to-r from-pink-500 to-rose-700 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500 animate-pulse"></div>
                             <div class="relative flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-pink-500 to-rose-700 text-white shadow-2xl z-10 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
