@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA Reset - TechSafi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        p {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        button {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+            width: 100%;
+            margin: 10px 0;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(239, 68, 68, 0.4);
+        }
+        button.success {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+        button.success:hover {
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.4);
+        }
+        .log {
+            background: #1f2937;
+            color: #10b981;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 20px;
+            text-align: left;
+        }
+        .log-entry {
+            margin: 5px 0;
+            padding: 5px;
+            border-left: 3px solid #10b981;
+            padding-left: 10px;
+        }
+        .log-entry.error {
+            border-left-color: #ef4444;
+            color: #ef4444;
+        }
+        .log-entry.success {
+            border-left-color: #10b981;
+            color: #10b981;
+        }
+        .warning {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            color: #92400e;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔄 PWA Reset Tool</h1>
+        <p>Use this tool to completely reset your PWA installation. This will unregister all service workers and clear all caches.</p>
+
+        <div class="warning">
+            ⚠️ <strong>Warning:</strong> This will remove all cached data and service workers. You'll need to refresh the page after reset.
+        </div>
+
+        <button onclick="resetPWA()">🗑️ Reset PWA (Unregister & Clear Cache)</button>
+        <button class="success" onclick="window.location.href='pwa-test.html'">✅ Go to Test Dashboard</button>
+        <button class="success" onclick="window.location.href='index.html'">🏠 Go to Home</button>
+
+        <div class="log" id="console-log">
+            <div class="log-entry">PWA Reset Tool initialized...</div>
+        </div>
+    </div>
+
+    <script>
+        function log(message, type = 'info') {
+            const logDiv = document.getElementById('console-log');
+            const entry = document.createElement('div');
+            entry.className = `log-entry ${type}`;
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logDiv.appendChild(entry);
+            logDiv.scrollTop = logDiv.scrollHeight;
+            console.log(message);
+        }
+
+        async function resetPWA() {
+            log('🔄 Starting PWA reset...');
+
+            try {
+                // 1. Unregister all service workers
+                if ('serviceWorker' in navigator) {
+                    const registrations = await navigator.serviceWorker.getRegistrations();
+                    
+                    if (registrations.length === 0) {
+                        log('ℹ️ No service workers found to unregister', 'info');
+                    } else {
+                        for (let registration of registrations) {
+                            await registration.unregister();
+                            log(`✅ Unregistered service worker: ${registration.scope}`, 'success');
+                        }
+                    }
+                } else {
+                    log('⚠️ Service Worker not supported', 'error');
+                }
+
+                // 2. Clear all caches
+                if ('caches' in window) {
+                    const cacheNames = await caches.keys();
+                    
+                    if (cacheNames.length === 0) {
+                        log('ℹ️ No caches found to clear', 'info');
+                    } else {
+                        for (let cacheName of cacheNames) {
+                            await caches.delete(cacheName);
+                            log(`✅ Deleted cache: ${cacheName}`, 'success');
+                        }
+                    }
+                } else {
+                    log('⚠️ Cache API not supported', 'error');
+                }
+
+                // 3. Clear localStorage (optional)
+                try {
+                    localStorage.clear();
+                    log('✅ Cleared localStorage', 'success');
+                } catch (e) {
+                    log('⚠️ Could not clear localStorage: ' + e.message, 'error');
+                }
+
+                // 4. Clear sessionStorage (optional)
+                try {
+                    sessionStorage.clear();
+                    log('✅ Cleared sessionStorage', 'success');
+                } catch (e) {
+                    log('⚠️ Could not clear sessionStorage: ' + e.message, 'error');
+                }
+
+                log('🎉 PWA reset complete!', 'success');
+                log('📝 Please refresh the page or navigate to another page', 'success');
+                
+                // Show success message
+                setTimeout(() => {
+                    if (confirm('PWA reset complete! Click OK to refresh the page.')) {
+                        window.location.reload();
+                    }
+                }, 1000);
+
+            } catch (error) {
+                log('❌ Error during reset: ' + error.message, 'error');
+            }
+        }
+
+        // Auto-check current status
+        window.addEventListener('load', async () => {
+            log('🔍 Checking current PWA status...');
+            
+            if ('serviceWorker' in navigator) {
+                const registrations = await navigator.serviceWorker.getRegistrations();
+                log(`📊 Found ${registrations.length} service worker(s)`, 'info');
+            }
+            
+            if ('caches' in window) {
+                const cacheNames = await caches.keys();
+                log(`📊 Found ${cacheNames.length} cache(s)`, 'info');
+            }
+        });
+    </script>
+</body>
+</html>

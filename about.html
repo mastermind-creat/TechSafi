@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - TechSafi</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Learn about TechSafi's mission, vision, team, and journey. Meet our founders and discover our commitment to innovative technology solutions.">
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="TechSafi">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="images/icons/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/icons/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="images/icons/favicon/favicon.svg">
+    <link rel="shortcut icon" href="images/icons/favicon/favicon.ico">
+    
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- AOS (Animate On Scroll) -->
@@ -735,6 +748,10 @@
                                 <a href="#" class="group/social w-10 h-10 rounded-xl bg-gradient-to-br from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 hover:from-red-600 hover:to-red-700 flex items-center justify-center text-red-600 hover:text-white dark:text-red-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6 shadow-md hover:shadow-lg">
                                     <i class="fab fa-youtube text-sm"></i>
                                 </a>
+                                <!-- Website -->
+                                 <a href="https://lates-portfolio-v1.vercel.app/" target="_blank" class="group/social w-10 h-10 rounded-xl bg-gradient-to-br from-sky-50 to-sky-100 dark:from-sky-900/20 dark:to-sky-800/20 hover:from-sky-500 hover:to-sky-600 flex items-center justify-center text-sky-600 hover:text-white dark:text-sky-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6 shadow-md hover:shadow-lg">
+                                    <i class="fas fa-globe-americas text-sm"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -806,6 +823,9 @@
                                 </a>
                                 <a href="#" class="group/social w-10 h-10 rounded-xl bg-gradient-to-br from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 hover:from-red-600 hover:to-red-700 flex items-center justify-center text-red-600 hover:text-white dark:text-red-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6 shadow-md hover:shadow-lg">
                                     <i class="fab fa-youtube text-sm"></i>
+                                </a>
+                                <a href="https://lewismwaura.vercel.app/" target="_blank" class="group/social w-10 h-10 rounded-xl bg-gradient-to-br from-sky-50 to-sky-100 dark:from-sky-900/20 dark:to-sky-800/20 hover:from-sky-500 hover:to-sky-600 flex items-center justify-center text-sky-600 hover:text-white dark:text-sky-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6 shadow-md hover:shadow-lg">
+                                    <i class="fas fa-globe-americas text-sm"></i>
                                 </a>
                             </div>
                         </div>
@@ -1404,5 +1424,8 @@
         // Run on scroll
         window.addEventListener('scroll', animateOnScroll);
     </script>
+
+    <!-- PWA Installation Script -->
+    <script src="/pwa-init.js"></script>
 </body>
 </html>

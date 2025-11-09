@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Worker Debug</title>
+    <style>
+        body {
+            font-family: monospace;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #0f0;
+        }
+        .log { margin: 5px 0; padding: 5px; }
+        .error { color: #f00; }
+        .success { color: #0f0; }
+        .info { color: #0ff; }
+        button {
+            background: #0f0;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Service Worker Debug Console</h1>
+    <button onclick="registerSW()">Register Service Worker</button>
+    <button onclick="checkStatus()">Check Status</button>
+    <button onclick="unregisterAll()">Unregister All</button>
+    <button onclick="clearLogs()">Clear Logs</button>
+    <hr>
+    <div id="logs"></div>
+
+    <script>
+        const logsDiv = document.getElementById('logs');
+
+        function log(message, type = 'info') {
+            const entry = document.createElement('div');
+            entry.className = `log ${type}`;
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logsDiv.appendChild(entry);
+            console.log(message);
+        }
+
+        function clearLogs() {
+            logsDiv.innerHTML = '';
+        }
+
+        async function registerSW() {
+            log('Attempting to register service worker...', 'info');
+            
+            if (!('serviceWorker' in navigator)) {
+                log('❌ Service Workers NOT supported in this browser!', 'error');
+                return;
+            }
+
+            log('✅ Service Worker API is supported', 'success');
+
+            try {
+                const registration = await navigator.serviceWorker.register('sw.js', { 
+                    scope: './',
+                    updateViaCache: 'none'
+                });
+                
+                log('✅ Registration successful!', 'success');
+                log(`   Scope: ${registration.scope}`, 'info');
+                log(`   Active: ${registration.active ? 'Yes' : 'No'}`, 'info');
+                log(`   Installing: ${registration.installing ? 'Yes' : 'No'}`, 'info');
+                log(`   Waiting: ${registration.waiting ? 'Yes' : 'No'}`, 'info');
+
+                // Listen for state changes
+                if (registration.installing) {
+                    log('🔄 Service Worker is installing...', 'info');
+                    registration.installing.addEventListener('statechange', (e) => {
+                        log(`   State: ${e.target.state}`, 'info');
+                    });
+                }
+
+            } catch (error) {
+                log('❌ Registration FAILED!', 'error');
+                log(`   Error: ${error.message}`, 'error');
+                log(`   Stack: ${error.stack}`, 'error');
+            }
+        }
+
+        async function checkStatus() {
+            log('Checking service worker status...', 'info');
+
+            if (!('serviceWorker' in navigator)) {
+                log('❌ Service Workers NOT supported', 'error');
+                return;
+            }
+
+            try {
+                const registrations = await navigator.serviceWorker.getRegistrations();
+                log(`Found ${registrations.length} registration(s)`, 'info');
+
+                registrations.forEach((reg, index) => {
+                    log(`\nRegistration ${index + 1}:`, 'info');
+                    log(`   Scope: ${reg.scope}`, 'info');
+                    log(`   Active: ${reg.active ? reg.active.scriptURL : 'None'}`, 'info');
+                    log(`   Installing: ${reg.installing ? reg.installing.scriptURL : 'None'}`, 'info');
+                    log(`   Waiting: ${reg.waiting ? reg.waiting.scriptURL : 'None'}`, 'info');
+                });
+
+                // Check controller
+                if (navigator.serviceWorker.controller) {
+                    log(`\n✅ Page is controlled by: ${navigator.serviceWorker.controller.scriptURL}`, 'success');
+                } else {
+                    log('\n⚠️ Page is NOT controlled by any service worker', 'error');
+                }
+
+                // Check caches
+                const cacheNames = await caches.keys();
+                log(`\nFound ${cacheNames.length} cache(s):`, 'info');
+                cacheNames.forEach(name => log(`   - ${name}`, 'info'));
+
+            } catch (error) {
+                log(`❌ Error: ${error.message}`, 'error');
+            }
+        }
+
+        async function unregisterAll() {
+            log('Unregistering all service workers...', 'info');
+
+            try {
+                const registrations = await navigator.serviceWorker.getRegistrations();
+                
+                for (let registration of registrations) {
+                    await registration.unregister();
+                    log(`✅ Unregistered: ${registration.scope}`, 'success');
+                }
+
+                log('✅ All service workers unregistered', 'success');
+            } catch (error) {
+                log(`❌ Error: ${error.message}`, 'error');
+            }
+        }
+
+        // Auto-check on load
+        window.addEventListener('load', () => {
+            log('=== Page Loaded ===', 'info');
+            checkStatus();
+        });
+
+        // Listen for service worker messages
+        navigator.serviceWorker.addEventListener('message', (event) => {
+            log(`📨 Message from SW: ${JSON.stringify(event.data)}`, 'info');
+        });
+
+        // Listen for controller change
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+            log('🔄 Controller changed!', 'info');
+        });
+    </script>
+</body>
+</html>

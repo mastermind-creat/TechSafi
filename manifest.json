@@ -1,0 +1,55 @@
+{
+    "name": "TechSafi - Technology Solutions",
+    "short_name": "TechSafi",
+    "description": "TechSafi offers comprehensive technology solutions including Web Development, Mobile Apps, AI Solutions, IoT, Cloud Services, and Digital Marketing.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#3b82f6",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "images/icons/favicon/favicon-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "images/icons/favicon/web-app-manifest-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "images/icons/favicon/web-app-manifest-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "images/icons/favicon/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ],
+    "categories": [
+        "business",
+        "technology",
+        "productivity"
+    ],
+    "screenshots": [
+        {
+            "src": "images/screenshots/desktop-1.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide"
+        },
+        {
+            "src": "images/screenshots/mobile-1.png",
+            "sizes": "540x720",
+            "type": "image/png",
+            "form_factor": "narrow"
+        }
+    ]
+}

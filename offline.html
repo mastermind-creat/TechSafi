@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - TechSafi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-md w-full text-center">
+        <!-- Offline Icon -->
+        <div class="mb-8 float-animation">
+            <div class="w-32 h-32 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl">
+                <i class="fas fa-wifi-slash text-white text-5xl"></i>
+            </div>
+        </div>
+
+        <!-- Message -->
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">You're Offline</h1>
+        <p class="text-lg text-gray-600 mb-8">
+            It looks like you've lost your internet connection. Don't worry, you can still browse cached pages!
+        </p>
+
+        <!-- Actions -->
+        <div class="space-y-4">
+            <button onclick="window.location.reload()" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-bold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <i class="fas fa-sync-alt mr-2"></i>
+                Try Again
+            </button>
+            
+            <a href="/" class="block w-full bg-white text-gray-700 px-8 py-4 rounded-xl font-bold hover:bg-gray-50 transition-all duration-300 shadow-lg border border-gray-200">
+                <i class="fas fa-home mr-2"></i>
+                Go to Homepage
+            </a>
+        </div>
+
+        <!-- Tips -->
+        <div class="mt-12 bg-white rounded-2xl p-6 shadow-lg">
+            <h3 class="font-bold text-gray-900 mb-4 flex items-center justify-center">
+                <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+                Quick Tips
+            </h3>
+            <ul class="text-sm text-gray-600 space-y-2 text-left">
+                <li class="flex items-start">
+                    <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                    <span>Check your WiFi or mobile data connection</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                    <span>Make sure airplane mode is turned off</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                    <span>Some pages may still be available offline</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Branding -->
+        <div class="mt-8">
+            <p class="text-sm text-gray-500">
+                <i class="fas fa-heart text-red-500"></i> TechSafi - Technology Solutions
+            </p>
+        </div>
+    </div>
+</body>
+</html>
