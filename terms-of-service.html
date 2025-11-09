@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Solutions - TechSafi | Enterprise AI Development</title>
-    <meta name="description" content="Transform your business with cutting-edge AI solutions. Machine learning, NLP, computer vision, and intelligent automation services.">
+    <title>Terms of Service - TechSafi</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script>
@@ -14,361 +14,28 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            200: '#bfdbfe',
-                            300: '#93c5fd',
-                            400: '#60a5fa',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                            800: '#1e40af',
-                            900: '#1e3a8a',
-                        },
-                        dark: {
-                            800: '#1e293b',
-                            900: '#0f172a',
-                        }
-                    },
-                    fontFamily: {
-                        'inter': ['Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.8s ease-in-out',
-                        'slide-up': 'slideUp 0.8s ease-out',
-                        'slide-down': 'slideDown 0.8s ease-out',
-                        'slide-left': 'slideLeft 0.8s ease-out',
-                        'slide-right': 'slideRight 0.8s ease-out',
-                        'zoom-in': 'zoomIn 0.8s ease-out',
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
-                        'typewriter': 'typewriter 2s steps(11) 1s 1 normal both',
-                        'blob': 'blob 7s infinite',
-                        'gradient': 'gradient 15s ease infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(30px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' },
-                        },
-                        slideDown: {
-                            '0%': { transform: 'translateY(-30px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' },
-                        },
-                        slideLeft: {
-                            '0%': { transform: 'translateX(30px)', opacity: '0' },
-                            '100%': { transform: 'translateX(0)', opacity: '1' },
-                        },
-                        slideRight: {
-                            '0%': { transform: 'translateX(-30px)', opacity: '0' },
-                            '100%': { transform: 'translateX(0)', opacity: '1' },
-                        },
-                        zoomIn: {
-                            '0%': { transform: 'scale(0.9)', opacity: '0' },
-                            '100%': { transform: 'scale(1)', opacity: '1' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        },
-                        pulseGlow: {
-                            '0%, 100%': { 
-                                boxShadow: '0 0 5px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3)'
-                            },
-                            '50%': { 
-                                boxShadow: '0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.5)'
-                            },
-                        },
-                        typewriter: {
-                            'from': { width: '0' },
-                            'to': { width: '11ch' }
-                        },
-                        blob: {
-                            '0%': {
-                                transform: 'translate(0px, 0px) scale(1)',
-                            },
-                            '33%': {
-                                transform: 'translate(30px, -50px) scale(1.1)',
-                            },
-                            '66%': {
-                                transform: 'translate(-20px, 20px) scale(0.9)',
-                            },
-                            '100%': {
-                                transform: 'translate(0px, 0px) scale(1)',
-                            },
-                        },
-                        gradient: {
-                            '0%, 100%': {
-                                'background-size': '200% 200%',
-                                'background-position': 'left center'
-                            },
-                            '50%': {
-                                'background-size': '200% 200%',
-                                'background-position': 'right center'
-                            },
-                        }
+                        primary: { 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8' },
+                        dark: { 800: '#1e293b', 900: '#0f172a' }
                     }
                 }
             }
         }
     </script>
+    <script>
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+        }
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
     <style>
-        * {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9;
-        }
-        
-        .dark ::-webkit-scrollbar-track {
-            background: #1e293b;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
-        }
-        
-        .dark ::-webkit-scrollbar-thumb {
-            background: #475569;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
-        
-        /* Dropdown Menu Styles */
-        .dropdown {
-            position: relative;
-        }
-        
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            margin-top: 0.5rem;
-            min-width: 240px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 50;
-        }
-        
-        .dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        
-        .dropdown-item {
-            transition: all 0.2s ease;
-        }
-        
-        .dropdown-item:hover {
-            transform: translateX(5px);
-        }
-        
-        /* Navbar scroll effect */
-        .navbar-scrolled {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            backdrop-filter: blur(10px);
-        }
-        
-        /* Animated background elements */
-        .floating-shapes {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            top: 0;
-            left: 0;
-            z-index: 0;
-        }
-        
-        .floating-shape {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(40px);
-            opacity: 0.7;
-            animation: float 15s ease-in-out infinite;
-        }
-        
-        .shape-1 {
-            width: 200px;
-            height: 200px;
-            background: rgba(59, 130, 246, 0.3);
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-        
-        .shape-2 {
-            width: 150px;
-            height: 150px;
-            background: rgba(139, 92, 246, 0.3);
-            top: 60%;
-            right: 10%;
-            animation-delay: 5s;
-        }
-        
-        .shape-3 {
-            width: 100px;
-            height: 100px;
-            background: rgba(236, 72, 153, 0.3);
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 10s;
-        }
-        
-        /* Gradient text animation */
-        .gradient-text {
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradient 3s linear infinite;
-        }
-        
-        /* Card hover effects */
-        .card-hover {
-            transition: all 0.4s ease;
-            transform: translateY(0);
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        /* Stagger animation for grid items */
-        .stagger-item {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        
-        /* Progress bar for scroll */
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 4px;
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-            z-index: 100;
-            transition: width 0.1s ease;
-        }
-        
-        /* Back to top button */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: #3b82f6;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 99;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .back-to-top:hover {
-            background: #2563eb;
-            transform: translateY(-3px);
-        }
-        
-        /* Section reveal animation */
-        .section-reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-        
-        .section-reveal.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Glowing elements */
-        .glow {
-            box-shadow: 0 0 5px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3);
-        }
-        
-        /* Animated underline */
-        .animated-underline {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .animated-underline::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-            transition: width 0.3s ease;
-        }
-        
-        .animated-underline:hover::after {
-            width: 100%;
-        }
-        
-        /* Pulse animation for CTA buttons */
-        .pulse-cta {
-            animation: pulseGlow 2s ease-in-out infinite;
-        }
-        
-        /* Typewriter effect */
-        .typewriter {
-            overflow: hidden;
-            border-right: .15em solid #3b82f6;
-            white-space: nowrap;
-            margin: 0 auto;
-            animation: typewriter 2s steps(11) 1s 1 normal both;
-        }
+        * { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
-<body class="bg-white dark:bg-dark-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress"></div>
-    
-    <!-- Back to Top Button -->
-    <div class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-    
+<body class="bg-white dark:bg-dark-900 text-gray-900 dark:text-gray-100">
     <!-- Navigation -->
     <nav id="navbar" class="fixed w-full bg-white/95 dark:bg-dark-900/95 backdrop-blur-md z-50 shadow-sm border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -543,223 +210,287 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 relative overflow-hidden">
-        <!-- Animated Background -->
-        <div class="floating-shapes">
-            <div class="floating-shape shape-1"></div>
-            <div class="floating-shape shape-2"></div>
-            <div class="floating-shape shape-3"></div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 mb-6 animate-slide-down">
-                    <i class="fas fa-brain text-blue-600 dark:text-blue-400 mr-2"></i>
-                    <span class="text-sm font-semibold text-blue-600 dark:text-blue-400 tracking-wider">ARTIFICIAL INTELLIGENCE</span>
-                </div>
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 dark:text-white mb-6 animate-slide-up">
-                    Custom Software with <span class="gradient-text">AI Integration</span>
-                </h1>
-                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed animate-slide-up" style="animation-delay: 0.2s;">
-                    We build custom websites, software, and systems integrated with AI automation for your business. From chatbots to predictive analytics, we deliver intelligent solutions tailored to your needs.
-                </p>
-                <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style="animation-delay: 0.4s;">
-                    <a href="#contact" class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-xl transition-all duration-300 transform hover:scale-105 pulse-cta">
-                        Get Started
-                    </a>
-                    <a href="#solutions" class="px-8 py-4 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300">
-                        Explore Solutions
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AI Solutions Grid -->
-    <section id="solutions" class="py-20 bg-white dark:bg-dark-900 section-reveal">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">AI Features We Build Into Your Software</h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                    Custom AI integrations designed specifically for your business requirements
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Machine Learning -->
-                <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border border-blue-200 dark:border-blue-800 card-hover stagger-item">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg glow">
-                        <i class="fas fa-brain text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Machine Learning</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6">
-                        We integrate predictive models into your applications that learn from your data to make intelligent decisions and forecasts.
-                    </p>
-                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Sales & Demand Forecasting</li>
-                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Customer Behavior Prediction</li>
-                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Fraud Detection Systems</li>
-                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Smart Recommendation Engines</li>
-                    </ul>
-                </div>
-
-                <!-- Natural Language Processing -->
-                <div class="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border border-purple-200 dark:border-purple-800 card-hover stagger-item">
-                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 shadow-lg glow">
-                        <i class="fas fa-comments text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">NLP & ChatGPT</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6">
-                        Enable machines to understand, interpret, and generate human language for intelligent communication.
-                    </p>
-                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i> AI Chatbots</li>
-                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i> Sentiment Analysis</li>
-                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i> Text Classification</li>
-                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i> Language Translation</li>
-                    </ul>
-                </div>
-
-                <!-- Computer Vision -->
-                <div class="bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-900/20 dark:to-pink-800/20 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border border-pink-200 dark:border-pink-800 card-hover stagger-item">
-                    <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-6 shadow-lg glow">
-                        <i class="fas fa-eye text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Computer Vision</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6">
-                        Extract meaningful information from images and videos to automate visual tasks and enhance decision-making.
-                    </p>
-                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-                        <li class="flex items-center"><i class="fas fa-check text-pink-600 mr-2"></i> Image Recognition</li>
-                        <li class="flex items-center"><i class="fas fa-check text-pink-600 mr-2"></i> Object Detection</li>
-                        <li class="flex items-center"><i class="fas fa-check text-pink-600 mr-2"></i> Facial Recognition</li>
-                        <li class="flex items-center"><i class="fas fa-check text-pink-600 mr-2"></i> Video Analytics</li>
-                    </ul>
-                </div>
-
-                <!-- AI Automation -->
-                <div class="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border border-green-200 dark:border-green-800 card-hover stagger-item">
-                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6 shadow-lg glow">
-                        <i class="fas fa-robot text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">AI Automation</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6">
-                        Automate repetitive tasks and workflows with intelligent bots and robotic process automation.
-                    </p>
-                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i> Workflow Automation</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i> RPA Solutions</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i> Process Optimization</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i> Smart Assistants</li>
-                    </ul>
-                </div>
-
-                <!-- Deep Learning -->
-                <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-900/20 dark:to-indigo-800/20 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border border-indigo-200 dark:border-indigo-800 card-hover stagger-item">
-                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 shadow-lg glow">
-                        <i class="fas fa-network-wired text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Deep Learning</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6">
-                        Advanced neural networks for complex pattern recognition and decision-making tasks.
-                    </p>
-                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-                        <li class="flex items-center"><i class="fas fa-check text-indigo-600 mr-2"></i> Neural Networks</li>
-                        <li class="flex items-center"><i class="fas fa-check text-indigo-600 mr-2"></i> Transfer Learning</li>
-                        <li class="flex items-center"><i class="fas fa-check text-indigo-600 mr-2"></i> Generative AI</li>
-                        <li class="flex items-center"><i class="fas fa-check text-indigo-600 mr-2"></i> Custom Models</li>
-                    </ul>
-                </div>
-
-                <!-- Data Science -->
-                <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-900/20 dark:to-yellow-800/20 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border border-yellow-200 dark:border-yellow-800 card-hover stagger-item">
-                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mb-6 shadow-lg glow">
-                        <i class="fas fa-chart-bar text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Data Science</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6">
-                        Extract actionable insights from your data with advanced analytics and visualization.
-                    </p>
-                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-                        <li class="flex items-center"><i class="fas fa-check text-yellow-600 mr-2"></i> Data Analytics</li>
-                        <li class="flex items-center"><i class="fas fa-check text-yellow-600 mr-2"></i> Business Intelligence</li>
-                        <li class="flex items-center"><i class="fas fa-check text-yellow-600 mr-2"></i> Data Visualization</li>
-                        <li class="flex items-center"><i class="fas fa-check text-yellow-600 mr-2"></i> Statistical Modeling</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Use Cases -->
-    <section class="py-20 bg-gray-50 dark:bg-dark-800 section-reveal">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Industry Use Cases</h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                    AI solutions transforming businesses across industries
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white dark:bg-dark-900 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover stagger-item">
-                    <i class="fas fa-hospital text-4xl text-blue-600 mb-4"></i>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Healthcare</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Medical diagnosis, patient monitoring, drug discovery, and personalized treatment plans.</p>
-                </div>
-
-                <div class="bg-white dark:bg-dark-900 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover stagger-item">
-                    <i class="fas fa-shopping-cart text-4xl text-purple-600 mb-4"></i>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">E-Commerce</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Product recommendations, demand forecasting, dynamic pricing, and customer service automation.</p>
-                </div>
-
-                <div class="bg-white dark:bg-dark-900 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover stagger-item">
-                    <i class="fas fa-university text-4xl text-green-600 mb-4"></i>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Finance</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Fraud detection, risk assessment, algorithmic trading, and credit scoring.</p>
-                </div>
-
-                <div class="bg-white dark:bg-dark-900 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover stagger-item">
-                    <i class="fas fa-industry text-4xl text-yellow-600 mb-4"></i>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Manufacturing</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Predictive maintenance, quality control, supply chain optimization, and process automation.</p>
-                </div>
-
-                <div class="bg-white dark:bg-dark-900 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover stagger-item">
-                    <i class="fas fa-car text-4xl text-red-600 mb-4"></i>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Transportation</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Route optimization, autonomous vehicles, traffic prediction, and fleet management.</p>
-                </div>
-
-                <div class="bg-white dark:bg-dark-900 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover stagger-item">
-                    <i class="fas fa-bullhorn text-4xl text-pink-600 mb-4"></i>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Marketing</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Customer segmentation, campaign optimization, content generation, and sentiment analysis.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600 section-reveal">
+    <section class="pt-32 pb-12 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Transform Your Business with AI?</h2>
-            <p class="text-xl text-blue-100 mb-10">
-                Let's discuss how our AI solutions can drive innovation and growth for your organization.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="contact.html" class="px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-xl pulse-cta">
-                    Schedule a Consultation
-                </a>
-                <a href="pricing.html" class="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300">
-                    View Pricing
-                </a>
+            <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 mb-6">
+                <i class="fas fa-file-contract text-blue-600 dark:text-blue-400 mr-2"></i>
+                <span class="text-sm font-semibold text-blue-600 dark:text-blue-400">LEGAL</span>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-6">Terms of Service</h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300">Last Updated: November 2025</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-16 bg-white dark:bg-dark-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="prose prose-lg dark:prose-invert max-w-none">
+                
+                <!-- Introduction -->
+                <div class="mb-12">
+                    <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Welcome to TechSafi. These Terms of Service ("Terms") govern your access to and use of our website, services, and products. By accessing or using our services, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our services.
+                    </p>
+                </div>
+
+                <!-- Section 1 -->
+                <div class="mb-10">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                        <span class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-handshake text-blue-600 dark:text-blue-400"></i>
+                        </span>
+                        1. Acceptance of Terms
+                    </h2>
+                    <div class="ml-13 space-y-4 text-gray-600 dark:text-gray-300">
+                        <p>By using TechSafi's services, you acknowledge that you have read, understood, and agree to be bound by these Terms and our Privacy Policy. These Terms apply to all visitors, users, and others who access or use our services.</p>
+                        <p>We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting on our website. Your continued use of our services after changes are posted constitutes acceptance of the modified Terms.</p>
+                    </div>
+                </div>
+
+                <!-- Section 2 -->
+                <div class="mb-10">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                        <span class="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-briefcase text-purple-600 dark:text-purple-400"></i>
+                        </span>
+                        2. Services Description
+                    </h2>
+                    <div class="ml-13 space-y-4 text-gray-600 dark:text-gray-300">
+                        <p>TechSafi provides custom software development services, including but not limited to:</p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>Web application development</li>
+                            <li>Mobile application development (iOS and Android)</li>
+                            <li>AI and machine learning solutions</li>
+                            <li>Cloud infrastructure and deployment</li>
+                            <li>UI/UX design services</li>
+                            <li>Enterprise software solutions</li>
+                            <li>Digital marketing and SEO services</li>
+                            <li>IT consulting and support</li>
+                        </ul>
+                        <p class="mt-4">The specific scope, deliverables, timeline, and pricing for each project will be outlined in a separate Service Agreement or Statement of Work (SOW).</p>
+                    </div>
+                </div>
+
+                <!-- Section 3 -->
+                <div class="mb-10">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                        <span class="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-user-shield text-green-600 dark:text-green-400"></i>
+                        </span>
+                        3. User Responsibilities
+                    </h2>
+                    <div class="ml-13 space-y-4 text-gray-600 dark:text-gray-300">
+                        <p>As a user of our services, you agree to:</p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>Provide accurate, current, and complete information</li>
+                            <li>Maintain the confidentiality of any account credentials</li>
+                            <li>Notify us immediately of any unauthorized use of your account</li>
+                            <li>Use our services only for lawful purposes</li>
+                            <li>Not interfere with or disrupt our services or servers</li>
+                            <li>Not attempt to gain unauthorized access to our systems</li>
+                            <li>Comply with all applicable laws and regulations</li>
+                            <li>Provide timely feedback and approvals as required for project completion</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section 4 -->
+                <div class="mb-10">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                        <span class="w-10 h-10 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-copyright text-yellow-600 dark:text-yellow-400"></i>
+                        </span>
+                        4. Intellectual Property Rights
+                    </h2>
+                    <div class="ml-13 space-y-4 text-gray-600 dark:text-gray-300">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6">4.1 Client-Owned Work</h3>
+                        <p>Upon full payment for services rendered, all custom-developed code, designs, and deliverables created specifically for your project will be transferred to you, subject to the terms of the Service Agreement.</p>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6">4.2 TechSafi-Owned Property</h3>
+                        <p>TechSafi retains all rights to:</p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>Pre-existing code, frameworks, and tools</li>
+                            <li>Reusable components and libraries</li>
+                            <li>Development methodologies and processes</li>
+                            <li>Website content, branding, and marketing materials</li>
+                        </ul>
+
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6">4.3 Third-Party Components</h3>
+                        <p>Projects may include third-party software, libraries, or services subject to their own licenses. You are responsible for complying with all applicable third-party licenses.</p>
+                    </div>
+                </div>
+
+                <!-- Section 5 -->
+                <div class="mb-10">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                        <span class="w-10 h-10 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-dollar-sign text-red-600 dark:text-red-400"></i>
+                        </span>
+                        5. Payment Terms
+                    </h2>
+                    <div class="ml-13 space-y-4 text-gray-600 dark:text-gray-300">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6">5.1 Pricing</h3>
+                        <p>Project pricing will be specified in the Service Agreement or quote. Prices are in USD or KES as agreed upon.</p>
+
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6">5.2 Payment Schedule</h3>
+                        <p>Unless otherwise specified, payment terms typically include:</p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>Initial deposit (usually 30-50%) upon project commencement</li>
+                            <li>Milestone payments as outlined in the Service Agreement</li>
+                            <li>Final payment upon project completion and delivery</li>
+                        </ul>
+
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6">5.3 Late Payments</h3>
+                        <p>Late payments may incur interest charges and may result in suspension of services until payment is received.</p>
+
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6">5.4 Refunds</h3>
+                        <p>Refund policies will be outlined in the Service Agreement. Generally, deposits are non-refundable once work has commenced.</p>
+                    </div>
+                </div>
+
+                <!-- Section 6 -->
+                <div class="mb-10">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                        <span class="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-shield-alt text-indigo-600 dark:text-indigo-400"></i>
+                        </span>
+                        6. Warranties and Disclaimers
+                    </h2>
+                    <div class="ml-13 space-y-4 text-gray-600 dark:text-gray-300">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6">6.1 Service Warranty</h3>
+                        <p>We warrant that services will be performed in a professional and workmanlike manner. We will correct any defects in our work at no additional charge for a period specified in the Service Agreement (typically 30-90 days after delivery).</p>
+
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6">6.2 Disclaimer</h3>
+                        <p>EXCEPT AS EXPRESSLY PROVIDED IN THE SERVICE AGREEMENT, OUR SERVICES ARE PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.</p>
+                    </div>
+                </div>
+
+                <!-- Section 7 -->
+                <div class="mb-10">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                        <span class="w-10 h-10 bg-pink-100 dark:bg-pink-900/30 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-exclamation-triangle text-pink-600 dark:text-pink-400"></i>
+                        </span>
+                        7. Limitation of Liability
+                    </h2>
+                    <div class="ml-13 space-y-4 text-gray-600 dark:text-gray-300">
+                        <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, TECHSAFI SHALL NOT BE LIABLE FOR:</p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>Indirect, incidental, special, consequential, or punitive damages</li>
+                            <li>Loss of profits, revenue, data, or business opportunities</li>
+                            <li>Service interruptions or delays</li>
+                            <li>Third-party actions or content</li>
+                        </ul>
+                        <p class="mt-4">Our total liability for any claims arising from or related to our services shall not exceed the amount paid by you for the specific services giving rise to the claim.</p>
+                    </div>
+                </div>
+
+                <!-- Section 8 -->
+                <div class="mb-10">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                        <span class="w-10 h-10 bg-teal-100 dark:bg-teal-900/30 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-user-secret text-teal-600 dark:text-teal-400"></i>
+                        </span>
+                        8. Confidentiality
+                    </h2>
+                    <div class="ml-13 space-y-4 text-gray-600 dark:text-gray-300">
+                        <p>Both parties agree to maintain the confidentiality of any proprietary or confidential information disclosed during the course of the project. This obligation survives the termination of the Service Agreement.</p>
+                        <p>Confidential information does not include information that:</p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>Is or becomes publicly available through no breach of this agreement</li>
+                            <li>Was rightfully in the receiving party's possession prior to disclosure</li>
+                            <li>Is independently developed without use of confidential information</li>
+                            <li>Is required to be disclosed by law or court order</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section 9 -->
+                <div class="mb-10">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                        <span class="w-10 h-10 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-ban text-orange-600 dark:text-orange-400"></i>
+                        </span>
+                        9. Termination
+                    </h2>
+                    <div class="ml-13 space-y-4 text-gray-600 dark:text-gray-300">
+                        <p>Either party may terminate the Service Agreement under the following conditions:</p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li><strong>For Convenience:</strong> With 30 days written notice</li>
+                            <li><strong>For Cause:</strong> Immediately upon material breach by the other party</li>
+                            <li><strong>Non-Payment:</strong> If payment is not received within 15 days of due date</li>
+                        </ul>
+                        <p class="mt-4">Upon termination, you will pay for all work completed up to the termination date. TechSafi will deliver all completed work and transfer ownership as specified in the Service Agreement.</p>
+                    </div>
+                </div>
+
+                <!-- Section 10 -->
+                <div class="mb-10">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                        <span class="w-10 h-10 bg-cyan-100 dark:bg-cyan-900/30 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-balance-scale text-cyan-600 dark:text-cyan-400"></i>
+                        </span>
+                        10. Governing Law and Dispute Resolution
+                    </h2>
+                    <div class="ml-13 space-y-4 text-gray-600 dark:text-gray-300">
+                        <p>These Terms shall be governed by and construed in accordance with the laws of Kenya, without regard to its conflict of law provisions.</p>
+                        <p>Any disputes arising from these Terms or our services shall be resolved through:</p>
+                        <ol class="list-decimal pl-6 space-y-2">
+                            <li>Good faith negotiations between the parties</li>
+                            <li>Mediation, if negotiations fail</li>
+                            <li>Arbitration or litigation in Nairobi, Kenya, if mediation is unsuccessful</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Section 11 -->
+                <div class="mb-10">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                        <span class="w-10 h-10 bg-violet-100 dark:bg-violet-900/30 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-file-alt text-violet-600 dark:text-violet-400"></i>
+                        </span>
+                        11. General Provisions
+                    </h2>
+                    <div class="ml-13 space-y-4 text-gray-600 dark:text-gray-300">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6">11.1 Entire Agreement</h3>
+                        <p>These Terms, together with any Service Agreement, constitute the entire agreement between you and TechSafi regarding our services.</p>
+
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6">11.2 Severability</h3>
+                        <p>If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect.</p>
+
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6">11.3 Waiver</h3>
+                        <p>No waiver of any term shall be deemed a further or continuing waiver of such term or any other term.</p>
+
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6">11.4 Assignment</h3>
+                        <p>You may not assign or transfer these Terms without our prior written consent. We may assign our rights and obligations without restriction.</p>
+
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6">11.5 Force Majeure</h3>
+                        <p>Neither party shall be liable for delays or failures in performance resulting from causes beyond reasonable control, including natural disasters, war, terrorism, labor disputes, or government actions.</p>
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="mt-12 p-8 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl border border-blue-200 dark:border-blue-800">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                        <i class="fas fa-envelope text-blue-600 dark:text-blue-400 mr-3"></i>
+                        Contact Us
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        If you have any questions about these Terms of Service, please contact us:
+                    </p>
+                    <div class="space-y-3 text-gray-700 dark:text-gray-300">
+                        <p><strong>TechSafi</strong></p>
+                        <p><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i> Nairobi, Kenya</p>
+                        <p><i class="fas fa-envelope text-blue-600 mr-2"></i> <a href="mailto:info@techsafi.com" class="text-primary-600 dark:text-primary-400 hover:underline">info@techsafi.com</a></p>
+                        <p><i class="fas fa-phone text-blue-600 mr-2"></i> +254 751 380 948 | +254 110 046 523</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-   <!-- Footer -->
+    <!-- Footer -->
     <footer class="bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 text-gray-300 pt-20 pb-8 relative overflow-hidden">
         <!-- Animated Background Elements -->
         <div class="absolute inset-0 opacity-5">
@@ -967,110 +698,5 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Dark mode toggle
-        function toggleDarkMode() {
-            document.documentElement.classList.toggle('dark');
-            localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
-        }
-
-        // Check for saved user preference or system preference
-        if (localStorage.getItem('darkMode') === 'true' || 
-            (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        }
-
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (mobileMenuButton && mobileMenu) {
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
-
-        // Search toggle
-        function toggleSearch() {
-            const searchBar = document.getElementById('search-bar');
-            searchBar.classList.toggle('hidden');
-        }
-
-        // Scroll progress bar
-        const scrollProgress = document.querySelector('.scroll-progress');
-        const backToTop = document.querySelector('.back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (window.scrollY / windowHeight) * 100;
-            scrollProgress.style.width = scrolled + '%';
-            
-            // Show/hide back to top button
-            if (window.scrollY > 500) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-            
-            // Navbar scroll effect
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('navbar-scrolled');
-            } else {
-                navbar.classList.remove('navbar-scrolled');
-            }
-        });
-
-        // Back to top functionality
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Section reveal animation
-        const revealSections = document.querySelectorAll('.section-reveal');
-        
-        const revealOnScroll = () => {
-            revealSections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (sectionTop < windowHeight - 100) {
-                    section.classList.add('revealed');
-                }
-            });
-        };
-        
-        // Stagger animation for grid items
-        const staggerItems = document.querySelectorAll('.stagger-item');
-        
-        const staggerOnScroll = () => {
-            staggerItems.forEach((item, index) => {
-                const itemTop = item.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (itemTop < windowHeight - 100) {
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
-                    }, index * 100);
-                }
-            });
-        };
-        
-        // Run animations on load and scroll
-        window.addEventListener('load', () => {
-            revealOnScroll();
-            staggerOnScroll();
-        });
-        
-        window.addEventListener('scroll', () => {
-            revealOnScroll();
-            staggerOnScroll();
-        });
-    </script>
 </body>
 </html>
