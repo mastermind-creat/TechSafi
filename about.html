@@ -644,61 +644,170 @@
     </section>
 
     <!-- Our Team -->
-    <section class="py-20 bg-white dark:bg-dark-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Meet Our <span class="gradient-text">Leadership Team</span></h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-700 mx-auto rounded-full"></div>
-                <p class="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                    Our leadership team brings together decades of combined experience in technology, business strategy, and innovation.
+    <section class="py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 dark:from-dark-900 dark:via-dark-800 dark:to-dark-900 relative overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 opacity-30 dark:opacity-10">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+            <div class="absolute top-40 right-10 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-8 left-1/2 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 border border-blue-200 dark:border-blue-800 mb-6">
+                    <i class="fas fa-users text-blue-600 dark:text-blue-400 mr-2"></i>
+                    <span class="text-sm font-semibold text-blue-600 dark:text-blue-400 tracking-wider">OUR LEADERSHIP</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-6">
+                    Meet The <span class="gradient-text">Visionaries</span>
+                </h2>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mx-auto rounded-full mb-6"></div>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    The brilliant minds driving innovation and excellence at TechSafi
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Team Member 1 -->
-                <div class="team-card bg-white dark:bg-dark-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-72 overflow-hidden">
-                        <img src="images/Team/Kennedy.png" 
-                             alt="Wambia Kennedy" 
-                             class="w-full h-full object-cover team-image">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">Wambia Kennedy</h3>
-                        <p class="text-primary-600 dark:text-primary-400 font-medium mb-3">CEO & Founder</p>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                            With over 15 years of experience in technology leadership, Wambia founded TechSafi with a vision to bridge the gap between business and technology.
-                        </p>
-                        <div class="flex space-x-3">
-                            <a href="#" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition">
-                                <i class="fab fa-linkedin-in text-sm"></i>
-                            </a>
-                            <a href="https://x.com/MastermindCreat" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition">
-                                <i class="fab fa-twitter text-sm"></i>
-                            </a>
+            <div class="grid md:grid-cols-2 gap-12 mx-auto max-w-6xl">
+                <!-- Team Member 1 - CEO -->
+                <div class="group relative" data-aos="fade-right" data-aos-delay="100">
+                    <!-- Decorative gradient border -->
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl opacity-0 group-hover:opacity-100 blur transition duration-500 group-hover:duration-200"></div>
+                    
+                    <div class="relative bg-white dark:bg-dark-800 rounded-3xl overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:-translate-y-2">
+                        <!-- Image Section with Overlay -->
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="images/Team/Kennedy.png" 
+                                 alt="Wambia Kennedy" 
+                                 class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110">
+                            
+                            <!-- Gradient Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+                            
+                            <!-- Floating Badge -->
+                            <div class="absolute top-4 right-4 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white text-xs font-bold shadow-lg transform transition-transform duration-500 group-hover:scale-110">
+                                <i class="fas fa-crown mr-1"></i>CEO
+                            </div>
+                            
+                            <!-- Name Overlay on Image -->
+                            <div class="absolute bottom-0 left-0 right-0 p-6 transform transition-transform duration-500">
+                                <h3 class="text-2xl font-bold text-white mb-1">Wambia Kennedy</h3>
+                                <p class="text-blue-300 font-semibold">Chief Executive Officer</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Content Section -->
+                        <div class="p-8">
+                            <!-- Bio -->
+                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6">
+                                Wambia Kennedy is the visionary co-founder and CEO of TechSafi. With a strong background in web and mobile development, he leads the company's strategic direction and business growth. Passionate about innovation and problem-solving, Kennedy believes in using technology as a tool to empower individuals, businesses, and communities.
+                            </p>
+                            
+                            <!-- Stats Row -->
+                            <div class="grid grid-cols-3 gap-4 mb-6 pb-6 border-b border-gray-200 dark:border-gray-700">
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">3+</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">Years</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-purple-600 dark:text-purple-400">50+</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">Projects</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-pink-600 dark:text-pink-400">100%</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">Dedicated</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Social Links -->
+                            <div class="flex justify-center space-x-2">
+                                <a href="#" class="group/social w-10 h-10 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 hover:from-blue-600 hover:to-blue-700 flex items-center justify-center text-blue-600 hover:text-white dark:text-blue-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6 shadow-md hover:shadow-lg">
+                                    <i class="fab fa-linkedin-in text-sm"></i>
+                                </a>
+                                <a href="https://x.com/MastermindCreat" target="_blank" class="group/social w-10 h-10 rounded-xl bg-gradient-to-br from-sky-50 to-sky-100 dark:from-sky-900/20 dark:to-sky-800/20 hover:from-sky-500 hover:to-sky-600 flex items-center justify-center text-sky-600 hover:text-white dark:text-sky-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6 shadow-md hover:shadow-lg">
+                                    <i class="fab fa-twitter text-sm"></i>
+                                </a>
+                                <a href="#" class="group/social w-10 h-10 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900/20 dark:to-gray-800/20 hover:from-gray-700 hover:to-gray-900 flex items-center justify-center text-gray-600 hover:text-white dark:text-gray-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6 shadow-md hover:shadow-lg">
+                                    <i class="fab fa-github text-sm"></i>
+                                </a>
+                                <a href="#" class="group/social w-10 h-10 rounded-xl bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-900/20 dark:to-pink-800/20 hover:from-pink-600 hover:to-pink-700 flex items-center justify-center text-pink-600 hover:text-white dark:text-pink-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6 shadow-md hover:shadow-lg">
+                                    <i class="fab fa-instagram text-sm"></i>
+                                </a>
+                                <a href="#" class="group/social w-10 h-10 rounded-xl bg-gradient-to-br from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 hover:from-red-600 hover:to-red-700 flex items-center justify-center text-red-600 hover:text-white dark:text-red-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6 shadow-md hover:shadow-lg">
+                                    <i class="fab fa-youtube text-sm"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Team Member 2 -->
-                <div class="team-card bg-white dark:bg-dark-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-72 overflow-hidden">
-                        <img src="images/Team/lewis.jpg" 
-                             alt="Lewis Mwaura" 
-                             class="w-full h-full object-cover team-image">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">Lewis Mwaura</h3>
-                        <p class="text-primary-600 dark:text-primary-400 font-medium mb-3">CTO & Founder</p>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                            A technology visionary with expertise in software architecture and emerging technologies, Lewis leads our technical strategy and innovation initiatives.
-                        </p>
-                        <div class="flex space-x-3">
-                            <a href="#" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition">
-                                <i class="fab fa-linkedin-in text-sm"></i>
-                            </a>
-                            <a href="#" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition">
-                                <i class="fab fa-github text-sm"></i>
-                            </a>
+                <!-- Team Member 2 - CTO -->
+                <div class="group relative" data-aos="fade-left" data-aos-delay="200">
+                    <!-- Decorative gradient border -->
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-3xl opacity-0 group-hover:opacity-100 blur transition duration-500 group-hover:duration-200"></div>
+                    
+                    <div class="relative bg-white dark:bg-dark-800 rounded-3xl overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:-translate-y-2">
+                        <!-- Image Section with Overlay -->
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="images/Team/lewis.jpg" 
+                                 alt="Lewis Mwaura" 
+                                 class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110">
+                            
+                            <!-- Gradient Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+                            
+                            <!-- Floating Badge -->
+                            <div class="absolute top-4 right-4 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white text-xs font-bold shadow-lg transform transition-transform duration-500 group-hover:scale-110">
+                                <i class="fas fa-code mr-1"></i>CTO
+                            </div>
+                            
+                            <!-- Name Overlay on Image -->
+                            <div class="absolute bottom-0 left-0 right-0 p-6 transform transition-transform duration-500">
+                                <h3 class="text-2xl font-bold text-white mb-1">Lewis Mwaura</h3>
+                                <p class="text-purple-300 font-semibold">Chief Technology Officer</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Content Section -->
+                        <div class="p-8">
+                            <!-- Bio -->
+                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6">
+                                Lewis is the technical mastermind behind TechSafi's cutting-edge solutions. As the co-founder and CTO, he oversees all aspects of product development, system architecture, and emerging technology integration. Known for his sharp problem-solving skills and deep understanding of backend systems and cloud infrastructure.
+                            </p>
+                            
+                            <!-- Stats Row -->
+                            <div class="grid grid-cols-3 gap-4 mb-6 pb-6 border-b border-gray-200 dark:border-gray-700">
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-purple-600 dark:text-purple-400">5+</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">Years</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-pink-600 dark:text-pink-400">100+</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">Solutions</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">24/7</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">Available</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Social Links -->
+                            <div class="flex justify-center space-x-2">
+                                <a href="#" class="group/social w-10 h-10 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 hover:from-blue-600 hover:to-blue-700 flex items-center justify-center text-blue-600 hover:text-white dark:text-blue-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6 shadow-md hover:shadow-lg">
+                                    <i class="fab fa-linkedin-in text-sm"></i>
+                                </a>
+                                <a href="#" class="group/social w-10 h-10 rounded-xl bg-gradient-to-br from-sky-50 to-sky-100 dark:from-sky-900/20 dark:to-sky-800/20 hover:from-sky-500 hover:to-sky-600 flex items-center justify-center text-sky-600 hover:text-white dark:text-sky-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6 shadow-md hover:shadow-lg">
+                                    <i class="fab fa-twitter text-sm"></i>
+                                </a>
+                                <a href="#" class="group/social w-10 h-10 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900/20 dark:to-gray-800/20 hover:from-gray-700 hover:to-gray-900 flex items-center justify-center text-gray-600 hover:text-white dark:text-gray-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6 shadow-md hover:shadow-lg">
+                                    <i class="fab fa-github text-sm"></i>
+                                </a>
+                                <a href="#" class="group/social w-10 h-10 rounded-xl bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-900/20 dark:to-pink-800/20 hover:from-pink-600 hover:to-pink-700 flex items-center justify-center text-pink-600 hover:text-white dark:text-pink-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6 shadow-md hover:shadow-lg">
+                                    <i class="fab fa-instagram text-sm"></i>
+                                </a>
+                                <a href="#" class="group/social w-10 h-10 rounded-xl bg-gradient-to-br from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 hover:from-red-600 hover:to-red-700 flex items-center justify-center text-red-600 hover:text-white dark:text-red-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6 shadow-md hover:shadow-lg">
+                                    <i class="fab fa-youtube text-sm"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
