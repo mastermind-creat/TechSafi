@@ -244,17 +244,19 @@
         /* Navbar scroll effect */
         .navbar-scrolled {
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }dropdown-item {
+        }
+
+        .dropdown-item {
             transition: all 0.2s ease;
         }
-        
+
         .dropdown-item:hover {
             transform: translateX(5px);
         }
-        
-        /* Navbar scroll effect */
-        .navbar-scrolled {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+        /* Hide horizontal overflow on small screens to prevent unexpected right-side whitespace */
+        html, body {
+            overflow-x: hidden;
         }
     </style>
 </head>
