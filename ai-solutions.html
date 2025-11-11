@@ -373,6 +373,77 @@
         margin: 0 auto;
         animation: typewriter 2s steps(11) 1s 1 normal both;
       }
+
+      /* FAQ Accordion Styles */
+      .faq-item {
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .faq-item:hover {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+
+      .faq-button {
+        transition: all 0.3s ease;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        outline: none;
+      }
+
+      .faq-button:hover h3 {
+        color: #3b82f6;
+      }
+
+      .dark .faq-button:hover h3 {
+        color: #60a5fa;
+      }
+
+      .faq-button:focus {
+        outline: 2px solid #3b82f6;
+        outline-offset: 2px;
+        border-radius: 0.5rem;
+      }
+
+      .faq-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out, opacity 0.3s ease-out, margin-top 0.3s ease-out, padding-top 0.3s ease-out;
+        opacity: 0;
+        margin-top: 0;
+        padding-top: 0;
+      }
+
+      .faq-content.open {
+        max-height: 500px;
+        opacity: 1;
+        margin-top: 1rem;
+        padding-top: 0.5rem;
+      }
+
+      .faq-icon {
+        transition: transform 0.3s ease;
+        flex-shrink: 0;
+      }
+
+      .faq-item.active .faq-icon {
+        transform: rotate(180deg);
+        color: #3b82f6;
+      }
+
+      .dark .faq-item.active .faq-icon {
+        color: #60a5fa;
+      }
+
+      .faq-item.active .faq-button h3 {
+        color: #3b82f6;
+      }
+
+      .dark .faq-item.active .faq-button h3 {
+        color: #60a5fa;
+      }
     </style>
   </head>
   <body
@@ -733,10 +804,145 @@
       </div>
     </section>
 
+    <!-- About AI Integration Section -->
+    <section class="py-20 bg-white dark:bg-dark-900 section-reveal">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2
+              class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6"
+            >
+              Our Approach to AI Integration
+            </h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+              At TechSafi, we don't just implement AI—we build intelligent
+              systems that become integral to your business operations. Our
+              methodology combines cutting-edge technologies with proven
+              development practices.
+            </p>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mr-4"
+                >
+                  <i class="fas fa-lightbulb text-blue-600 text-xl"></i>
+                </div>
+                <div>
+                  <h3
+                    class="text-xl font-bold text-gray-900 dark:text-white mb-2"
+                  >
+                    AI-First Strategy
+                  </h3>
+                  <p class="text-gray-600 dark:text-gray-300">
+                    We design solutions with AI at the core, not as an
+                    afterthought, ensuring maximum impact and seamless
+                    integration.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mr-4"
+                >
+                  <i class="fas fa-cogs text-purple-600 text-xl"></i>
+                </div>
+                <div>
+                  <h3
+                    class="text-xl font-bold text-gray-900 dark:text-white mb-2"
+                  >
+                    Custom Model Development
+                  </h3>
+                  <p class="text-gray-600 dark:text-gray-300">
+                    We build tailored AI models specific to your data and
+                    business requirements, not one-size-fits-all solutions.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center mr-4"
+                >
+                  <i class="fas fa-sync-alt text-green-600 text-xl"></i>
+                </div>
+                <div>
+                  <h3
+                    class="text-xl font-bold text-gray-900 dark:text-white mb-2"
+                  >
+                    Continuous Learning
+                  </h3>
+                  <p class="text-gray-600 dark:text-gray-300">
+                    Our systems evolve with your business, continuously
+                    improving through feedback loops and new data.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div
+              class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-8 text-white"
+            >
+              <h3 class="text-2xl font-bold mb-6">Technologies We Work With</h3>
+              <div class="grid grid-cols-2 gap-4">
+                <div
+                  class="flex items-center p-3 bg-white/10 rounded-lg backdrop-blur-sm"
+                >
+                  <i class="fab fa-python text-2xl mr-3"></i>
+                  <span>Python & TensorFlow</span>
+                </div>
+                <div
+                  class="flex items-center p-3 bg-white/10 rounded-lg backdrop-blur-sm"
+                >
+                  <i class="fas fa-robot text-2xl mr-3"></i>
+                  <span>OpenAI & GPT</span>
+                </div>
+                <div
+                  class="flex items-center p-3 bg-white/10 rounded-lg backdrop-blur-sm"
+                >
+                  <i class="fab fa-js-square text-2xl mr-3"></i>
+                  <span>Node.js & React</span>
+                </div>
+                <div
+                  class="flex items-center p-3 bg-white/10 rounded-lg backdrop-blur-sm"
+                >
+                  <i class="fas fa-cloud text-2xl mr-3"></i>
+                  <span>AWS & Azure AI</span>
+                </div>
+                <div
+                  class="flex items-center p-3 bg-white/10 rounded-lg backdrop-blur-sm"
+                >
+                  <i class="fas fa-database text-2xl mr-3"></i>
+                  <span>PyTorch & Keras</span>
+                </div>
+                <div
+                  class="flex items-center p-3 bg-white/10 rounded-lg backdrop-blur-sm"
+                >
+                  <i class="fas fa-chart-line text-2xl mr-3"></i>
+                  <span>Data Analytics</span>
+                </div>
+                <div
+                  class="flex items-center p-3 bg-white/10 rounded-lg backdrop-blur-sm"
+                >
+                  <i class="fas fa-brain text-2xl mr-3"></i>
+                  <span>Hugging Face</span>
+                </div>
+                <div
+                  class="flex items-center p-3 bg-white/10 rounded-lg backdrop-blur-sm"
+                >
+                  <i class="fas fa-microphone text-2xl mr-3"></i>
+                  <span>Speech APIs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- AI Solutions Grid -->
     <section
       id="solutions"
-      class="py-20 bg-white dark:bg-dark-900 section-reveal"
+      class="py-20 bg-gray-50 dark:bg-dark-800 section-reveal"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
@@ -806,7 +1012,12 @@
             </p>
             <ul class="space-y-2 text-gray-600 dark:text-gray-300">
               <li class="flex items-center">
-                <i class="fas fa-check text-purple-600 mr-2"></i> AI Chatbots
+                <i class="fas fa-check text-purple-600 mr-2"></i> AI Chatbots &
+                Virtual Assistants
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-purple-600 mr-2"></i> GPT Integration
+                & Fine-tuning
               </li>
               <li class="flex items-center">
                 <i class="fas fa-check text-purple-600 mr-2"></i> Sentiment
@@ -814,10 +1025,10 @@
               </li>
               <li class="flex items-center">
                 <i class="fas fa-check text-purple-600 mr-2"></i> Text
-                Classification
+                Classification & Summarization
               </li>
               <li class="flex items-center">
-                <i class="fas fa-check text-purple-600 mr-2"></i> Language
+                <i class="fas fa-check text-purple-600 mr-2"></i> Multi-language
                 Translation
               </li>
             </ul>
@@ -842,17 +1053,19 @@
             <ul class="space-y-2 text-gray-600 dark:text-gray-300">
               <li class="flex items-center">
                 <i class="fas fa-check text-pink-600 mr-2"></i> Image
-                Recognition
+                Recognition & Classification
               </li>
               <li class="flex items-center">
                 <i class="fas fa-check text-pink-600 mr-2"></i> Object Detection
+                & Tracking
               </li>
               <li class="flex items-center">
                 <i class="fas fa-check text-pink-600 mr-2"></i> Facial
-                Recognition
+                Recognition & Analysis
               </li>
               <li class="flex items-center">
                 <i class="fas fa-check text-pink-600 mr-2"></i> Video Analytics
+                & Processing
               </li>
             </ul>
           </div>
@@ -960,6 +1173,935 @@
               </li>
             </ul>
           </div>
+
+          <!-- Voice AI & Speech Recognition -->
+          <div
+            class="bg-gradient-to-br from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border border-red-200 dark:border-red-800 card-hover stagger-item"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-6 shadow-lg glow"
+            >
+              <i class="fas fa-microphone text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              Voice AI & Speech
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              Integrate voice recognition and speech synthesis for hands-free
+              interactions and voice-enabled applications.
+            </p>
+            <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+              <li class="flex items-center">
+                <i class="fas fa-check text-red-600 mr-2"></i> Voice Recognition
+                & Commands
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-red-600 mr-2"></i> Text-to-Speech
+                Synthesis
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-red-600 mr-2"></i> Voice
+                Assistants
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-red-600 mr-2"></i> Audio
+                Transcription
+              </li>
+            </ul>
+          </div>
+
+          <!-- Document Processing & OCR -->
+          <div
+            class="bg-gradient-to-br from-teal-50 to-teal-100 dark:from-teal-900/20 dark:to-teal-800/20 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border border-teal-200 dark:border-teal-800 card-hover stagger-item"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center mb-6 shadow-lg glow"
+            >
+              <i class="fas fa-file-alt text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              Document Processing
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              Automate document extraction, processing, and analysis with
+              advanced OCR and intelligent document understanding.
+            </p>
+            <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+              <li class="flex items-center">
+                <i class="fas fa-check text-teal-600 mr-2"></i> OCR & Text
+                Extraction
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-teal-600 mr-2"></i> Document
+                Classification
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-teal-600 mr-2"></i> Form Data
+                Extraction
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-teal-600 mr-2"></i> Invoice &
+                Receipt Processing
+              </li>
+            </ul>
+          </div>
+
+          <!-- AI Content Generation -->
+          <div
+            class="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border border-orange-200 dark:border-orange-800 card-hover stagger-item"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 shadow-lg glow"
+            >
+              <i class="fas fa-pen-fancy text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              AI Content Generation
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              Generate high-quality content automatically using AI writing
+              assistants and content creation tools.
+            </p>
+            <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+              <li class="flex items-center">
+                <i class="fas fa-check text-orange-600 mr-2"></i> Blog Posts &
+                Articles
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-orange-600 mr-2"></i> Product
+                Descriptions
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-orange-600 mr-2"></i> Social Media
+                Content
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-orange-600 mr-2"></i> Email
+                Templates
+              </li>
+            </ul>
+          </div>
+
+          <!-- AI-Powered Search -->
+          <div
+            class="bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-900/20 dark:to-cyan-800/20 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border border-cyan-200 dark:border-cyan-800 card-hover stagger-item"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-6 shadow-lg glow"
+            >
+              <i class="fas fa-search-plus text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              AI-Powered Search
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              Implement intelligent search that understands user intent and
+              delivers relevant results with semantic understanding.
+            </p>
+            <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+              <li class="flex items-center">
+                <i class="fas fa-check text-cyan-600 mr-2"></i> Semantic Search
+                Engine
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-cyan-600 mr-2"></i> Auto-Complete &
+                Suggestions
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-cyan-600 mr-2"></i> Image & Video
+                Search
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-cyan-600 mr-2"></i> Voice Search
+                Integration
+              </li>
+            </ul>
+          </div>
+
+          <!-- Content Moderation -->
+          <div
+            class="bg-gradient-to-br from-rose-50 to-rose-100 dark:from-rose-900/20 dark:to-rose-800/20 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border border-rose-200 dark:border-rose-800 card-hover stagger-item"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-rose-500 to-rose-600 rounded-xl flex items-center justify-center mb-6 shadow-lg glow"
+            >
+              <i class="fas fa-shield-alt text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              Content Moderation
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              Automatically detect and filter inappropriate content, spam, and
+              harmful material using AI-powered moderation.
+            </p>
+            <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+              <li class="flex items-center">
+                <i class="fas fa-check text-rose-600 mr-2"></i> Text
+                Moderation
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-rose-600 mr-2"></i> Image
+                Moderation
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-rose-600 mr-2"></i> Spam Detection
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-rose-600 mr-2"></i> Toxic Content
+                Filtering
+              </li>
+            </ul>
+          </div>
+
+          <!-- Predictive Analytics -->
+          <div
+            class="bg-gradient-to-br from-violet-50 to-violet-100 dark:from-violet-900/20 dark:to-violet-800/20 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border border-violet-200 dark:border-violet-800 card-hover stagger-item"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-violet-500 to-violet-600 rounded-xl flex items-center justify-center mb-6 shadow-lg glow"
+            >
+              <i class="fas fa-crystal-ball text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              Predictive Analytics
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              Forecast future trends, behaviors, and outcomes using advanced
+              predictive models and machine learning algorithms.
+            </p>
+            <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+              <li class="flex items-center">
+                <i class="fas fa-check text-violet-600 mr-2"></i> Sales
+                Forecasting
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-violet-600 mr-2"></i> Churn
+                Prediction
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-violet-600 mr-2"></i> Risk
+                Assessment
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-violet-600 mr-2"></i> Demand
+                Planning
+              </li>
+            </ul>
+          </div>
+
+          <!-- Real-time AI Processing -->
+          <div
+            class="bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border border-emerald-200 dark:border-emerald-800 card-hover stagger-item"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6 shadow-lg glow"
+            >
+              <i class="fas fa-bolt text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              Real-time AI Processing
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              Process data and make decisions in real-time with low-latency AI
+              systems for instant responses and insights.
+            </p>
+            <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+              <li class="flex items-center">
+                <i class="fas fa-check text-emerald-600 mr-2"></i> Real-time
+                Decision Making
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-emerald-600 mr-2"></i> Stream
+                Processing
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-emerald-600 mr-2"></i> Live Data
+                Analysis
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-emerald-600 mr-2"></i> Instant
+                Notifications
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Integration for Existing Websites -->
+    <section class="py-20 bg-white dark:bg-dark-900 section-reveal">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2
+            class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+          >
+            Add AI to Your <span class="gradient-text">Existing Website</span>
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Transform your current website or software with AI capabilities
+            without rebuilding from scratch
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Quick Integration -->
+          <div
+            class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800"
+          >
+            <div
+              class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-plug text-white text-xl"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
+              Quick Integration
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              Seamlessly add AI features to your existing website with minimal
+              downtime. No rebuild required.
+            </p>
+          </div>
+
+          <!-- AI Chatbot Widget -->
+          <div
+            class="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-xl p-6 border border-purple-200 dark:border-purple-800"
+          >
+            <div
+              class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-robot text-white text-xl"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
+              AI Chatbot Widget
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              Add an intelligent chatbot to your website in days. Works with
+              WordPress, Shopify, custom sites, and more.
+            </p>
+          </div>
+
+          <!-- API Integration -->
+          <div
+            class="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-xl p-6 border border-green-200 dark:border-green-800"
+          >
+            <div
+              class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-code text-white text-xl"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
+              API Integration
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              Connect AI services to your existing software through REST APIs.
+              Works with any technology stack.
+            </p>
+          </div>
+
+          <!-- Smart Features -->
+          <div
+            class="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 rounded-xl p-6 border border-orange-200 dark:border-orange-800"
+          >
+            <div
+              class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-magic text-white text-xl"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
+              Smart Features
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              Add AI-powered search, recommendations, personalization, and
+              content generation to existing pages.
+            </p>
+          </div>
+        </div>
+
+        <!-- Integration Examples -->
+        <div class="mt-12 grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-gray-50 dark:bg-dark-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700"
+          >
+            <h4
+              class="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center"
+            >
+              <i class="fas fa-shopping-cart text-blue-600 mr-2"></i>
+              E-commerce Sites
+            </h4>
+            <ul class="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
+              <li class="flex items-start">
+                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                <span>Product recommendation engine</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                <span>AI-powered search & filters</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                <span>Smart chatbot for customer support</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                <span>Price optimization & forecasting</span>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-gray-50 dark:bg-dark-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700"
+          >
+            <h4
+              class="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center"
+            >
+              <i class="fas fa-briefcase text-purple-600 mr-2"></i>
+              Business Websites
+            </h4>
+            <ul class="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
+              <li class="flex items-start">
+                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                <span>Lead qualification chatbot</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                <span>Content generation for blogs</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                <span>Smart contact forms with validation</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                <span>Personalized user experience</span>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-gray-50 dark:bg-dark-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700"
+          >
+            <h4
+              class="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center"
+            >
+              <i class="fas fa-cogs text-green-600 mr-2"></i>
+              Custom Software
+            </h4>
+            <ul class="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
+              <li class="flex items-start">
+                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                <span>Document processing & OCR</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                <span>Predictive analytics dashboards</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                <span>Automated workflow optimization</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-green-600 mr-2 mt-1"></i>
+                <span>Real-time data processing</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Process Section -->
+    <section class="py-20 bg-gray-50 dark:bg-dark-800 section-reveal">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2
+            class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+          >
+            Our AI Development Process
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            A structured approach to delivering successful AI solutions that
+            drive real business value
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-5 gap-8">
+          <div class="text-center">
+            <div
+              class="w-20 h-20 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-search text-blue-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+              Discovery
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              We analyze your business needs, data availability, and define AI
+              objectives.
+            </p>
+          </div>
+          <div class="text-center">
+            <div
+              class="w-20 h-20 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-database text-purple-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+              Data Preparation
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              We collect, clean, and prepare your data for model training and
+              validation.
+            </p>
+          </div>
+          <div class="text-center">
+            <div
+              class="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-cogs text-green-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+              Model Development
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              We design, train, and optimize AI models tailored to your specific
+              use case.
+            </p>
+          </div>
+          <div class="text-center">
+            <div
+              class="w-20 h-20 bg-yellow-100 dark:bg-yellow-900/30 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-plug text-yellow-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+              Integration
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              We seamlessly integrate the AI solution into your existing systems
+              and workflows.
+            </p>
+          </div>
+          <div class="text-center">
+            <div
+              class="w-20 h-20 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-headset text-red-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+              Support & Optimization
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              We provide ongoing maintenance, monitoring, and continuous
+              improvement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="py-20 bg-gray-50 dark:bg-dark-800 section-reveal">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2
+            class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+          >
+            Our AI Technology Stack
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            We leverage industry-leading technologies to build robust, scalable
+            AI solutions
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <div
+            class="bg-white dark:bg-dark-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 card-hover group"
+            title="Python & TensorFlow"
+          >
+            <i class="fab fa-python text-4xl text-blue-600 mb-2"></i>
+            <span class="text-xs text-gray-600 dark:text-gray-400 mt-2 text-center"
+              >Python</span
+            >
+          </div>
+          <div
+            class="bg-white dark:bg-dark-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 card-hover group"
+            title="OpenAI & GPT"
+          >
+            <i class="fas fa-robot text-4xl text-purple-600 mb-2"></i>
+            <span class="text-xs text-gray-600 dark:text-gray-400 mt-2 text-center"
+              >OpenAI</span
+            >
+          </div>
+          <div
+            class="bg-white dark:bg-dark-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 card-hover group"
+            title="JavaScript & Node.js"
+          >
+            <i class="fab fa-js-square text-4xl text-yellow-500 mb-2"></i>
+            <span class="text-xs text-gray-600 dark:text-gray-400 mt-2 text-center"
+              >Node.js</span
+            >
+          </div>
+          <div
+            class="bg-white dark:bg-dark-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 card-hover group"
+            title="React"
+          >
+            <i class="fab fa-react text-4xl text-blue-400 mb-2"></i>
+            <span class="text-xs text-gray-600 dark:text-gray-400 mt-2 text-center"
+              >React</span
+            >
+          </div>
+          <div
+            class="bg-white dark:bg-dark-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 card-hover group"
+            title="AWS AI Services"
+          >
+            <i class="fab fa-aws text-4xl text-orange-500 mb-2"></i>
+            <span class="text-xs text-gray-600 dark:text-gray-400 mt-2 text-center"
+              >AWS AI</span
+            >
+          </div>
+          <div
+            class="bg-white dark:bg-dark-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 card-hover group"
+            title="Azure AI"
+          >
+            <i class="fab fa-microsoft text-4xl text-blue-600 mb-2"></i>
+            <span class="text-xs text-gray-600 dark:text-gray-400 mt-2 text-center"
+              >Azure AI</span
+            >
+          </div>
+          <div
+            class="bg-white dark:bg-dark-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 card-hover group"
+            title="PyTorch"
+          >
+            <i class="fas fa-brain text-4xl text-orange-600 mb-2"></i>
+            <span class="text-xs text-gray-600 dark:text-gray-400 mt-2 text-center"
+              >PyTorch</span
+            >
+          </div>
+          <div
+            class="bg-white dark:bg-dark-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 card-hover group"
+            title="Hugging Face"
+          >
+            <i class="fas fa-brain text-4xl text-yellow-600 mb-2"></i>
+            <span class="text-xs text-gray-600 dark:text-gray-400 mt-2 text-center"
+              >Hugging Face</span
+            >
+          </div>
+          <div
+            class="bg-white dark:bg-dark-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 card-hover group"
+            title="TensorFlow"
+          >
+            <i class="fas fa-project-diagram text-4xl text-orange-500 mb-2"></i>
+            <span class="text-xs text-gray-600 dark:text-gray-400 mt-2 text-center"
+              >TensorFlow</span
+            >
+          </div>
+          <div
+            class="bg-white dark:bg-dark-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 card-hover group"
+            title="Google Cloud AI"
+          >
+            <i class="fab fa-google text-4xl text-blue-500 mb-2"></i>
+            <span class="text-xs text-gray-600 dark:text-gray-400 mt-2 text-center"
+              >Google AI</span
+            >
+          </div>
+          <div
+            class="bg-white dark:bg-dark-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 card-hover group"
+            title="Docker"
+          >
+            <i class="fab fa-docker text-4xl text-blue-500 mb-2"></i>
+            <span class="text-xs text-gray-600 dark:text-gray-400 mt-2 text-center"
+              >Docker</span
+            >
+          </div>
+          <div
+            class="bg-white dark:bg-dark-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 card-hover group"
+            title="Kubernetes"
+          >
+            <i class="fab fa-kubernetes text-4xl text-blue-600 mb-2"></i>
+            <span class="text-xs text-gray-600 dark:text-gray-400 mt-2 text-center"
+              >Kubernetes</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section class="py-20 bg-white dark:bg-dark-900 section-reveal">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2
+            class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+          >
+            AI Success Stories
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Real-world examples of how our AI solutions have transformed
+            businesses
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border border-blue-200 dark:border-blue-800 card-hover"
+          >
+            <div
+              class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-shopping-cart text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              E-commerce Personalization
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              Implemented AI-powered recommendation engine for a retail client,
+              increasing conversion rates by 34% and average order value by 22%.
+            </p>
+            <div class="flex items-center text-blue-600 font-semibold">
+              <span>Read Case Study</span>
+              <i class="fas fa-arrow-right ml-2"></i>
+            </div>
+          </div>
+
+          <div
+            class="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border border-purple-200 dark:border-purple-800 card-hover"
+          >
+            <div
+              class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-stethoscope text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              Healthcare Diagnostics
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              Developed computer vision system for medical imaging analysis,
+              reducing diagnostic time by 65% and improving accuracy by 28%.
+            </p>
+            <div class="flex items-center text-purple-600 font-semibold">
+              <span>Read Case Study</span>
+              <i class="fas fa-arrow-right ml-2"></i>
+            </div>
+          </div>
+
+          <div
+            class="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 border border-green-200 dark:border-green-800 card-hover"
+          >
+            <div
+              class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-industry text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              Manufacturing Optimization
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              Created predictive maintenance system that reduced equipment
+              downtime by 47% and maintenance costs by 32% for industrial
+              client.
+            </p>
+            <div class="flex items-center text-green-600 font-semibold">
+              <span>Read Case Study</span>
+              <i class="fas fa-arrow-right ml-2"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose TechSafi Section -->
+    <section class="py-20 bg-gray-50 dark:bg-dark-800 section-reveal">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2
+            class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+          >
+            Why Choose TechSafi for AI Solutions
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Our unique approach sets us apart in delivering successful AI
+            implementations
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div
+            class="bg-white dark:bg-dark-900 rounded-2xl p-8 text-center hover:shadow-2xl transition-all duration-300 card-hover"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-bullseye text-blue-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+              AI-First Approach
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              We design solutions with AI at the core, ensuring maximum impact
+              rather than superficial integration.
+            </p>
+          </div>
+
+          <div
+            class="bg-white dark:bg-dark-900 rounded-2xl p-8 text-center hover:shadow-2xl transition-all duration-300 card-hover"
+          >
+            <div
+              class="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-users text-purple-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+              Full-Stack Expertise
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Our team combines AI specialists with software engineers to
+              deliver complete, production-ready solutions.
+            </p>
+          </div>
+
+          <div
+            class="bg-white dark:bg-dark-900 rounded-2xl p-8 text-center hover:shadow-2xl transition-all duration-300 card-hover"
+          >
+            <div
+              class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-map-marker-alt text-green-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+              Local Understanding
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              We understand the unique challenges and opportunities in the
+              Kenyan and East African market context.
+            </p>
+          </div>
+
+          <div
+            class="bg-white dark:bg-dark-900 rounded-2xl p-8 text-center hover:shadow-2xl transition-all duration-300 card-hover"
+          >
+            <div
+              class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-shield-alt text-red-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+              Ethical AI Practices
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              We prioritize transparency, fairness, and accountability in all
+              our AI implementations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white dark:bg-dark-900 section-reveal">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2
+            class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+          >
+            What Our Clients Say
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Don't just take our word for it - hear from businesses we've
+            transformed with AI
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-gray-50 dark:bg-dark-800 rounded-2xl p-8">
+            <div class="flex items-center mb-6">
+              <div
+                class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4"
+              >
+                JD
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 dark:text-white">
+                  James D.
+                </h4>
+                <p class="text-gray-600 dark:text-gray-400">
+                  CTO, RetailTech Solutions
+                </p>
+              </div>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 italic mb-6">
+              "TechSafi's AI recommendation engine transformed our e-commerce
+              platform. Our conversion rates increased by 34% within just three
+              months of implementation."
+            </p>
+            <div class="flex text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 dark:bg-dark-800 rounded-2xl p-8">
+            <div class="flex items-center mb-6">
+              <div
+                class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-4"
+              >
+                SM
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 dark:text-white">
+                  Sarah M.
+                </h4>
+                <p class="text-gray-600 dark:text-gray-400">
+                  Operations Director, HealthPlus
+                </p>
+              </div>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 italic mb-6">
+              "The AI-powered diagnostic system TechSafi developed has
+              significantly improved our patient outcomes while reducing
+              diagnostic time by over 60%."
+            </p>
+            <div class="flex text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 dark:bg-dark-800 rounded-2xl p-8">
+            <div class="flex items-center mb-6">
+              <div
+                class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-4"
+              >
+                RK
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 dark:text-white">
+                  Robert K.
+                </h4>
+                <p class="text-gray-600 dark:text-gray-400">
+                  CEO, Manufacturing Pro
+                </p>
+              </div>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 italic mb-6">
+              "TechSafi's predictive maintenance solution has saved us millions
+              in equipment downtime. Their team's expertise in both AI and
+              manufacturing is impressive."
+            </p>
+            <div class="flex text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1056,11 +2198,157 @@
               and sentiment analysis.
             </p>
           </div>
+
+          <!-- New Industry Use Cases -->
+          <div
+            class="bg-white dark:bg-dark-900 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover stagger-item"
+          >
+            <i class="fas fa-graduation-cap text-4xl text-indigo-600 mb-4"></i>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              Education
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Personalized learning paths, automated grading, student
+              performance prediction, and adaptive content.
+            </p>
+          </div>
+
+          <div
+            class="bg-white dark:bg-dark-900 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover stagger-item"
+          >
+            <i class="fas fa-shipping-fast text-4xl text-teal-600 mb-4"></i>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              Logistics
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Supply chain optimization, demand forecasting, warehouse
+              automation, and delivery route planning.
+            </p>
+          </div>
+
+          <div
+            class="bg-white dark:bg-dark-900 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover stagger-item"
+          >
+            <i class="fas fa-home text-4xl text-orange-600 mb-4"></i>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              Real Estate
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Property valuation, market trend analysis, virtual property tours,
+              and intelligent property matching.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white dark:bg-dark-900 section-reveal">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2
+            class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+          >
+            Frequently Asked Questions
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300">
+            Get answers to common questions about our AI solutions
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="faq-item bg-gray-50 dark:bg-dark-800 rounded-2xl p-6">
+            <button class="faq-button flex justify-between items-center w-full text-left">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                How long does an AI integration project typically take?
+              </h3>
+              <i class="fas fa-chevron-down faq-icon text-gray-500"></i>
+            </button>
+            <div class="faq-content text-gray-600 dark:text-gray-300">
+              <p>
+                AI project timelines vary based on complexity, but typically
+                range from 3-6 months for standard implementations. Simple
+                chatbot integrations can be completed in 4-8 weeks, while
+                complex predictive analytics systems may take 6-9 months.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item bg-gray-50 dark:bg-dark-800 rounded-2xl p-6">
+            <button class="faq-button flex justify-between items-center w-full text-left">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                Do I need to provide my own data for AI training?
+              </h3>
+              <i class="fas fa-chevron-down faq-icon text-gray-500"></i>
+            </button>
+            <div class="faq-content text-gray-600 dark:text-gray-300">
+              <p>
+                Yes, your proprietary data is essential for training accurate
+                models. We help you identify relevant data sources, clean and
+                prepare the data, and ensure compliance with data privacy
+                regulations. For some applications, we can supplement with
+                publicly available datasets.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item bg-gray-50 dark:bg-dark-800 rounded-2xl p-6">
+            <button class="faq-button flex justify-between items-center w-full text-left">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                What kind of ROI can I expect from AI implementation?
+              </h3>
+              <i class="fas fa-chevron-down faq-icon text-gray-500"></i>
+            </button>
+            <div class="faq-content text-gray-600 dark:text-gray-300">
+              <p>
+                ROI varies by use case, but our clients typically see 30-50%
+                improvement in operational efficiency, 20-40% reduction in
+                costs, and 25-60% increase in relevant KPIs. We provide detailed
+                ROI projections during the discovery phase based on your
+                specific business case.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item bg-gray-50 dark:bg-dark-800 rounded-2xl p-6">
+            <button class="faq-button flex justify-between items-center w-full text-left">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                Do you provide ongoing support and maintenance?
+              </h3>
+              <i class="fas fa-chevron-down faq-icon text-gray-500"></i>
+            </button>
+            <div class="faq-content text-gray-600 dark:text-gray-300">
+              <p>
+                Yes, we offer comprehensive support packages including model
+                monitoring, performance optimization, regular updates, and
+                technical support. AI models require ongoing maintenance to
+                maintain accuracy as data patterns change over time.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item bg-gray-50 dark:bg-dark-800 rounded-2xl p-6">
+            <button class="faq-button flex justify-between items-center w-full text-left">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                How do you ensure data security and privacy?
+              </h3>
+              <i class="fas fa-chevron-down faq-icon text-gray-500"></i>
+            </button>
+            <div class="faq-content text-gray-600 dark:text-gray-300">
+              <p>
+                We implement enterprise-grade security measures including
+                encryption, access controls, and compliance with data protection
+                regulations. All data processing follows strict privacy
+                protocols, and we can deploy solutions on-premises or in secure
+                cloud environments based on your requirements.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
     <section
       class="py-20 bg-gradient-to-r from-blue-600 to-purple-600 section-reveal"
     >
@@ -1077,15 +2365,28 @@
             href="contact.html"
             class="px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-xl pulse-cta"
           >
-            Schedule a Consultation
+            <i class="fas fa-calendar-alt mr-2"></i>Schedule a Consultation
           </a>
           <a
-            href="pricing.html"
+            href="pricing.html#ai-integration"
+            class="px-8 py-4 bg-purple-700 text-white font-semibold rounded-xl hover:bg-purple-800 transition-all duration-300 transform hover:scale-105 shadow-xl"
+          >
+            <i class="fas fa-tag mr-2"></i>View AI Pricing
+          </a>
+          <a
+            href="tel:+254751380948"
             class="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300"
           >
-            View Pricing
+            <i class="fas fa-phone mr-2"></i>Talk to Our AI Experts
           </a>
         </div>
+        <p class="text-blue-200 mt-6">
+          Call us directly:
+          <a href="tel:+254751380948" class="font-semibold underline"
+            >+254 751 380 948</a
+          >
+          | <a href="pricing.html" class="font-semibold underline hover:text-white">View Pricing Plans</a>
+        </p>
       </div>
     </section>
 
@@ -1665,6 +2966,35 @@
           }
         });
       };
+
+      // FAQ accordion functionality
+      const faqItems = document.querySelectorAll(".faq-item");
+
+      faqItems.forEach((item) => {
+        const button = item.querySelector(".faq-button");
+        const content = item.querySelector(".faq-content");
+
+        button.addEventListener("click", () => {
+          const isActive = item.classList.contains("active");
+
+          // Close all FAQ items (accordion behavior - only one open at a time)
+          faqItems.forEach((otherItem) => {
+            if (otherItem !== item) {
+              otherItem.classList.remove("active");
+              otherItem.querySelector(".faq-content").classList.remove("open");
+            }
+          });
+
+          // Toggle current item
+          if (isActive) {
+            item.classList.remove("active");
+            content.classList.remove("open");
+          } else {
+            item.classList.add("active");
+            content.classList.add("open");
+          }
+        });
+      });
 
       // Run animations on load and scroll
       window.addEventListener("load", () => {
