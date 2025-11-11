@@ -1,1357 +1,2335 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Services - TechSafi</title>
-    
+
     <!-- PWA Meta Tags -->
-    <meta name="description" content="Explore TechSafi's comprehensive technology services: Web Development, Mobile Apps, AI Solutions, IoT, Cloud Services, and Digital Marketing.">
-    <meta name="theme-color" content="#3b82f6">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="TechSafi">
-    <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="images/icons/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="images/icons/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/svg+xml" href="images/icons/favicon/favicon.svg">
-    <link rel="shortcut icon" href="images/icons/favicon/favicon.ico">
-    
+    <meta
+      name="description"
+      content="Explore TechSafi's comprehensive technology services: Web Development, Mobile Apps, AI Solutions, IoT, Cloud Services, and Digital Marketing."
+    />
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="TechSafi" />
+    <link rel="manifest" href="manifest.json" />
+    <link
+      rel="apple-touch-icon"
+      href="images/icons/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="images/icons/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="images/icons/favicon/favicon.svg"
+    />
+    <link rel="shortcut icon" href="images/icons/favicon/favicon.ico" />
+
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- AOS (Animate On Scroll) -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <script>
-        // Initialize AOS
-        document.addEventListener('DOMContentLoaded', function() {
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true,
-                mirror: false
-            });
+      // Initialize AOS
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.init({
+          duration: 800,
+          easing: "ease-in-out",
+          once: true,
+          mirror: false,
         });
+      });
 
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'inter': ['Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 1s ease-in-out',
-                        'slide-up': 'slideUp 0.8s ease-out',
-                        'pulse-slow': 'pulse 3s infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'gradient': 'gradient 15s ease infinite',
-                        'blob': 'blob 7s infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(20px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        },
-                        gradient: {
-                            '0%, 100%': {
-                                'background-size': '200% 200%',
-                                'background-position': 'left center'
-                            },
-                            '50%': {
-                                'background-size': '200% 200%',
-                                'background-position': 'right center'
-                            },
-                        },
-                        blob: {
-                            '0%': {
-                                transform: 'translate(0px, 0px) scale(1)',
-                            },
-                            '33%': {
-                                transform: 'translate(30px, -50px) scale(1.1)',
-                            },
-                            '66%': {
-                                transform: 'translate(-20px, 20px) scale(0.9)',
-                            },
-                            '100%': {
-                                transform: 'translate(0px, 0px) scale(1)',
-                            },
-                        }
-                    },
-                    colors: {
-                        primary: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
-                        },
-                        dark: {
-                            900: '#0f172a',
-                            800: '#1e293b',
-                            700: '#334155',
-                            600: '#475569',
-                        }
-                    },
-                },
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
             },
-        }
+            animation: {
+              "fade-in": "fadeIn 1s ease-in-out",
+              "slide-up": "slideUp 0.8s ease-out",
+              "pulse-slow": "pulse 3s infinite",
+              float: "float 6s ease-in-out infinite",
+              gradient: "gradient 15s ease infinite",
+              blob: "blob 7s infinite",
+            },
+            keyframes: {
+              fadeIn: {
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" },
+              },
+              slideUp: {
+                "0%": { transform: "translateY(20px)", opacity: "0" },
+                "100%": { transform: "translateY(0)", opacity: "1" },
+              },
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-10px)" },
+              },
+              gradient: {
+                "0%, 100%": {
+                  "background-size": "200% 200%",
+                  "background-position": "left center",
+                },
+                "50%": {
+                  "background-size": "200% 200%",
+                  "background-position": "right center",
+                },
+              },
+              blob: {
+                "0%": {
+                  transform: "translate(0px, 0px) scale(1)",
+                },
+                "33%": {
+                  transform: "translate(30px, -50px) scale(1.1)",
+                },
+                "66%": {
+                  transform: "translate(-20px, 20px) scale(0.9)",
+                },
+                "100%": {
+                  transform: "translate(0px, 0px) scale(1)",
+                },
+              },
+            },
+            colors: {
+              primary: {
+                50: "#f0f9ff",
+                100: "#e0f2fe",
+                200: "#bae6fd",
+                300: "#7dd3fc",
+                400: "#38bdf8",
+                500: "#0ea5e9",
+                600: "#0284c7",
+                700: "#0369a1",
+                800: "#075985",
+                900: "#0c4a6e",
+              },
+              dark: {
+                900: "#0f172a",
+                800: "#1e293b",
+                700: "#334155",
+                600: "#475569",
+              },
+            },
+          },
+        },
+      };
 
-        // Toggle dark mode
-        function toggleDarkMode() {
-            document.documentElement.classList.toggle('dark');
-            localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
-        }
+      // Toggle dark mode
+      function toggleDarkMode() {
+        document.documentElement.classList.toggle("dark");
+        localStorage.setItem(
+          "darkMode",
+          document.documentElement.classList.contains("dark")
+        );
+      }
 
-        // Check for saved user preference or system preference
-        if (localStorage.getItem('darkMode') === 'true' || 
-            (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        }
+      // Check for saved user preference or system preference
+      if (
+        localStorage.getItem("darkMode") === "true" ||
+        (!localStorage.getItem("darkMode") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      }
     </script>
     <style type="text/css">
-        * {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(-45deg, #0ea5e9, #3b82f6, #8b5cf6, #06b6d4);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-        }
-        
-        .dark .hero-gradient {
-            background: linear-gradient(-45deg, #1e40af, #1e3a8a, #3730a3, #0e7490);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-        }
-        
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .dark .glass-effect {
-            background: rgba(15, 23, 42, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .gradient-text {
-            background: linear-gradient(90deg, #0ea5e9, #3b82f6, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .service-card {
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .service-icon {
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover .service-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-        
-        .process-step {
-            transition: all 0.3s ease;
-        }
-        
-        .process-step:hover {
-            transform: translateY(-5px);
-        }
-        
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .blob {
-            border-radius: 50%;
-            filter: blur(40px);
-            opacity: 0.7;
-        }
-        
-        .dark .blob {
-            opacity: 0.3;
-        }
-        
-        .feature-list li {
-            position: relative;
-            padding-left: 1.75rem;
-        }
-        
-        .feature-list li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #10b981;
-            font-weight: bold;
-        }
-        /* Dropdown Menu Styles */
-        .dropdown {
-            position: relative;
-        }
-        
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            margin-top: 0.5rem;
-            min-width: 240px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 50;
-        }
-        
-        .dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        
-        .dropdown-item {
-            transition: all 0.2s ease;
-        }
-        
-        .dropdown-item:hover {
-            transform: translateX(5px);
-        }
-        
-        /* Navbar scroll effect */
-        .navbar-scrolled {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }dropdown-item {
-            transition: all 0.2s ease;
-        }
-        
-        .dropdown-item:hover {
-            transform: translateX(5px);
-        }
-        
-        /* Navbar scroll effect */
-        .navbar-scrolled {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
+      * {
+        font-family: "Inter", sans-serif;
+      }
+
+      .hero-gradient {
+        background: linear-gradient(-45deg, #0ea5e9, #3b82f6, #8b5cf6, #06b6d4);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+      }
+
+      .dark .hero-gradient {
+        background: linear-gradient(-45deg, #1e40af, #1e3a8a, #3730a3, #0e7490);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+      }
+
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .dark .glass-effect {
+        background: rgba(15, 23, 42, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .gradient-text {
+        background: linear-gradient(90deg, #0ea5e9, #3b82f6, #8b5cf6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .service-card {
+        transition: all 0.3s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+
+      .service-icon {
+        transition: all 0.3s ease;
+      }
+
+      .service-card:hover .service-icon {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .process-step {
+        transition: all 0.3s ease;
+      }
+
+      .process-step:hover {
+        transform: translateY(-5px);
+      }
+
+      .floating {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .blob {
+        border-radius: 50%;
+        filter: blur(40px);
+        opacity: 0.7;
+      }
+
+      .dark .blob {
+        opacity: 0.3;
+      }
+
+      .feature-list li {
+        position: relative;
+        padding-left: 1.75rem;
+      }
+
+      .feature-list li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #10b981;
+        font-weight: bold;
+      }
+      /* Dropdown Menu Styles */
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin-top: 0.5rem;
+        min-width: 240px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 50;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .dropdown-item {
+        transition: all 0.2s ease;
+      }
+
+      .dropdown-item:hover {
+        transform: translateX(5px);
+      }
+
+      /* Navbar scroll effect */
+      .navbar-scrolled {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+      dropdown-item {
+        transition: all 0.2s ease;
+      }
+
+      .dropdown-item:hover {
+        transform: translateX(5px);
+      }
+
+      /* Navbar scroll effect */
+      .navbar-scrolled {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
     </style>
-</head>
-<body class="bg-white dark:bg-dark-900 text-gray-800 dark:text-gray-200 transition-colors duration-300 font-inter">
+  </head>
+  <body
+    class="bg-white dark:bg-dark-900 text-gray-800 dark:text-gray-200 transition-colors duration-300 font-inter"
+  >
     <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full bg-white/95 dark:bg-dark-900/95 backdrop-blur-md z-50 shadow-sm border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <a href="index.html" class="text-2xl font-bold text-primary-600 dark:text-primary-400 flex items-center group">
-                        <img src="images/logo/logo1.png" alt="TechSafi Logo" class="h-14 w-auto mr-2 transition-transform duration-300 group-hover:scale-110">
-                    </a>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center space-x-1">
-                    <!-- Home -->
-                    <a href="index.html" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition relative group rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <i class="fas fa-home mr-2"></i>Home
-                    </a>
-                    
-                    <!-- About Dropdown -->
-                    <div class="dropdown">
-                        <button class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition relative group rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 flex items-center">
-                            <i class="fas fa-info-circle mr-2"></i>About
-                            <i class="fas fa-chevron-down ml-2 text-xs transition-transform duration-300 group-hover:rotate-180"></i>
-                        </button>
-                        <div class="dropdown-menu bg-white dark:bg-dark-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-                            <a href="about.html" class="dropdown-item flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400">
-                                <i class="fas fa-building w-5 mr-3 text-primary-600"></i>
-                                <div>
-                                    <div class="font-semibold">Company</div>
-                                    <div class="text-xs text-gray-500 dark:text-gray-400">Learn about us</div>
-                                </div>
-                            </a>
-                            <a href="portfolio.html" class="dropdown-item flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400 border-t border-gray-100 dark:border-gray-700">
-                                <i class="fas fa-briefcase w-5 mr-3 text-purple-600"></i>
-                                <div>
-                                    <div class="font-semibold">Portfolio</div>
-                                    <div class="text-xs text-gray-500 dark:text-gray-400">View our work</div>
-                                </div>
-                            </a>
-                        </div>
+    <nav
+      id="navbar"
+      class="fixed w-full bg-white/95 dark:bg-dark-900/95 backdrop-blur-md z-50 shadow-sm border-b border-gray-200 dark:border-gray-800 transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <a
+              href="index.html"
+              class="text-2xl font-bold text-primary-600 dark:text-primary-400 flex items-center group"
+            >
+              <img
+                src="images/logo/logo1.png"
+                alt="TechSafi Logo"
+                class="h-14 w-auto mr-2 transition-transform duration-300 group-hover:scale-110"
+              />
+            </a>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden lg:flex items-center space-x-1">
+            <!-- Home -->
+            <a
+              href="index.html"
+              class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition relative group rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"
+            >
+              <i class="fas fa-home mr-2"></i>Home
+            </a>
+
+            <!-- About Dropdown -->
+            <div class="dropdown">
+              <button
+                class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition relative group rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 flex items-center"
+              >
+                <i class="fas fa-info-circle mr-2"></i>About
+                <i
+                  class="fas fa-chevron-down ml-2 text-xs transition-transform duration-300 group-hover:rotate-180"
+                ></i>
+              </button>
+              <div
+                class="dropdown-menu bg-white dark:bg-dark-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden"
+              >
+                <a
+                  href="about.html"
+                  class="dropdown-item flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400"
+                >
+                  <i class="fas fa-building w-5 mr-3 text-primary-600"></i>
+                  <div>
+                    <div class="font-semibold">Company</div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400">
+                      Learn about us
                     </div>
-                    
-                    <!-- Services Dropdown (Active) -->
-                    <div class="dropdown">
-                        <button class="px-4 py-2 text-primary-600 dark:text-primary-400 font-semibold hover:text-primary-800 dark:hover:text-primary-200 transition relative group rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 flex items-center">
-                            <i class="fas fa-cogs mr-2"></i>Services
-                            <i class="fas fa-chevron-down ml-2 text-xs transition-transform duration-300 group-hover:rotate-180"></i>
-                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary-600 scale-x-100 transition-transform duration-300"></span>
-                        </button>
-                        <div class="dropdown-menu bg-white dark:bg-dark-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-                            <a href="services.html" class="dropdown-item flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400">
-                                <i class="fas fa-code w-5 mr-3 text-blue-600"></i>
-                                <div>
-                                    <div class="font-semibold">All Services</div>
-                                    <div class="text-xs text-gray-500 dark:text-gray-400">Web, Mobile & More</div>
-                                </div>
-                            </a>
-                            <a href="ai-solutions.html" class="dropdown-item flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400 border-t border-gray-100 dark:border-gray-700">
-                                <i class="fas fa-robot w-5 mr-3 text-purple-600"></i>
-                                <div>
-                                    <div class="font-semibold">AI Solutions</div>
-                                    <div class="text-xs text-gray-500 dark:text-gray-400">AI-powered development</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Pricing -->
-                    <a href="pricing.html" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition relative group rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <i class="fas fa-tag mr-2"></i>Pricing
-                    </a>
-                    
-                    <!-- Careers -->
-                    <a href="careers.html" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition relative group rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <i class="fas fa-briefcase mr-2"></i>Careers
-                    </a>
-                </div>
-                
-                <!-- Right Side Actions -->
-                <div class="hidden lg:flex items-center space-x-3">
-                    <!-- Search Button -->
-                    <button onclick="toggleSearch()" class="p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition text-gray-600 dark:text-gray-300" title="Search">
-                        <i class="fas fa-search"></i>
-                    </button>
-                    
-                    <!-- Dark Mode Toggle -->
-                    <button onclick="toggleDarkMode()" class="p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition" title="Toggle Dark Mode">
-                        <i class="fas fa-moon dark:hidden text-gray-600"></i>
-                        <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
-                    </button>
-                    
-                    <!-- Contact CTA -->
-                    <a href="contact.html" class="inline-flex items-center bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-6 py-2.5 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-                        <i class="fas fa-paper-plane mr-2"></i>
-                        Contact Us
-                    </a>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <div class="lg:hidden flex items-center space-x-2">
-                    <button onclick="toggleDarkMode()" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">
-                        <i class="fas fa-moon dark:hidden text-gray-600"></i>
-                        <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
-                    </button>
-                    <button id="mobile-menu-button" class="text-gray-600 dark:text-gray-300 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Search Bar (Hidden by default) -->
-        <div id="search-bar" class="hidden bg-white dark:bg-dark-800 border-t border-gray-200 dark:border-gray-700">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-                <div class="relative">
-                    <input type="text" placeholder="Search services, solutions, or pages..." class="w-full px-5 py-3 pl-12 pr-12 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-dark-900 text-gray-900 dark:text-gray-100 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 transition">
-                    <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                    <button onclick="toggleSearch()" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-dark-800 border-t border-gray-200 dark:border-gray-700 max-h-screen overflow-y-auto">
-            <div class="px-4 py-3 space-y-1">
-                <a href="index.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
-                    <i class="fas fa-home w-5 mr-3"></i>Home
+                  </div>
                 </a>
-                
-                <!-- About Section -->
-                <div class="border-t border-gray-100 dark:border-gray-700 pt-2 mt-2">
-                    <div class="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">About</div>
-                    <a href="about.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
-                        <i class="fas fa-building w-5 mr-3 text-primary-600"></i>Company
-                    </a>
-                    <a href="portfolio.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
-                        <i class="fas fa-briefcase w-5 mr-3 text-purple-600"></i>Portfolio
-                    </a>
-                </div>
-                
-                <!-- Services Section -->
-                <div class="border-t border-gray-100 dark:border-gray-700 pt-2 mt-2">
-                    <div class="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Services</div>
-                    <a href="services.html" class="flex items-center px-4 py-3 text-primary-600 dark:text-primary-400 font-semibold rounded-lg bg-primary-50 dark:bg-primary-900/20">
-                        <i class="fas fa-code w-5 mr-3 text-blue-600"></i>All Services
-                    </a>
-                    <a href="ai-solutions.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
-                        <i class="fas fa-robot w-5 mr-3 text-purple-600"></i>AI Solutions
-                    </a>
-                </div>
-                
-                <!-- Other Links -->
-                <div class="border-t border-gray-100 dark:border-gray-700 pt-2 mt-2">
-                    <a href="pricing.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
-                        <i class="fas fa-tag w-5 mr-3 text-green-600"></i>Pricing
-                    </a>
-                    <a href="careers.html" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition">
-                        <i class="fas fa-briefcase w-5 mr-3 text-orange-600"></i>Careers
-                    </a>
-                </div>
-                
-                <!-- Contact CTA -->
-                <div class="pt-4 pb-2">
-                    <a href="contact.html" class="flex items-center justify-center bg-gradient-to-r from-primary-600 to-primary-700 text-white px-6 py-3 rounded-lg font-semibold shadow-lg">
-                        <i class="fas fa-paper-plane mr-2"></i>Contact Us
-                    </a>
-                </div>
+                <a
+                  href="portfolio.html"
+                  class="dropdown-item flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400 border-t border-gray-100 dark:border-gray-700"
+                >
+                  <i class="fas fa-briefcase w-5 mr-3 text-purple-600"></i>
+                  <div>
+                    <div class="font-semibold">Portfolio</div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400">
+                      View our work
+                    </div>
+                  </div>
+                </a>
+              </div>
             </div>
+
+            <!-- Services Dropdown (Active) -->
+            <div class="dropdown">
+              <button
+                class="px-4 py-2 text-primary-600 dark:text-primary-400 font-semibold hover:text-primary-800 dark:hover:text-primary-200 transition relative group rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 flex items-center"
+              >
+                <i class="fas fa-cogs mr-2"></i>Services
+                <i
+                  class="fas fa-chevron-down ml-2 text-xs transition-transform duration-300 group-hover:rotate-180"
+                ></i>
+                <span
+                  class="absolute bottom-0 left-0 w-full h-0.5 bg-primary-600 scale-x-100 transition-transform duration-300"
+                ></span>
+              </button>
+              <div
+                class="dropdown-menu bg-white dark:bg-dark-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden"
+              >
+                <a
+                  href="services.html"
+                  class="dropdown-item flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400"
+                >
+                  <i class="fas fa-code w-5 mr-3 text-blue-600"></i>
+                  <div>
+                    <div class="font-semibold">All Services</div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400">
+                      Web, Mobile & More
+                    </div>
+                  </div>
+                </a>
+                <a
+                  href="ai-solutions.html"
+                  class="dropdown-item flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400 border-t border-gray-100 dark:border-gray-700"
+                >
+                  <i class="fas fa-robot w-5 mr-3 text-purple-600"></i>
+                  <div>
+                    <div class="font-semibold">AI Solutions</div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400">
+                      AI-powered development
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Pricing -->
+            <a
+              href="pricing.html"
+              class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition relative group rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"
+            >
+              <i class="fas fa-tag mr-2"></i>Pricing
+            </a>
+
+            <!-- Careers -->
+            <a
+              href="careers.html"
+              class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition relative group rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"
+            >
+              <i class="fas fa-briefcase mr-2"></i>Careers
+            </a>
+          </div>
+
+          <!-- Right Side Actions -->
+          <div class="hidden lg:flex items-center space-x-3">
+            <!-- Search Button -->
+            <button
+              onclick="toggleSearch()"
+              class="p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition text-gray-600 dark:text-gray-300"
+              title="Search"
+            >
+              <i class="fas fa-search"></i>
+            </button>
+
+            <!-- Dark Mode Toggle -->
+            <button
+              onclick="toggleDarkMode()"
+              class="p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+              title="Toggle Dark Mode"
+            >
+              <i class="fas fa-moon dark:hidden text-gray-600"></i>
+              <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+            </button>
+
+            <!-- Contact CTA -->
+            <a
+              href="contact.html"
+              class="inline-flex items-center bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-6 py-2.5 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              <i class="fas fa-paper-plane mr-2"></i>
+              Contact Us
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="lg:hidden flex items-center space-x-2">
+            <button
+              onclick="toggleDarkMode()"
+              class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+            >
+              <i class="fas fa-moon dark:hidden text-gray-600"></i>
+              <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+            </button>
+            <button
+              id="mobile-menu-button"
+              class="text-gray-600 dark:text-gray-300 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+            >
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
         </div>
+      </div>
+
+      <!-- Search Bar (Hidden by default) -->
+      <div
+        id="search-bar"
+        class="hidden bg-white dark:bg-dark-800 border-t border-gray-200 dark:border-gray-700"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="Search services, solutions, or pages..."
+              class="w-full px-5 py-3 pl-12 pr-12 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-dark-900 text-gray-900 dark:text-gray-100 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 transition"
+            />
+            <i
+              class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"
+            ></i>
+            <button
+              onclick="toggleSearch()"
+              class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden bg-white dark:bg-dark-800 border-t border-gray-200 dark:border-gray-700 max-h-screen overflow-y-auto"
+      >
+        <div class="px-4 py-3 space-y-1">
+          <a
+            href="index.html"
+            class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition"
+          >
+            <i class="fas fa-home w-5 mr-3"></i>Home
+          </a>
+
+          <!-- About Section -->
+          <div class="border-t border-gray-100 dark:border-gray-700 pt-2 mt-2">
+            <div
+              class="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider"
+            >
+              About
+            </div>
+            <a
+              href="about.html"
+              class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition"
+            >
+              <i class="fas fa-building w-5 mr-3 text-primary-600"></i>Company
+            </a>
+            <a
+              href="portfolio.html"
+              class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition"
+            >
+              <i class="fas fa-briefcase w-5 mr-3 text-purple-600"></i>Portfolio
+            </a>
+          </div>
+
+          <!-- Services Section -->
+          <div class="border-t border-gray-100 dark:border-gray-700 pt-2 mt-2">
+            <div
+              class="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider"
+            >
+              Services
+            </div>
+            <a
+              href="services.html"
+              class="flex items-center px-4 py-3 text-primary-600 dark:text-primary-400 font-semibold rounded-lg bg-primary-50 dark:bg-primary-900/20"
+            >
+              <i class="fas fa-code w-5 mr-3 text-blue-600"></i>All Services
+            </a>
+            <a
+              href="ai-solutions.html"
+              class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition"
+            >
+              <i class="fas fa-robot w-5 mr-3 text-purple-600"></i>AI Solutions
+            </a>
+          </div>
+
+          <!-- Other Links -->
+          <div class="border-t border-gray-100 dark:border-gray-700 pt-2 mt-2">
+            <a
+              href="pricing.html"
+              class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition"
+            >
+              <i class="fas fa-tag w-5 mr-3 text-green-600"></i>Pricing
+            </a>
+            <a
+              href="careers.html"
+              class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition"
+            >
+              <i class="fas fa-briefcase w-5 mr-3 text-orange-600"></i>Careers
+            </a>
+          </div>
+
+          <!-- Contact CTA -->
+          <div class="pt-4 pb-2">
+            <a
+              href="contact.html"
+              class="flex items-center justify-center bg-gradient-to-r from-primary-600 to-primary-700 text-white px-6 py-3 rounded-lg font-semibold shadow-lg"
+            >
+              <i class="fas fa-paper-plane mr-2"></i>Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
     </nav>
 
     <!-- Page Header -->
-    <header class="pt-32 pb-20 text-white dark:text-gray-100 relative overflow-hidden min-h-[500px] flex items-center">
-        <!-- GIF Background -->
-        <div class="absolute inset-0 w-full h-full">
-            <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTU3cmdjdXBiamIyZjdkZmtwNnd1ODNvaTV5dnAxOWhtdDBhOHdqNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xTiTnxpQ3ghPiB2Hp6/giphy.gif" 
-                 alt="Tech Services Background" 
-                 class="w-full h-full object-cover object-center"
-                 style="filter: brightness(0.25);">
-        </div>
-        
-        <!-- Gradient Overlay - Light/Dark Theme -->
-        <div class="absolute inset-0 bg-gradient-to-br from-blue-800/75 via-purple-800/75 to-pink-800/75 dark:from-blue-800/75 dark:via-purple-800/75 dark:to-pink-800/75"></div>
-        
-        <!-- Animated background elements -->
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 dark:opacity-30">
-            <div class="absolute top-1/4 -left-10 w-72 h-72 bg-blue-400 dark:bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob"></div>
-            <div class="absolute top-1/3 -right-10 w-96 h-96 bg-purple-400 dark:bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-2000"></div>
-            <div class="absolute -bottom-8 left-20 w-80 h-80 bg-pink-400 dark:bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-4000"></div>
+    <header
+      class="pt-32 pb-20 text-white dark:text-gray-100 relative overflow-hidden min-h-[500px] flex items-center"
+    >
+      <!-- GIF Background -->
+      <div class="absolute inset-0 w-full h-full">
+        <img
+          src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTU3cmdjdXBiamIyZjdkZmtwNnd1ODNvaTV5dnAxOWhtdDBhOHdqNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xTiTnxpQ3ghPiB2Hp6/giphy.gif"
+          alt="Tech Services Background"
+          class="w-full h-full object-cover object-center"
+          style="filter: brightness(0.25)"
+        />
+      </div>
+
+      <!-- Gradient Overlay - Light/Dark Theme -->
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-blue-800/75 via-purple-800/75 to-pink-800/75 dark:from-blue-800/75 dark:via-purple-800/75 dark:to-pink-800/75"
+      ></div>
+
+      <!-- Animated background elements -->
+      <div
+        class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 dark:opacity-30"
+      >
+        <div
+          class="absolute top-1/4 -left-10 w-72 h-72 bg-blue-400 dark:bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob"
+        ></div>
+        <div
+          class="absolute top-1/3 -right-10 w-96 h-96 bg-purple-400 dark:bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-2000"
+        ></div>
+        <div
+          class="absolute -bottom-8 left-20 w-80 h-80 bg-pink-400 dark:bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-4000"
+        ></div>
+      </div>
+
+      <!-- Decorative Elements -->
+      <div
+        class="absolute top-16 right-16 w-24 h-24 border-2 border-white/20 dark:border-white/30 rounded-xl rotate-12 animate-pulse"
+      ></div>
+      <div
+        class="absolute bottom-24 left-16 w-20 h-20 border-2 border-indigo-300/30 dark:border-indigo-200/40 rounded-full animate-bounce"
+        style="animation-duration: 3s"
+      ></div>
+      <div
+        class="absolute top-1/3 right-1/3 w-16 h-16 bg-gradient-to-br from-purple-400/20 to-pink-400/20 dark:from-purple-300/30 dark:to-pink-300/30 rounded-lg rotate-45 animate-pulse"
+        style="animation-delay: 1s"
+      ></div>
+      <div
+        class="absolute bottom-1/3 left-1/4 w-12 h-12 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 dark:from-blue-300/30 dark:to-cyan-300/30 rounded-full animate-pulse"
+        style="animation-delay: 2s"
+      ></div>
+
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
+      >
+        <!-- Badge -->
+        <div
+          class="inline-flex items-center mb-6 px-6 py-3 rounded-full bg-white/10 dark:bg-white/15 backdrop-blur-md border border-white/30 dark:border-white/40 shadow-xl animate-fade-in"
+        >
+          <i
+            class="fas fa-cogs text-cyan-300 dark:text-cyan-200 mr-2 animate-spin"
+            style="animation-duration: 3s"
+          ></i>
+          <span
+            class="text-sm font-semibold tracking-wider text-white dark:text-gray-100"
+            >COMPREHENSIVE SOLUTIONS</span
+          >
         </div>
 
-        <!-- Decorative Elements -->
-        <div class="absolute top-16 right-16 w-24 h-24 border-2 border-white/20 dark:border-white/30 rounded-xl rotate-12 animate-pulse"></div>
-        <div class="absolute bottom-24 left-16 w-20 h-20 border-2 border-indigo-300/30 dark:border-indigo-200/40 rounded-full animate-bounce" style="animation-duration: 3s;"></div>
-        <div class="absolute top-1/3 right-1/3 w-16 h-16 bg-gradient-to-br from-purple-400/20 to-pink-400/20 dark:from-purple-300/30 dark:to-pink-300/30 rounded-lg rotate-45 animate-pulse" style="animation-delay: 1s;"></div>
-        <div class="absolute bottom-1/3 left-1/4 w-12 h-12 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 dark:from-blue-300/30 dark:to-cyan-300/30 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <!-- Badge -->
-            <div class="inline-flex items-center mb-6 px-6 py-3 rounded-full bg-white/10 dark:bg-white/15 backdrop-blur-md border border-white/30 dark:border-white/40 shadow-xl animate-fade-in">
-                <i class="fas fa-cogs text-cyan-300 dark:text-cyan-200 mr-2 animate-spin" style="animation-duration: 3s;"></i>
-                <span class="text-sm font-semibold tracking-wider text-white dark:text-gray-100">COMPREHENSIVE SOLUTIONS</span>
-            </div>
-            
-            <!-- Main Heading with Gradient -->
-            <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 animate-fade-in" style="animation-delay: 0.2s;">
-                <span class="inline-block text-white dark:text-gray-100">Our</span>
-                <span class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-300 dark:from-cyan-200 dark:via-blue-200 dark:to-purple-200 animate-pulse" style="animation-duration: 3s;">
-                    Services
-                </span>
-            </h1>
-            
-            <!-- Subtitle with Animation -->
-            <p class="text-xl md:text-2xl text-blue-100 dark:text-blue-200 max-w-4xl mx-auto leading-relaxed mb-10 animate-fade-in" style="animation-delay: 0.4s;">
-                <span class="font-semibold text-white dark:text-gray-100">End-to-end technology solutions</span> designed to 
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300 dark:from-yellow-200 dark:to-orange-200 font-semibold">transform your business</span> 
-                and drive digital innovation.
-            </p>
+        <!-- Main Heading with Gradient -->
+        <h1
+          class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 animate-fade-in"
+          style="animation-delay: 0.2s"
+        >
+          <span class="inline-block text-white dark:text-gray-100">Our</span>
+          <span
+            class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-300 dark:from-cyan-200 dark:via-blue-200 dark:to-purple-200 animate-pulse"
+            style="animation-duration: 3s"
+          >
+            Services
+          </span>
+        </h1>
 
-            <!-- Service Categories Pills -->
-            <div class="flex flex-wrap justify-center gap-4 mt-10 animate-fade-in" style="animation-delay: 0.6s;">
-                <div class="group px-6 py-3 bg-white/10 dark:bg-white/15 backdrop-blur-sm rounded-full border border-white/20 dark:border-white/30 hover:bg-white/20 dark:hover:bg-white/25 transition-all duration-300 transform hover:scale-105 cursor-pointer">
-                    <i class="fas fa-laptop-code text-blue-300 dark:text-blue-200 mr-2"></i>
-                    <span class="text-sm font-medium text-white dark:text-gray-100">Web Development</span>
-                </div>
-                <div class="group px-6 py-3 bg-white/10 dark:bg-white/15 backdrop-blur-sm rounded-full border border-white/20 dark:border-white/30 hover:bg-white/20 dark:hover:bg-white/25 transition-all duration-300 transform hover:scale-105 cursor-pointer">
-                    <i class="fas fa-mobile-alt text-purple-300 dark:text-purple-200 mr-2"></i>
-                    <span class="text-sm font-medium text-white dark:text-gray-100">Mobile Apps</span>
-                </div>
-                <div class="group px-6 py-3 bg-white/10 dark:bg-white/15 backdrop-blur-sm rounded-full border border-white/20 dark:border-white/30 hover:bg-white/20 dark:hover:bg-white/25 transition-all duration-300 transform hover:scale-105 cursor-pointer">
-                    <i class="fas fa-brain text-pink-300 dark:text-pink-200 mr-2"></i>
-                    <span class="text-sm font-medium text-white dark:text-gray-100">AI Solutions</span>
-                </div>
-                <div class="group px-6 py-3 bg-white/10 dark:bg-white/15 backdrop-blur-sm rounded-full border border-white/20 dark:border-white/30 hover:bg-white/20 dark:hover:bg-white/25 transition-all duration-300 transform hover:scale-105 cursor-pointer">
-                    <i class="fas fa-cloud text-cyan-300 dark:text-cyan-200 mr-2"></i>
-                    <span class="text-sm font-medium text-white dark:text-gray-100">Cloud Services</span>
-                </div>
-                <div class="group px-6 py-3 bg-white/10 dark:bg-white/15 backdrop-blur-sm rounded-full border border-white/20 dark:border-white/30 hover:bg-white/20 dark:hover:bg-white/25 transition-all duration-300 transform hover:scale-105 cursor-pointer">
-                    <i class="fas fa-paint-brush text-yellow-300 dark:text-yellow-200 mr-2"></i>
-                    <span class="text-sm font-medium text-white dark:text-gray-100">UI/UX Design</span>
-                </div>
-            </div>
+        <!-- Subtitle with Animation -->
+        <p
+          class="text-xl md:text-2xl text-blue-100 dark:text-blue-200 max-w-4xl mx-auto leading-relaxed mb-10 animate-fade-in"
+          style="animation-delay: 0.4s"
+        >
+          <span class="font-semibold text-white dark:text-gray-100"
+            >End-to-end technology solutions</span
+          >
+          designed to
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300 dark:from-yellow-200 dark:to-orange-200 font-semibold"
+            >transform your business</span
+          >
+          and drive digital innovation.
+        </p>
+
+        <!-- Service Categories Pills -->
+        <div
+          class="flex flex-wrap justify-center gap-4 mt-10 animate-fade-in"
+          style="animation-delay: 0.6s"
+        >
+          <div
+            class="group px-6 py-3 bg-white/10 dark:bg-white/15 backdrop-blur-sm rounded-full border border-white/20 dark:border-white/30 hover:bg-white/20 dark:hover:bg-white/25 transition-all duration-300 transform hover:scale-105 cursor-pointer"
+          >
+            <i
+              class="fas fa-laptop-code text-blue-300 dark:text-blue-200 mr-2"
+            ></i>
+            <span class="text-sm font-medium text-white dark:text-gray-100"
+              >Web Development</span
+            >
+          </div>
+          <div
+            class="group px-6 py-3 bg-white/10 dark:bg-white/15 backdrop-blur-sm rounded-full border border-white/20 dark:border-white/30 hover:bg-white/20 dark:hover:bg-white/25 transition-all duration-300 transform hover:scale-105 cursor-pointer"
+          >
+            <i
+              class="fas fa-mobile-alt text-purple-300 dark:text-purple-200 mr-2"
+            ></i>
+            <span class="text-sm font-medium text-white dark:text-gray-100"
+              >Mobile Apps</span
+            >
+          </div>
+          <div
+            class="group px-6 py-3 bg-white/10 dark:bg-white/15 backdrop-blur-sm rounded-full border border-white/20 dark:border-white/30 hover:bg-white/20 dark:hover:bg-white/25 transition-all duration-300 transform hover:scale-105 cursor-pointer"
+          >
+            <i class="fas fa-brain text-pink-300 dark:text-pink-200 mr-2"></i>
+            <span class="text-sm font-medium text-white dark:text-gray-100"
+              >AI Solutions</span
+            >
+          </div>
+          <div
+            class="group px-6 py-3 bg-white/10 dark:bg-white/15 backdrop-blur-sm rounded-full border border-white/20 dark:border-white/30 hover:bg-white/20 dark:hover:bg-white/25 transition-all duration-300 transform hover:scale-105 cursor-pointer"
+          >
+            <i class="fas fa-cloud text-cyan-300 dark:text-cyan-200 mr-2"></i>
+            <span class="text-sm font-medium text-white dark:text-gray-100"
+              >Cloud Services</span
+            >
+          </div>
+          <div
+            class="group px-6 py-3 bg-white/10 dark:bg-white/15 backdrop-blur-sm rounded-full border border-white/20 dark:border-white/30 hover:bg-white/20 dark:hover:bg-white/25 transition-all duration-300 transform hover:scale-105 cursor-pointer"
+          >
+            <i
+              class="fas fa-paint-brush text-yellow-300 dark:text-yellow-200 mr-2"
+            ></i>
+            <span class="text-sm font-medium text-white dark:text-gray-100"
+              >UI/UX Design</span
+            >
+          </div>
         </div>
+      </div>
     </header>
 
     <!-- Services Grid -->
     <section id="services-grid" class="py-20 bg-white dark:bg-dark-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">What We <span class="gradient-text">Offer</span></h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-700 mx-auto rounded-full"></div>
-                <p class="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                    From concept to deployment, we provide comprehensive technology solutions that help businesses thrive in the digital age.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Web Development -->
-                <div id="web-development" class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg">
-                        <i class="fas fa-laptop-code text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Web Development</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6">
-                        Custom websites and web applications built with modern technologies. We create fast, secure, and scalable solutions that deliver exceptional user experiences.
-                    </p>
-                    <ul class="space-y-3 mb-8 feature-list">
-                        <li class="text-gray-600 dark:text-gray-300">Responsive & Mobile-First Design</li>
-                        <li class="text-gray-600 dark:text-gray-300">E-commerce Solutions</li>
-                        <li class="text-gray-600 dark:text-gray-300">CMS Integration</li>
-                        <li class="text-gray-600 dark:text-gray-300">Progressive Web Apps</li>
-                        <li class="text-gray-600 dark:text-gray-300">API Development</li>
-                    </ul>
-                    <a href="contact.html?service=web-development" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group">
-                        Discuss Your Project
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-
-                <!-- Mobile App Development -->
-                <div id="mobile-app" class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="150">
-                    <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg">
-                        <i class="fas fa-mobile-alt text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Mobile App Development</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6">
-                        Native and cross-platform mobile applications that engage users and drive business growth. We build intuitive, high-performance apps for iOS and Android.
-                    </p>
-                    <ul class="space-y-3 mb-8 feature-list">
-                        <li class="text-gray-600 dark:text-gray-300">iOS & Android Native Apps</li>
-                        <li class="text-gray-600 dark:text-gray-300">React Native & Flutter</li>
-                        <li class="text-gray-600 dark:text-gray-300">App Store Optimization</li>
-                        <li class="text-gray-600 dark:text-gray-300">Push Notifications</li>
-                        <li class="text-gray-600 dark:text-gray-300">In-App Purchases</li>
-                    </ul>
-                    <a href="contact.html?service=mobile-app" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group">
-                        Discuss Your Project
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-
-                <!-- UI/UX Design -->
-                <div id="ui-ux" class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-20 h-20 bg-gradient-to-br from-pink-500 to-pink-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg">
-                        <i class="fas fa-paint-brush text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">UI/UX Design</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6">
-                        Beautiful, intuitive user interfaces designed to enhance user experience and drive engagement. We combine aesthetics with functionality for seamless digital experiences.
-                    </p>
-                    <ul class="space-y-3 mb-8 feature-list">
-                        <li class="text-gray-600 dark:text-gray-300">User Research & Testing</li>
-                        <li class="text-gray-600 dark:text-gray-300">Wireframing & Prototyping</li>
-                        <li class="text-gray-600 dark:text-gray-300">Interaction Design</li>
-                        <li class="text-gray-600 dark:text-gray-300">Design Systems</li>
-                        <li class="text-gray-600 dark:text-gray-300">Brand Identity</li>
-                    </ul>
-                    <a href="contact.html?service=ui-ux" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group">
-                        Discuss Your Project
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-
-                <!-- Cloud Solutions -->
-                <div id="cloud" class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="250">
-                    <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg">
-                        <i class="fas fa-cloud text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Cloud Solutions</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6">
-                        Scalable and secure cloud infrastructure solutions. We help businesses migrate to the cloud and optimize operations with AWS, Azure, and Google Cloud.
-                    </p>
-                    <ul class="space-y-3 mb-8 feature-list">
-                        <li class="text-gray-600 dark:text-gray-300">Cloud Migration</li>
-                        <li class="text-gray-600 dark:text-gray-300">Serverless Architecture</li>
-                        <li class="text-gray-600 dark:text-gray-300">DevOps & CI/CD</li>
-                        <li class="text-gray-600 dark:text-gray-300">Infrastructure as Code</li>
-                        <li class="text-gray-600 dark:text-gray-300">Cloud Security</li>
-                    </ul>
-                    <a href="contact.html?service=cloud" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group">
-                        Discuss Your Project
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-
-                <!-- SEO & Digital Marketing -->
-                <div id="seo" class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg">
-                        <i class="fas fa-chart-line text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">SEO & Digital Marketing</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6">
-                        Data-driven digital marketing strategies to increase online visibility, drive traffic, and generate leads. We help you reach your target audience effectively.
-                    </p>
-                    <ul class="space-y-3 mb-8 feature-list">
-                        <li class="text-gray-600 dark:text-gray-300">Search Engine Optimization</li>
-                        <li class="text-gray-600 dark:text-gray-300">Content Marketing</li>
-                        <li class="text-gray-600 dark:text-gray-300">Social Media Management</li>
-                        <li class="text-gray-600 dark:text-gray-300">PPC Advertising</li>
-                        <li class="text-gray-600 dark:text-gray-300">Analytics & Reporting</li>
-                    </ul>
-                    <a href="contact.html?service=seo" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group">
-                        Discuss Your Project
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-
-                <!-- IT Consulting -->
-                <div id="consulting" class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="350">
-                    <div class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg">
-                        <i class="fas fa-headset text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">IT Consulting</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6">
-                        Expert technology consulting to help you make informed decisions about IT infrastructure, software development, and digital transformation initiatives.
-                    </p>
-                    <ul class="space-y-3 mb-8 feature-list">
-                        <li class="text-gray-600 dark:text-gray-300">Technology Strategy</li>
-                        <li class="text-gray-600 dark:text-gray-300">Digital Transformation</li>
-                        <li class="text-gray-600 dark:text-gray-300">IT Infrastructure</li>
-                        <li class="text-gray-600 dark:text-gray-300">Security Audits</li>
-                        <li class="text-gray-600 dark:text-gray-300">Technical Due Diligence</li>
-                    </ul>
-                    <a href="contact.html?service=consulting" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group">
-                        Discuss Your Project
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-
-                <!-- ERP Systems -->
-                <div id="erp-systems" class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg">
-                        <i class="fas fa-network-wired text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">ERP Systems</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6">
-                        Comprehensive ERP solutions including Odoo, ERPNext, and custom ERP development to streamline your business operations and boost productivity.
-                    </p>
-                    <ul class="space-y-3 mb-8 feature-list">
-                        <li class="text-gray-600 dark:text-gray-300">Odoo Implementation</li>
-                        <li class="text-gray-600 dark:text-gray-300">ERPNext Deployment</li>
-                        <li class="text-gray-600 dark:text-gray-300">Custom ERP Development</li>
-                        <li class="text-gray-600 dark:text-gray-300">ERP Integration</li>
-                        <li class="text-gray-600 dark:text-gray-300">Module Customization</li>
-                    </ul>
-                    <a href="contact.html?service=erp" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group">
-                        Get Started
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-
-                <!-- POS & HR Systems -->
-                <div id="pos-hr" class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="450">
-                    <div class="w-20 h-20 bg-gradient-to-br from-teal-500 to-teal-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg">
-                        <i class="fas fa-cash-register text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">POS & HR Systems</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6">
-                        Modern Point of Sale and Human Resource Management systems tailored to your business needs with seamless integration and user-friendly interfaces.
-                    </p>
-                    <ul class="space-y-3 mb-8 feature-list">
-                        <li class="text-gray-600 dark:text-gray-300">Custom POS Solutions</li>
-                        <li class="text-gray-600 dark:text-gray-300">HR Management Systems</li>
-                        <li class="text-gray-600 dark:text-gray-300">Inventory Management</li>
-                        <li class="text-gray-600 dark:text-gray-300">Payroll Processing</li>
-                        <li class="text-gray-600 dark:text-gray-300">Employee Self-Service</li>
-                    </ul>
-                    <a href="contact.html?service=pos-hr" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group">
-                        Learn More
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-
-                <!-- M-Pesa Integration -->
-                <div id="mpesa" class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="500">
-                    <div class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg">
-                        <i class="fas fa-mobile-alt text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">M-Pesa Integration</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6">
-                        Automated M-Pesa payment integration for your applications, enabling seamless mobile money transactions with real-time processing and notifications.
-                    </p>
-                    <ul class="space-y-3 mb-8 feature-list">
-                        <li class="text-gray-600 dark:text-gray-300">STK Push Integration</li>
-                        <li class="text-gray-600 dark:text-gray-300">Payment Callbacks</li>
-                        <li class="text-gray-600 dark:text-gray-300">Transaction Tracking</li>
-                        <li class="text-gray-600 dark:text-gray-300">Automated Reconciliation</li>
-                        <li class="text-gray-600 dark:text-gray-300">Multi-Channel Support</li>
-                    </ul>
-                    <a href="contact.html?service=mpesa" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group">
-                        Integrate Now
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-
-                <!-- System Maintenance & Upgrades -->
-                <div id="maintenance" class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="550">
-                    <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg">
-                        <i class="fas fa-tools text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">System Maintenance & Upgrades</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6">
-                        Keep your systems running smoothly with our comprehensive maintenance, upgrade, and advancement services for existing software solutions.
-                    </p>
-                    <ul class="space-y-3 mb-8 feature-list">
-                        <li class="text-gray-600 dark:text-gray-300">Software Maintenance</li>
-                        <li class="text-gray-600 dark:text-gray-300">System Upgrades</li>
-                        <li class="text-gray-600 dark:text-gray-300">Performance Optimization</li>
-                        <li class="text-gray-600 dark:text-gray-300">Bug Fixes & Updates</li>
-                        <li class="text-gray-600 dark:text-gray-300">Feature Enhancement</li>
-                    </ul>
-                    <a href="contact.html?service=maintenance" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group">
-                        Request Service
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-
-                <!-- Feature Customization -->
-                <div id="customization" class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="600">
-                    <div class="w-20 h-20 bg-gradient-to-br from-rose-500 to-rose-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg">
-                        <i class="fas fa-sliders-h text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Feature Customization</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6">
-                        Tailor existing systems to your specific needs with custom features, workflows, and integrations that enhance functionality and user experience.
-                    </p>
-                    <ul class="space-y-3 mb-8 feature-list">
-                        <li class="text-gray-600 dark:text-gray-300">Custom Feature Development</li>
-                        <li class="text-gray-600 dark:text-gray-300">Workflow Automation</li>
-                        <li class="text-gray-600 dark:text-gray-300">Third-Party Integrations</li>
-                        <li class="text-gray-600 dark:text-gray-300">UI/UX Improvements</li>
-                        <li class="text-gray-600 dark:text-gray-300">API Development</li>
-                    </ul>
-                    <a href="contact.html?service=customization" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group">
-                        Customize Now
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-
-                <!-- User Training -->
-                <div id="training" class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="650">
-                    <div class="w-20 h-20 bg-gradient-to-br from-cyan-500 to-cyan-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg">
-                        <i class="fas fa-chalkboard-teacher text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">User Training</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6">
-                        Comprehensive training programs to ensure your team can effectively use and maximize the potential of your software systems and applications.
-                    </p>
-                    <ul class="space-y-3 mb-8 feature-list">
-                        <li class="text-gray-600 dark:text-gray-300">On-Site Training</li>
-                        <li class="text-gray-600 dark:text-gray-300">Remote Sessions</li>
-                        <li class="text-gray-600 dark:text-gray-300">Custom Training Materials</li>
-                        <li class="text-gray-600 dark:text-gray-300">Hands-On Workshops</li>
-                        <li class="text-gray-600 dark:text-gray-300">Ongoing Support</li>
-                    </ul>
-                    <a href="contact.html?service=training" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group">
-                        Book Training
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+          >
+            What We <span class="gradient-text">Offer</span>
+          </h2>
+          <div
+            class="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-700 mx-auto rounded-full"
+          ></div>
+          <p
+            class="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+          >
+            From concept to deployment, we provide comprehensive technology
+            solutions that help businesses thrive in the digital age.
+          </p>
         </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Web Development -->
+          <div
+            id="web-development"
+            class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg"
+            >
+              <i class="fas fa-laptop-code text-3xl text-white"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              Web Development
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              Custom websites and web applications built with modern
+              technologies. We create fast, secure, and scalable solutions that
+              deliver exceptional user experiences.
+            </p>
+            <ul class="space-y-3 mb-8 feature-list">
+              <li class="text-gray-600 dark:text-gray-300">
+                Responsive & Mobile-First Design
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                E-commerce Solutions
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">CMS Integration</li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Progressive Web Apps
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">API Development</li>
+            </ul>
+            <a
+              href="contact.html?service=web-development"
+              class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group"
+            >
+              Discuss Your Project
+              <i
+                class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"
+              ></i>
+            </a>
+          </div>
+
+          <!-- Mobile App Development -->
+          <div
+            id="mobile-app"
+            class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg"
+            >
+              <i class="fas fa-mobile-alt text-3xl text-white"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              Mobile App Development
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              Native and cross-platform mobile applications that engage users
+              and drive business growth. We build intuitive, high-performance
+              apps for iOS and Android.
+            </p>
+            <ul class="space-y-3 mb-8 feature-list">
+              <li class="text-gray-600 dark:text-gray-300">
+                iOS & Android Native Apps
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                React Native & Flutter
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                App Store Optimization
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Push Notifications
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">In-App Purchases</li>
+            </ul>
+            <a
+              href="contact.html?service=mobile-app"
+              class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group"
+            >
+              Discuss Your Project
+              <i
+                class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"
+              ></i>
+            </a>
+          </div>
+
+          <!-- UI/UX Design -->
+          <div
+            id="ui-ux"
+            class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-pink-500 to-pink-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg"
+            >
+              <i class="fas fa-paint-brush text-3xl text-white"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              UI/UX Design
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              Beautiful, intuitive user interfaces designed to enhance user
+              experience and drive engagement. We combine aesthetics with
+              functionality for seamless digital experiences.
+            </p>
+            <ul class="space-y-3 mb-8 feature-list">
+              <li class="text-gray-600 dark:text-gray-300">
+                User Research & Testing
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Wireframing & Prototyping
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Interaction Design
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">Design Systems</li>
+              <li class="text-gray-600 dark:text-gray-300">Brand Identity</li>
+            </ul>
+            <a
+              href="contact.html?service=ui-ux"
+              class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group"
+            >
+              Discuss Your Project
+              <i
+                class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"
+              ></i>
+            </a>
+          </div>
+
+          <!-- Cloud Solutions -->
+          <div
+            id="cloud"
+            class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg"
+            >
+              <i class="fas fa-cloud text-3xl text-white"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              Cloud Solutions
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              Scalable and secure cloud infrastructure solutions. We help
+              businesses migrate to the cloud and optimize operations with AWS,
+              Azure, and Google Cloud.
+            </p>
+            <ul class="space-y-3 mb-8 feature-list">
+              <li class="text-gray-600 dark:text-gray-300">Cloud Migration</li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Serverless Architecture
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">DevOps & CI/CD</li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Infrastructure as Code
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">Cloud Security</li>
+            </ul>
+            <a
+              href="contact.html?service=cloud"
+              class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group"
+            >
+              Discuss Your Project
+              <i
+                class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"
+              ></i>
+            </a>
+          </div>
+
+          <!-- SEO & Digital Marketing -->
+          <div
+            id="seo"
+            class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg"
+            >
+              <i class="fas fa-chart-line text-3xl text-white"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              SEO & Digital Marketing
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              Data-driven digital marketing strategies to increase online
+              visibility, drive traffic, and generate leads. We help you reach
+              your target audience effectively.
+            </p>
+            <ul class="space-y-3 mb-8 feature-list">
+              <li class="text-gray-600 dark:text-gray-300">
+                Search Engine Optimization
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Content Marketing
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Social Media Management
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">PPC Advertising</li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Analytics & Reporting
+              </li>
+            </ul>
+            <a
+              href="contact.html?service=seo"
+              class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group"
+            >
+              Discuss Your Project
+              <i
+                class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"
+              ></i>
+            </a>
+          </div>
+
+          <!-- IT Consulting -->
+          <div
+            id="consulting"
+            class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
+            data-aos="fade-up"
+            data-aos-delay="350"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg"
+            >
+              <i class="fas fa-headset text-3xl text-white"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              IT Consulting
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              Expert technology consulting to help you make informed decisions
+              about IT infrastructure, software development, and digital
+              transformation initiatives.
+            </p>
+            <ul class="space-y-3 mb-8 feature-list">
+              <li class="text-gray-600 dark:text-gray-300">
+                Technology Strategy
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Digital Transformation
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                IT Infrastructure
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">Security Audits</li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Technical Due Diligence
+              </li>
+            </ul>
+            <a
+              href="contact.html?service=consulting"
+              class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group"
+            >
+              Discuss Your Project
+              <i
+                class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"
+              ></i>
+            </a>
+          </div>
+
+          <!-- ERP Systems -->
+          <div
+            id="erp-systems"
+            class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg"
+            >
+              <i class="fas fa-network-wired text-3xl text-white"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              ERP Systems
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              Comprehensive ERP solutions including Odoo, ERPNext, and custom
+              ERP development to streamline your business operations and boost
+              productivity.
+            </p>
+            <ul class="space-y-3 mb-8 feature-list">
+              <li class="text-gray-600 dark:text-gray-300">
+                Odoo Implementation
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                ERPNext Deployment
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Custom ERP Development
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">ERP Integration</li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Module Customization
+              </li>
+            </ul>
+            <a
+              href="contact.html?service=erp"
+              class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group"
+            >
+              Get Started
+              <i
+                class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"
+              ></i>
+            </a>
+          </div>
+
+          <!-- POS & HR Systems -->
+          <div
+            id="pos-hr"
+            class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
+            data-aos="fade-up"
+            data-aos-delay="450"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-teal-500 to-teal-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg"
+            >
+              <i class="fas fa-cash-register text-3xl text-white"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              POS & HR Systems
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              Modern Point of Sale and Human Resource Management systems
+              tailored to your business needs with seamless integration and
+              user-friendly interfaces.
+            </p>
+            <ul class="space-y-3 mb-8 feature-list">
+              <li class="text-gray-600 dark:text-gray-300">
+                Custom POS Solutions
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                HR Management Systems
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Inventory Management
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Payroll Processing
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Employee Self-Service
+              </li>
+            </ul>
+            <a
+              href="contact.html?service=pos-hr"
+              class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group"
+            >
+              Learn More
+              <i
+                class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"
+              ></i>
+            </a>
+          </div>
+
+          <!-- M-Pesa Integration -->
+          <div
+            id="mpesa"
+            class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg"
+            >
+              <i class="fas fa-mobile-alt text-3xl text-white"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              M-Pesa Integration
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              Automated M-Pesa payment integration for your applications,
+              enabling seamless mobile money transactions with real-time
+              processing and notifications.
+            </p>
+            <ul class="space-y-3 mb-8 feature-list">
+              <li class="text-gray-600 dark:text-gray-300">
+                STK Push Integration
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Payment Callbacks
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Transaction Tracking
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Automated Reconciliation
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Multi-Channel Support
+              </li>
+            </ul>
+            <a
+              href="contact.html?service=mpesa"
+              class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group"
+            >
+              Integrate Now
+              <i
+                class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"
+              ></i>
+            </a>
+          </div>
+
+          <!-- System Maintenance & Upgrades -->
+          <div
+            id="maintenance"
+            class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
+            data-aos="fade-up"
+            data-aos-delay="550"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg"
+            >
+              <i class="fas fa-tools text-3xl text-white"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              System Maintenance & Upgrades
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              Keep your systems running smoothly with our comprehensive
+              maintenance, upgrade, and advancement services for existing
+              software solutions.
+            </p>
+            <ul class="space-y-3 mb-8 feature-list">
+              <li class="text-gray-600 dark:text-gray-300">
+                Software Maintenance
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">System Upgrades</li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Performance Optimization
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Bug Fixes & Updates
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Feature Enhancement
+              </li>
+            </ul>
+            <a
+              href="contact.html?service=maintenance"
+              class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group"
+            >
+              Request Service
+              <i
+                class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"
+              ></i>
+            </a>
+          </div>
+
+          <!-- Feature Customization -->
+          <div
+            id="customization"
+            class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-rose-500 to-rose-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg"
+            >
+              <i class="fas fa-sliders-h text-3xl text-white"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              Feature Customization
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              Tailor existing systems to your specific needs with custom
+              features, workflows, and integrations that enhance functionality
+              and user experience.
+            </p>
+            <ul class="space-y-3 mb-8 feature-list">
+              <li class="text-gray-600 dark:text-gray-300">
+                Custom Feature Development
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Workflow Automation
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Third-Party Integrations
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                UI/UX Improvements
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">API Development</li>
+            </ul>
+            <a
+              href="contact.html?service=customization"
+              class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group"
+            >
+              Customize Now
+              <i
+                class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"
+              ></i>
+            </a>
+          </div>
+
+          <!-- User Training -->
+          <div
+            id="training"
+            class="service-card bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
+            data-aos="fade-up"
+            data-aos-delay="650"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-cyan-500 to-cyan-700 rounded-2xl flex items-center justify-center mb-6 service-icon shadow-lg"
+            >
+              <i class="fas fa-chalkboard-teacher text-3xl text-white"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              User Training
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              Comprehensive training programs to ensure your team can
+              effectively use and maximize the potential of your software
+              systems and applications.
+            </p>
+            <ul class="space-y-3 mb-8 feature-list">
+              <li class="text-gray-600 dark:text-gray-300">On-Site Training</li>
+              <li class="text-gray-600 dark:text-gray-300">Remote Sessions</li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Custom Training Materials
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">
+                Hands-On Workshops
+              </li>
+              <li class="text-gray-600 dark:text-gray-300">Ongoing Support</li>
+            </ul>
+            <a
+              href="contact.html?service=training"
+              class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline group"
+            >
+              Book Training
+              <i
+                class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"
+              ></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Process Section -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-dark-800 dark:to-dark-900 relative overflow-hidden">
-        <!-- Background elements -->
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 dark:opacity-20">
-            <div class="absolute top-40 left-10 w-72 h-72 bg-blue-400 dark:bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
-            <div class="absolute top-0 right-10 w-96 h-96 bg-purple-400 dark:bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
-            <div class="absolute bottom-20 left-1/2 w-80 h-80 bg-pink-400 dark:bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
+    <section
+      class="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-dark-800 dark:to-dark-900 relative overflow-hidden"
+    >
+      <!-- Background elements -->
+      <div
+        class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 dark:opacity-20"
+      >
+        <div
+          class="absolute top-40 left-10 w-72 h-72 bg-blue-400 dark:bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"
+        ></div>
+        <div
+          class="absolute top-0 right-10 w-96 h-96 bg-purple-400 dark:bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"
+        ></div>
+        <div
+          class="absolute bottom-20 left-1/2 w-80 h-80 bg-pink-400 dark:bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"
+        ></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <div
+            class="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 mb-6"
+          >
+            <i
+              class="fas fa-project-diagram text-blue-600 dark:text-blue-400 mr-2"
+            ></i>
+            <span
+              class="text-sm font-semibold text-blue-600 dark:text-blue-400 tracking-wider"
+              >OUR METHODOLOGY</span
+            >
+          </div>
+          <h2
+            class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+          >
+            Our
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"
+              >Process</span
+            >
+          </h2>
+          <div
+            class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-700 mx-auto rounded-full mb-6"
+          ></div>
+          <p
+            class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
+          >
+            We follow a proven methodology to deliver exceptional results and
+            ensure your project's success from start to finish.
+          </p>
+
+          <!-- Payment Terms Box -->
+          <div
+            class="mt-8 inline-block bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-2xl p-6 shadow-lg"
+          >
+            <div class="flex items-center justify-center mb-3">
+              <i
+                class="fas fa-hand-holding-usd text-blue-600 dark:text-blue-400 text-2xl mr-3"
+              ></i>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                Payment Terms
+              </h3>
+            </div>
+            <div class="space-y-2 text-gray-700 dark:text-gray-300">
+              <p class="flex items-center justify-center">
+                <i
+                  class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"
+                ></i>
+                <span
+                  class="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400"
+                  >40% upfront fee</span
+                >
+                <span class="ml-2">after agreement</span>
+              </p>
+              <p class="flex items-center justify-center">
+                <i
+                  class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"
+                ></i>
+                <span
+                  >Remaining <span class="font-semibold">60%</span> on project
+                  delivery</span
+                >
+              </p>
+            </div>
+          </div>
         </div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 mb-6">
-                    <i class="fas fa-project-diagram text-blue-600 dark:text-blue-400 mr-2"></i>
-                    <span class="text-sm font-semibold text-blue-600 dark:text-blue-400 tracking-wider">OUR METHODOLOGY</span>
+
+        <!-- Process Steps with Arrows -->
+        <div class="relative">
+          <!-- Desktop Arrows (hidden on mobile) -->
+          <div class="hidden lg:block">
+            <div
+              class="absolute top-24 left-1/4 transform -translate-x-1/2 animate-pulse"
+              style="animation-duration: 2s"
+            >
+              <i
+                class="fas fa-arrow-right text-4xl text-blue-400 dark:text-blue-300 opacity-50"
+              ></i>
+            </div>
+            <div
+              class="absolute top-24 left-1/2 transform -translate-x-1/2 animate-pulse"
+              style="animation-duration: 2s; animation-delay: 0.3s"
+            >
+              <i
+                class="fas fa-arrow-right text-4xl text-purple-400 dark:text-purple-300 opacity-50"
+              ></i>
+            </div>
+            <div
+              class="absolute top-24 left-3/4 transform -translate-x-1/2 animate-pulse"
+              style="animation-duration: 2s; animation-delay: 0.6s"
+            >
+              <i
+                class="fas fa-arrow-right text-4xl text-green-400 dark:text-green-300 opacity-50"
+              ></i>
+            </div>
+          </div>
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6"
+          >
+            <!-- Step 1 -->
+            <div class="relative group" data-aos="fade-up" data-aos-delay="100">
+              <div
+                class="process-step bg-white dark:bg-dark-700 rounded-2xl p-6 lg:p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-blue-200 dark:border-blue-700 hover:border-blue-400 dark:hover:border-blue-500 transform hover:-translate-y-2"
+              >
+                <div
+                  class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300"
+                >
+                  <span class="text-3xl font-bold text-white">1</span>
                 </div>
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                    Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Process</span>
-                </h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-700 mx-auto rounded-full mb-6"></div>
-                <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                    We follow a proven methodology to deliver exceptional results and ensure your project's success from start to finish.
+                <div class="mb-4">
+                  <i
+                    class="fas fa-search text-4xl text-blue-500 dark:text-blue-400 mb-3"
+                  ></i>
+                </div>
+                <h3
+                  class="text-xl font-bold mb-3 text-gray-900 dark:text-white"
+                >
+                  Discover
+                </h3>
+                <p
+                  class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed"
+                >
+                  We begin by understanding your business, goals, and challenges
+                  through in-depth discussions and research to define project
+                  requirements.
                 </p>
-                
-                <!-- Payment Terms Box -->
-                <div class="mt-8 inline-block bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-2xl p-6 shadow-lg">
-                    <div class="flex items-center justify-center mb-3">
-                        <i class="fas fa-hand-holding-usd text-blue-600 dark:text-blue-400 text-2xl mr-3"></i>
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">Payment Terms</h3>
-                    </div>
-                    <div class="space-y-2 text-gray-700 dark:text-gray-300">
-                        <p class="flex items-center justify-center">
-                            <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                            <span class="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">40% upfront fee</span>
-                            <span class="ml-2">after agreement</span>
-                        </p>
-                        <p class="flex items-center justify-center">
-                            <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                            <span>Remaining <span class="font-semibold">60%</span> on project delivery</span>
-                        </p>
-                    </div>
-                </div>
+              </div>
+              <!-- Mobile Arrow -->
+              <div class="lg:hidden flex justify-center my-4">
+                <i
+                  class="fas fa-arrow-down text-3xl text-blue-400 dark:text-blue-300 animate-bounce"
+                ></i>
+              </div>
             </div>
 
-            <!-- Process Steps with Arrows -->
-            <div class="relative">
-                <!-- Desktop Arrows (hidden on mobile) -->
-                <div class="hidden lg:block">
-                    <div class="absolute top-24 left-1/4 transform -translate-x-1/2 animate-pulse" style="animation-duration: 2s;">
-                        <i class="fas fa-arrow-right text-4xl text-blue-400 dark:text-blue-300 opacity-50"></i>
-                    </div>
-                    <div class="absolute top-24 left-1/2 transform -translate-x-1/2 animate-pulse" style="animation-duration: 2s; animation-delay: 0.3s;">
-                        <i class="fas fa-arrow-right text-4xl text-purple-400 dark:text-purple-300 opacity-50"></i>
-                    </div>
-                    <div class="absolute top-24 left-3/4 transform -translate-x-1/2 animate-pulse" style="animation-duration: 2s; animation-delay: 0.6s;">
-                        <i class="fas fa-arrow-right text-4xl text-green-400 dark:text-green-300 opacity-50"></i>
-                    </div>
+            <!-- Step 2 -->
+            <div class="relative group" data-aos="fade-up" data-aos-delay="200">
+              <div
+                class="process-step bg-white dark:bg-dark-700 rounded-2xl p-6 lg:p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-purple-200 dark:border-purple-700 hover:border-purple-400 dark:hover:border-purple-500 transform hover:-translate-y-2"
+              >
+                <div
+                  class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300"
+                >
+                  <span class="text-3xl font-bold text-white">2</span>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-                    <!-- Step 1 -->
-                    <div class="relative group" data-aos="fade-up" data-aos-delay="100">
-                        <div class="process-step bg-white dark:bg-dark-700 rounded-2xl p-6 lg:p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-blue-200 dark:border-blue-700 hover:border-blue-400 dark:hover:border-blue-500 transform hover:-translate-y-2">
-                            <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300">
-                                <span class="text-3xl font-bold text-white">1</span>
-                            </div>
-                            <div class="mb-4">
-                                <i class="fas fa-search text-4xl text-blue-500 dark:text-blue-400 mb-3"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Discover</h3>
-                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                                We begin by understanding your business, goals, and challenges through in-depth discussions and research to define project requirements.
-                            </p>
-                        </div>
-                        <!-- Mobile Arrow -->
-                        <div class="lg:hidden flex justify-center my-4">
-                            <i class="fas fa-arrow-down text-3xl text-blue-400 dark:text-blue-300 animate-bounce"></i>
-                        </div>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="relative group" data-aos="fade-up" data-aos-delay="200">
-                        <div class="process-step bg-white dark:bg-dark-700 rounded-2xl p-6 lg:p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-purple-200 dark:border-purple-700 hover:border-purple-400 dark:hover:border-purple-500 transform hover:-translate-y-2">
-                            <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300">
-                                <span class="text-3xl font-bold text-white">2</span>
-                            </div>
-                            <div class="mb-4">
-                                <i class="fas fa-clipboard-list text-4xl text-purple-500 dark:text-purple-400 mb-3"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Plan</h3>
-                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                                We create a detailed project plan with clear milestones, deliverables, timelines, and success metrics to ensure alignment.
-                            </p>
-                        </div>
-                        <!-- Mobile Arrow -->
-                        <div class="lg:hidden flex justify-center my-4">
-                            <i class="fas fa-arrow-down text-3xl text-purple-400 dark:text-purple-300 animate-bounce" style="animation-delay: 0.2s;"></i>
-                        </div>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="relative group" data-aos="fade-up" data-aos-delay="300">
-                        <div class="process-step bg-white dark:bg-dark-700 rounded-2xl p-6 lg:p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-green-200 dark:border-green-700 hover:border-green-400 dark:hover:border-green-500 transform hover:-translate-y-2">
-                            <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300">
-                                <span class="text-3xl font-bold text-white">3</span>
-                            </div>
-                            <div class="mb-4">
-                                <i class="fas fa-code text-4xl text-green-500 dark:text-green-400 mb-3"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Execute</h3>
-                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                                Our team works diligently to bring your project to life with agile development, regular updates, and continuous feedback loops.
-                            </p>
-                        </div>
-                        <!-- Mobile Arrow -->
-                        <div class="lg:hidden flex justify-center my-4">
-                            <i class="fas fa-arrow-down text-3xl text-green-400 dark:text-green-300 animate-bounce" style="animation-delay: 0.4s;"></i>
-                        </div>
-                    </div>
-
-                    <!-- Step 4 -->
-                    <div class="relative group" data-aos="fade-up" data-aos-delay="400">
-                        <div class="process-step bg-white dark:bg-dark-700 rounded-2xl p-6 lg:p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-yellow-200 dark:border-yellow-700 hover:border-yellow-400 dark:hover:border-yellow-500 transform hover:-translate-y-2">
-                            <div class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300">
-                                <span class="text-3xl font-bold text-white">4</span>
-                            </div>
-                            <div class="mb-4">
-                                <i class="fas fa-rocket text-4xl text-yellow-500 dark:text-yellow-400 mb-3"></i>
-                            </div>
-                            <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Deliver</h3>
-                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                                We launch your project successfully and provide ongoing support, maintenance, and optimization to ensure long-term success.
-                            </p>
-                        </div>
-                    </div>
+                <div class="mb-4">
+                  <i
+                    class="fas fa-clipboard-list text-4xl text-purple-500 dark:text-purple-400 mb-3"
+                  ></i>
                 </div>
+                <h3
+                  class="text-xl font-bold mb-3 text-gray-900 dark:text-white"
+                >
+                  Plan
+                </h3>
+                <p
+                  class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed"
+                >
+                  We create a detailed project plan with clear milestones,
+                  deliverables, timelines, and success metrics to ensure
+                  alignment.
+                </p>
+              </div>
+              <!-- Mobile Arrow -->
+              <div class="lg:hidden flex justify-center my-4">
+                <i
+                  class="fas fa-arrow-down text-3xl text-purple-400 dark:text-purple-300 animate-bounce"
+                  style="animation-delay: 0.2s"
+                ></i>
+              </div>
             </div>
 
-            <!-- CTA Button -->
-            <div class="text-center mt-16" data-aos="fade-up" data-aos-delay="500">
-                <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                    <i class="fas fa-paper-plane mr-3"></i>
-                    Start Your Project Today
-                    <i class="fas fa-arrow-right ml-3"></i>
-                </a>
+            <!-- Step 3 -->
+            <div class="relative group" data-aos="fade-up" data-aos-delay="300">
+              <div
+                class="process-step bg-white dark:bg-dark-700 rounded-2xl p-6 lg:p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-green-200 dark:border-green-700 hover:border-green-400 dark:hover:border-green-500 transform hover:-translate-y-2"
+              >
+                <div
+                  class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300"
+                >
+                  <span class="text-3xl font-bold text-white">3</span>
+                </div>
+                <div class="mb-4">
+                  <i
+                    class="fas fa-code text-4xl text-green-500 dark:text-green-400 mb-3"
+                  ></i>
+                </div>
+                <h3
+                  class="text-xl font-bold mb-3 text-gray-900 dark:text-white"
+                >
+                  Execute
+                </h3>
+                <p
+                  class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed"
+                >
+                  Our team works diligently to bring your project to life with
+                  agile development, regular updates, and continuous feedback
+                  loops.
+                </p>
+              </div>
+              <!-- Mobile Arrow -->
+              <div class="lg:hidden flex justify-center my-4">
+                <i
+                  class="fas fa-arrow-down text-3xl text-green-400 dark:text-green-300 animate-bounce"
+                  style="animation-delay: 0.4s"
+                ></i>
+              </div>
             </div>
+
+            <!-- Step 4 -->
+            <div class="relative group" data-aos="fade-up" data-aos-delay="400">
+              <div
+                class="process-step bg-white dark:bg-dark-700 rounded-2xl p-6 lg:p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-yellow-200 dark:border-yellow-700 hover:border-yellow-400 dark:hover:border-yellow-500 transform hover:-translate-y-2"
+              >
+                <div
+                  class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300"
+                >
+                  <span class="text-3xl font-bold text-white">4</span>
+                </div>
+                <div class="mb-4">
+                  <i
+                    class="fas fa-rocket text-4xl text-yellow-500 dark:text-yellow-400 mb-3"
+                  ></i>
+                </div>
+                <h3
+                  class="text-xl font-bold mb-3 text-gray-900 dark:text-white"
+                >
+                  Deliver
+                </h3>
+                <p
+                  class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed"
+                >
+                  We launch your project successfully and provide ongoing
+                  support, maintenance, and optimization to ensure long-term
+                  success.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- CTA Button -->
+        <div class="text-center mt-16" data-aos="fade-up" data-aos-delay="500">
+          <a
+            href="contact.html"
+            class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+          >
+            <i class="fas fa-paper-plane mr-3"></i>
+            Start Your Project Today
+            <i class="fas fa-arrow-right ml-3"></i>
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- Technology Stack -->
     <section class="py-20 bg-white dark:bg-dark-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Our <span class="gradient-text">Technology Stack</span></h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-700 mx-auto rounded-full"></div>
-                <p class="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                    We work with modern technologies and frameworks to build robust, scalable, and future-proof solutions.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-                <!-- Frontend -->
-                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-palette text-2xl text-blue-600 dark:text-blue-400"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-3 text-gray-900 dark:text-white">Frontend</h3>
-                    <div class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                        <div>React.js</div>
-                        <div>Vue.js</div>
-                        <div>Angular</div>
-                        <div>Next.js</div>
-                        <div>TypeScript</div>
-                        <div>Tailwind CSS</div>
-                        <div>Bootstrap</div>
-                    </div>
-                </div>
-
-                <!-- Backend -->
-                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-server text-2xl text-green-600 dark:text-green-400"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-3 text-gray-900 dark:text-white">Backend</h3>
-                    <div class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                        <div>Node.js</div>
-                        <div>Python/Django</div>
-                        <div>PHP</div>
-                        <div>Laravel</div>
-                        <div>Java/Spring</div>
-                        <div>.NET Core</div>
-                        <div>Ruby on Rails</div>
-                    </div>
-                </div>
-
-                <!-- Mobile -->
-                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-mobile text-2xl text-purple-600 dark:text-purple-400"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-3 text-gray-900 dark:text-white">Mobile</h3>
-                    <div class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                        <div>React Native</div>
-                        <div>Flutter</div>
-                        <div>iOS/Swift</div>
-                        <div>Android/Kotlin</div>
-                        <div>Ionic</div>
-                        <div>Xamarin</div>
-                    </div>
-                </div>
-
-                <!-- Database -->
-                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-16 h-16 bg-yellow-100 dark:bg-yellow-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-database text-2xl text-yellow-600 dark:text-yellow-400"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-3 text-gray-900 dark:text-white">Database</h3>
-                    <div class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                        <div>MySQL</div>
-                        <div>PostgreSQL</div>
-                        <div>MongoDB</div>
-                        <div>Redis</div>
-                        <div>Firebase</div>
-                        <div>SQL Server</div>
-                    </div>
-                </div>
-
-                <!-- Cloud & DevOps -->
-                <div class="text-center" data-aos="fade-up" data-aos-delay="500">
-                    <div class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-cloud text-2xl text-indigo-600 dark:text-indigo-400"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-3 text-gray-900 dark:text-white">Cloud & DevOps</h3>
-                    <div class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                        <div>AWS</div>
-                        <div>Azure</div>
-                        <div>Google Cloud</div>
-                        <div>Docker</div>
-                        <div>Kubernetes</div>
-                        <div>Jenkins</div>
-                        <div>GitHub Actions</div>
-                    </div>
-                </div>
-
-                <!-- AI & ML -->
-                <div class="text-center" data-aos="fade-up" data-aos-delay="600">
-                    <div class="w-16 h-16 bg-pink-100 dark:bg-pink-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-brain text-2xl text-pink-600 dark:text-pink-400"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-3 text-gray-900 dark:text-white">AI & ML</h3>
-                    <div class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                        <div>TensorFlow</div>
-                        <div>PyTorch</div>
-                        <div>OpenAI/GPT</div>
-                        <div>Scikit-learn</div>
-                        <div>Keras</div>
-                        <div>Hugging Face</div>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+          >
+            Our <span class="gradient-text">Technology Stack</span>
+          </h2>
+          <div
+            class="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-700 mx-auto rounded-full"
+          ></div>
+          <p
+            class="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+          >
+            We work with modern technologies and frameworks to build robust,
+            scalable, and future-proof solutions.
+          </p>
         </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <!-- Frontend -->
+          <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4"
+            >
+              <i
+                class="fas fa-palette text-2xl text-blue-600 dark:text-blue-400"
+              ></i>
+            </div>
+            <h3 class="text-lg font-bold mb-3 text-gray-900 dark:text-white">
+              Frontend
+            </h3>
+            <div class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+              <div>React.js</div>
+              <div>Vue.js</div>
+              <div>Angular</div>
+              <div>Next.js</div>
+              <div>TypeScript</div>
+              <div>Tailwind CSS</div>
+              <div>Bootstrap</div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4"
+            >
+              <i
+                class="fas fa-server text-2xl text-green-600 dark:text-green-400"
+              ></i>
+            </div>
+            <h3 class="text-lg font-bold mb-3 text-gray-900 dark:text-white">
+              Backend
+            </h3>
+            <div class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+              <div>Node.js</div>
+              <div>Python/Django</div>
+              <div>PHP</div>
+              <div>Laravel</div>
+              <div>Java/Spring</div>
+              <div>.NET Core</div>
+              <div>Ruby on Rails</div>
+            </div>
+          </div>
+
+          <!-- Mobile -->
+          <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+            <div
+              class="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4"
+            >
+              <i
+                class="fas fa-mobile text-2xl text-purple-600 dark:text-purple-400"
+              ></i>
+            </div>
+            <h3 class="text-lg font-bold mb-3 text-gray-900 dark:text-white">
+              Mobile
+            </h3>
+            <div class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+              <div>React Native</div>
+              <div>Flutter</div>
+              <div>iOS/Swift</div>
+              <div>Android/Kotlin</div>
+              <div>Ionic</div>
+              <div>Xamarin</div>
+            </div>
+          </div>
+
+          <!-- Database -->
+          <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+            <div
+              class="w-16 h-16 bg-yellow-100 dark:bg-yellow-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4"
+            >
+              <i
+                class="fas fa-database text-2xl text-yellow-600 dark:text-yellow-400"
+              ></i>
+            </div>
+            <h3 class="text-lg font-bold mb-3 text-gray-900 dark:text-white">
+              Database
+            </h3>
+            <div class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+              <div>MySQL</div>
+              <div>PostgreSQL</div>
+              <div>MongoDB</div>
+              <div>Redis</div>
+              <div>Firebase</div>
+              <div>SQL Server</div>
+            </div>
+          </div>
+
+          <!-- Cloud & DevOps -->
+          <div class="text-center" data-aos="fade-up" data-aos-delay="500">
+            <div
+              class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4"
+            >
+              <i
+                class="fas fa-cloud text-2xl text-indigo-600 dark:text-indigo-400"
+              ></i>
+            </div>
+            <h3 class="text-lg font-bold mb-3 text-gray-900 dark:text-white">
+              Cloud & DevOps
+            </h3>
+            <div class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+              <div>AWS</div>
+              <div>Azure</div>
+              <div>Google Cloud</div>
+              <div>Docker</div>
+              <div>Kubernetes</div>
+              <div>Jenkins</div>
+              <div>GitHub Actions</div>
+            </div>
+          </div>
+
+          <!-- AI & ML -->
+          <div class="text-center" data-aos="fade-up" data-aos-delay="600">
+            <div
+              class="w-16 h-16 bg-pink-100 dark:bg-pink-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4"
+            >
+              <i
+                class="fas fa-brain text-2xl text-pink-600 dark:text-pink-400"
+              ></i>
+            </div>
+            <h3 class="text-lg font-bold mb-3 text-gray-900 dark:text-white">
+              AI & ML
+            </h3>
+            <div class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+              <div>TensorFlow</div>
+              <div>PyTorch</div>
+              <div>OpenAI/GPT</div>
+              <div>Scikit-learn</div>
+              <div>Keras</div>
+              <div>Hugging Face</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-primary-600 to-primary-800 text-white relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
-            <div class="absolute -top-40 -left-40 w-80 h-80 bg-white rounded-full opacity-10"></div>
-            <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-white rounded-full opacity-10"></div>
+    <section
+      class="py-20 bg-gradient-to-r from-primary-600 to-primary-800 text-white relative overflow-hidden"
+    >
+      <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+        <div
+          class="absolute -top-40 -left-40 w-80 h-80 bg-white rounded-full opacity-10"
+        ></div>
+        <div
+          class="absolute -bottom-40 -right-40 w-96 h-96 bg-white rounded-full opacity-10"
+        ></div>
+      </div>
+      <div
+        class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
+      >
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Ready to Transform Your Business?
+        </h2>
+        <p class="text-xl text-primary-100 mb-10 max-w-2xl mx-auto">
+          Let's discuss how our technology solutions can help you achieve your
+          business goals and drive growth.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href="contact.html"
+            class="inline-flex items-center justify-center bg-white text-primary-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold text-lg transition duration-300 transform hover:scale-105 shadow-lg"
+          >
+            <i class="fas fa-calendar-check mr-2"></i>
+            Schedule a Consultation
+          </a>
+          <a
+            href="pricing.html"
+            class="inline-flex items-center justify-center bg-transparent border-2 border-white hover:bg-white/10 px-8 py-4 rounded-xl font-semibold text-lg transition duration-300"
+          >
+            <i class="fas fa-dollar-sign mr-2"></i>
+            View Pricing
+          </a>
         </div>
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
-            <p class="text-xl text-primary-100 mb-10 max-w-2xl mx-auto">
-                Let's discuss how our technology solutions can help you achieve your business goals and drive growth.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="contact.html" class="inline-flex items-center justify-center bg-white text-primary-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold text-lg transition duration-300 transform hover:scale-105 shadow-lg">
-                    <i class="fas fa-calendar-check mr-2"></i>
-                    Schedule a Consultation
-                </a>
-                <a href="pricing.html" class="inline-flex items-center justify-center bg-transparent border-2 border-white hover:bg-white/10 px-8 py-4 rounded-xl font-semibold text-lg transition duration-300">
-                    <i class="fas fa-dollar-sign mr-2"></i>
-                    View Pricing
-                </a>
-            </div>
-        </div>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 text-gray-300 pt-20 pb-8 relative overflow-hidden">
-        <!-- Animated Background Elements -->
-        <div class="absolute inset-0 opacity-5">
-            <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary-500 rounded-full filter blur-3xl animate-pulse"></div>
-            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+    <footer
+      class="bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 text-gray-300 pt-20 pb-8 relative overflow-hidden"
+    >
+      <!-- Animated Background Elements -->
+      <div class="absolute inset-0 opacity-5">
+        <div
+          class="absolute top-0 left-1/4 w-96 h-96 bg-primary-500 rounded-full filter blur-3xl animate-pulse"
+        ></div>
+        <div
+          class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl animate-pulse"
+          style="animation-delay: 2s"
+        ></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <!-- Newsletter Section -->
+        <div
+          class="bg-gradient-to-r from-primary-600 to-purple-600 rounded-2xl p-8 md:p-12 mb-16 shadow-2xl"
+        >
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">
+                Stay Updated!
+              </h3>
+              <p class="text-primary-100">
+                Subscribe to our newsletter for the latest tech insights and
+                exclusive offers.
+              </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="flex-1 px-6 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 transition"
+              />
+              <button
+                class="px-8 py-4 bg-white text-primary-600 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap"
+              >
+                <i class="fas fa-paper-plane mr-2"></i>Subscribe
+              </button>
+            </div>
+          </div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <!-- Newsletter Section -->
-            <div class="bg-gradient-to-r from-primary-600 to-purple-600 rounded-2xl p-8 md:p-12 mb-16 shadow-2xl">
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">Stay Updated!</h3>
-                        <p class="text-primary-100">Subscribe to our newsletter for the latest tech insights and exclusive offers.</p>
-                    </div>
-                    <div class="flex flex-col sm:flex-row gap-3">
-                        <input type="email" placeholder="Enter your email" class="flex-1 px-6 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 transition">
-                        <button class="px-8 py-4 bg-white text-primary-600 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap">
-                            <i class="fas fa-paper-plane mr-2"></i>Subscribe
-                        </button>
-                    </div>
-                </div>
+        <!-- Main Footer Content -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12"
+        >
+          <!-- Company Info with Logo -->
+          <div class="lg:col-span-2">
+            <a href="index.html" class="inline-block mb-6 group">
+              <img
+                src="images/logo/giphy-ezgif.com-gif-maker.gif"
+                alt="TechSafi Logo"
+                class="h-16 w-auto transition-transform duration-300 group-hover:scale-110"
+              />
+            </a>
+            <p class="mb-6 text-gray-400 leading-relaxed">
+              Empowering businesses across Kenya and beyond with innovative
+              technology solutions. We transform ideas into digital reality
+              through cutting-edge development and strategic consulting.
+            </p>
+
+            <!-- Social Media Links -->
+            <div class="mb-6">
+              <h5 class="text-white font-semibold mb-4 flex items-center">
+                <i class="fas fa-share-alt mr-2 text-primary-400"></i>
+                Connect With Us
+              </h5>
+              <div class="flex flex-wrap gap-3">
+                <a
+                  href="https://web.facebook.com/profile.php?id=61583792336767"
+                  class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-700 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-blue-500/50 transform hover:-translate-y-1"
+                  title="Facebook"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="https://x.com/_techsafi"
+                  class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-sky-500 hover:to-sky-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-sky-500/50 transform hover:-translate-y-1"
+                  title="Twitter"
+                >
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a
+                  href="#"
+                  class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-800 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-blue-700/50 transform hover:-translate-y-1"
+                  title="LinkedIn"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/_techsafi/"
+                  class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-pink-600 hover:to-purple-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-pink-500/50 transform hover:-translate-y-1"
+                  title="Instagram"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                  href="https://github.com/techsafi"
+                  class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-gray-700 hover:to-gray-900 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-gray-700/50 transform hover:-translate-y-1"
+                  title="GitHub"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+                <a
+                  href="https://wa.me/254712345678"
+                  class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-green-600 hover:to-green-700 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-green-500/50 transform hover:-translate-y-1"
+                  title="WhatsApp"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+                <!-- TikTok -->
+                <a
+                  href="https://www.tiktok.com/@_techsafi"
+                  class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-gray-700 hover:to-gray-900 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-gray-700/50 transform hover:-translate-y-1"
+                  title="TikTok"
+                >
+                  <i class="fab fa-tiktok"></i>
+                </a>
+              </div>
             </div>
 
-            <!-- Main Footer Content -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
-                <!-- Company Info with Logo -->
-                <div class="lg:col-span-2">
-                    <a href="index.html" class="inline-block mb-6 group">
-                        <img src="images/logo/giphy-ezgif.com-gif-maker.gif" alt="TechSafi Logo" class="h-16 w-auto transition-transform duration-300 group-hover:scale-110">
-                    </a>
-                    <p class="mb-6 text-gray-400 leading-relaxed">
-                        Empowering businesses across Kenya and beyond with innovative technology solutions. We transform ideas into digital reality through cutting-edge development and strategic consulting.
-                    </p>
-                    
-                    <!-- Social Media Links -->
-                    <div class="mb-6">
-                        <h5 class="text-white font-semibold mb-4 flex items-center">
-                            <i class="fas fa-share-alt mr-2 text-primary-400"></i>
-                            Connect With Us
-                        </h5>
-                        <div class="flex flex-wrap gap-3">
-                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-700 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-blue-500/50 transform hover:-translate-y-1" title="Facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="https://x.com/_techsafi" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-sky-500 hover:to-sky-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-sky-500/50 transform hover:-translate-y-1" title="Twitter">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-800 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-blue-700/50 transform hover:-translate-y-1" title="LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-pink-600 hover:to-purple-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-pink-500/50 transform hover:-translate-y-1" title="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-gray-700 hover:to-gray-900 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-gray-700/50 transform hover:-translate-y-1" title="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-green-600 hover:to-green-700 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-green-500/50 transform hover:-translate-y-1" title="WhatsApp">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
-                            <!-- TikTok -->
-                            <a href="https://www.tiktok.com/@_techsafi" class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-gray-700 hover:to-gray-900 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-gray-700/50 transform hover:-translate-y-1" title="TikTok">
-                                <i class="fab fa-tiktok"></i>
-                            </a>    
-                        </div>
-                    </div>
-
-                    <!-- Trust Badges -->
-                    <div class="flex flex-wrap gap-4 items-center">
-                        <div class="flex items-center space-x-2 text-sm">
-                            <i class="fas fa-shield-alt text-green-400"></i>
-                            <span class="text-gray-400">SSL Secured</span>
-                        </div>
-                        <div class="flex items-center space-x-2 text-sm">
-                            <i class="fas fa-award text-yellow-400"></i>
-                            <span class="text-gray-400">ISO Certified</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="text-white text-lg font-bold mb-6 flex items-center">
-                        <span class="w-1 h-6 bg-gradient-to-b from-primary-500 to-purple-500 rounded-full mr-3"></span>
-                        Quick Links
-                    </h4>
-                    <ul class="space-y-3">
-                        <li><a href="index.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Home</span></a></li>
-                        <li><a href="about.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">About Us</span></a></li>
-                        <li><a href="services.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Services</span></a></li>
-                        <li><a href="portfolio.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Portfolio</span></a></li>
-                        <li><a href="pricing.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Pricing</span></a></li>
-                        <li><a href="careers.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Careers</span></a></li>
-                        <li><a href="contact.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Contact</span></a></li>
-                    </ul>
-                </div>
-
-                <!-- Services -->
-                <div>
-                    <h4 class="text-white text-lg font-bold mb-6 flex items-center">
-                        <span class="w-1 h-6 bg-gradient-to-b from-primary-500 to-purple-500 rounded-full mr-3"></span>
-                        Our Services
-                    </h4>
-                    <ul class="space-y-3">
-                        <li><a href="services.html#web-development" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Web Development</span></a></li>
-                        <li><a href="services.html#mobile-app" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Mobile Apps</span></a></li>
-                        <li><a href="services.html#ui-ux" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">UI/UX Design</span></a></li>
-                        <li><a href="ai-solutions.html" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">AI Solutions</span></a></li>
-                        <li><a href="services.html#cloud" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Cloud Solutions</span></a></li>
-                        <li><a href="services.html#seo" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">Digital Marketing</span></a></li>
-                        <li><a href="services.html#consulting" class="hover:text-white transition-all duration-300 flex items-center group"><i class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"></i> <span class="group-hover:translate-x-1 transition-transform">IT Consulting</span></a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Info -->
-                <div>
-                    <h4 class="text-white text-lg font-bold mb-6 flex items-center">
-                        <span class="w-1 h-6 bg-gradient-to-b from-primary-500 to-purple-500 rounded-full mr-3"></span>
-                        Get In Touch
-                    </h4>
-                    <address class="not-italic space-y-4">
-                        <!-- Location -->
-                        <div class="flex items-start group">
-                            <div class="w-10 h-10 rounded-lg bg-primary-600/10 flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-primary-600/20 transition-colors">
-                                <i class="fas fa-map-marker-alt text-primary-400"></i>
-                            </div>
-                            <div>
-                                <p class="text-sm text-gray-500 mb-1">Location</p>
-                                <p class="text-gray-300 hover:text-white transition-colors">Nairobi, Kenya</p>
-                            </div>
-                        </div>
-
-                        <!-- Phone Numbers -->
-                        <div class="flex items-start group">
-                            <div class="w-10 h-10 rounded-lg bg-green-600/10 flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-green-600/20 transition-colors">
-                                <i class="fas fa-phone-alt text-green-400"></i>
-                            </div>
-                            <div>
-                                <p class="text-sm text-gray-500 mb-1">Call Us</p>
-                                <a href="tel:+254751380948" class="text-gray-300 hover:text-white transition-colors block">+254 751 380 948</a>
-                                <a href="tel:+254110046523" class="text-gray-300 hover:text-white transition-colors block">+254 110 046 523</a>
-                            </div>
-                        </div>
-
-                        <!-- Email -->
-                        <div class="flex items-start group">
-                            <div class="w-10 h-10 rounded-lg bg-purple-600/10 flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-purple-600/20 transition-colors">
-                                <i class="fas fa-envelope text-purple-400"></i>
-                            </div>
-                            <div>
-                                <p class="text-sm text-gray-500 mb-1">Email Us</p>
-                                <a href="mailto:info@techsafi.com" class="text-gray-300 hover:text-white transition-colors">info@techsafi.com</a>
-                            </div>
-                        </div>
-
-                        <!-- Working Hours -->
-                        <div class="flex items-start group">
-                            <div class="w-10 h-10 rounded-lg bg-blue-600/10 flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-blue-600/20 transition-colors">
-                                <i class="fas fa-clock text-blue-400"></i>
-                            </div>
-                            <div>
-                                <p class="text-sm text-gray-500 mb-1">Working Hours</p>
-                                <p class="text-gray-300">Mon - Fri: 8AM - 6PM</p>
-                                <p class="text-gray-300">Sat: 9AM - 2PM</p>
-                            </div>
-                        </div>
-                    </address>
-
-                    <!-- CTA Button -->
-                    <div class="mt-6">
-                        <a href="contact.html" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-600 to-purple-600 hover:from-primary-700 hover:to-purple-700 text-white rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-                            <i class="fas fa-paper-plane mr-2"></i>
-                            Send Message
-                        </a>
-                    </div>
-                </div>
+            <!-- Trust Badges -->
+            <div class="flex flex-wrap gap-4 items-center">
+              <div class="flex items-center space-x-2 text-sm">
+                <i class="fas fa-shield-alt text-green-400"></i>
+                <span class="text-gray-400">SSL Secured</span>
+              </div>
+              <div class="flex items-center space-x-2 text-sm">
+                <i class="fas fa-award text-yellow-400"></i>
+                <span class="text-gray-400">ISO Certified</span>
+              </div>
             </div>
+          </div>
 
-            <!-- Bottom Bar -->
-            <div class="border-t border-gray-800 pt-8">
-                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                    <!-- Copyright -->
-                    <div class="flex items-center space-x-2">
-                        <i class="fas fa-copyright text-primary-400"></i>
-                        <p class="text-gray-400">
-                            <span class="font-semibold text-white">2025 TechSafi</span> - All rights reserved. 
-                            <span class="hidden sm:inline">Crafted with <i class="fas fa-heart text-red-500 mx-1"></i> in Kenya</span>
-                        </p>
-                    </div>
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-white text-lg font-bold mb-6 flex items-center">
+              <span
+                class="w-1 h-6 bg-gradient-to-b from-primary-500 to-purple-500 rounded-full mr-3"
+              ></span>
+              Quick Links
+            </h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="index.html"
+                  class="hover:text-white transition-all duration-300 flex items-center group"
+                  ><i
+                    class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                  <span class="group-hover:translate-x-1 transition-transform"
+                    >Home</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html"
+                  class="hover:text-white transition-all duration-300 flex items-center group"
+                  ><i
+                    class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                  <span class="group-hover:translate-x-1 transition-transform"
+                    >About Us</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html"
+                  class="hover:text-white transition-all duration-300 flex items-center group"
+                  ><i
+                    class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                  <span class="group-hover:translate-x-1 transition-transform"
+                    >Services</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  href="portfolio.html"
+                  class="hover:text-white transition-all duration-300 flex items-center group"
+                  ><i
+                    class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                  <span class="group-hover:translate-x-1 transition-transform"
+                    >Portfolio</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  href="pricing.html"
+                  class="hover:text-white transition-all duration-300 flex items-center group"
+                  ><i
+                    class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                  <span class="group-hover:translate-x-1 transition-transform"
+                    >Pricing</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  href="careers.html"
+                  class="hover:text-white transition-all duration-300 flex items-center group"
+                  ><i
+                    class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                  <span class="group-hover:translate-x-1 transition-transform"
+                    >Careers</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="hover:text-white transition-all duration-300 flex items-center group"
+                  ><i
+                    class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                  <span class="group-hover:translate-x-1 transition-transform"
+                    >Contact</span
+                  ></a
+                >
+              </li>
+            </ul>
+          </div>
 
-                    <!-- Footer Links -->
-                    <div class="flex flex-wrap justify-center gap-6">
-                        <a href="privacy-policy.html" class="text-gray-400 hover:text-primary-400 transition-colors text-sm font-medium">Privacy Policy</a>
-                        <span class="text-gray-700">|</span>
-                        <a href="terms-of-service.html" class="text-gray-400 hover:text-primary-400 transition-colors text-sm font-medium">Terms of Service</a>
-                        <span class="text-gray-700">|</span>
-                        <a href="cookie-policy.html" class="text-gray-400 hover:text-primary-400 transition-colors text-sm font-medium">Cookie Policy</a>
-                        <span class="text-gray-700">|</span>
-                        <a href="sitemap.html" class="text-gray-400 hover:text-primary-400 transition-colors text-sm font-medium">Sitemap</a>
-                    </div>
+          <!-- Services -->
+          <div>
+            <h4 class="text-white text-lg font-bold mb-6 flex items-center">
+              <span
+                class="w-1 h-6 bg-gradient-to-b from-primary-500 to-purple-500 rounded-full mr-3"
+              ></span>
+              Our Services
+            </h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="services.html#web-development"
+                  class="hover:text-white transition-all duration-300 flex items-center group"
+                  ><i
+                    class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                  <span class="group-hover:translate-x-1 transition-transform"
+                    >Web Development</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html#mobile-app"
+                  class="hover:text-white transition-all duration-300 flex items-center group"
+                  ><i
+                    class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                  <span class="group-hover:translate-x-1 transition-transform"
+                    >Mobile Apps</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html#ui-ux"
+                  class="hover:text-white transition-all duration-300 flex items-center group"
+                  ><i
+                    class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                  <span class="group-hover:translate-x-1 transition-transform"
+                    >UI/UX Design</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  href="ai-solutions.html"
+                  class="hover:text-white transition-all duration-300 flex items-center group"
+                  ><i
+                    class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                  <span class="group-hover:translate-x-1 transition-transform"
+                    >AI Solutions</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html#cloud"
+                  class="hover:text-white transition-all duration-300 flex items-center group"
+                  ><i
+                    class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                  <span class="group-hover:translate-x-1 transition-transform"
+                    >Cloud Solutions</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html#seo"
+                  class="hover:text-white transition-all duration-300 flex items-center group"
+                  ><i
+                    class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                  <span class="group-hover:translate-x-1 transition-transform"
+                    >Digital Marketing</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html#consulting"
+                  class="hover:text-white transition-all duration-300 flex items-center group"
+                  ><i
+                    class="fas fa-chevron-right text-xs text-primary-500 mr-3 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                  <span class="group-hover:translate-x-1 transition-transform"
+                    >IT Consulting</span
+                  ></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <h4 class="text-white text-lg font-bold mb-6 flex items-center">
+              <span
+                class="w-1 h-6 bg-gradient-to-b from-primary-500 to-purple-500 rounded-full mr-3"
+              ></span>
+              Get In Touch
+            </h4>
+            <address class="not-italic space-y-4">
+              <!-- Location -->
+              <div class="flex items-start group">
+                <div
+                  class="w-10 h-10 rounded-lg bg-primary-600/10 flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-primary-600/20 transition-colors"
+                >
+                  <i class="fas fa-map-marker-alt text-primary-400"></i>
                 </div>
-
-                <!-- Made with love badge -->
-                <div class="text-center mt-6">
-                    <p class="text-xs text-gray-500">
-                        Powered by innovation • Driven by excellence • Built for the future
-                    </p>
+                <div>
+                  <p class="text-sm text-gray-500 mb-1">Location</p>
+                  <p class="text-gray-300 hover:text-white transition-colors">
+                    Nairobi, Kenya
+                  </p>
                 </div>
+              </div>
+
+              <!-- Phone Numbers -->
+              <div class="flex items-start group">
+                <div
+                  class="w-10 h-10 rounded-lg bg-green-600/10 flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-green-600/20 transition-colors"
+                >
+                  <i class="fas fa-phone-alt text-green-400"></i>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-500 mb-1">Call Us</p>
+                  <a
+                    href="tel:+254751380948"
+                    class="text-gray-300 hover:text-white transition-colors block"
+                    >+254 751 380 948</a
+                  >
+                  <a
+                    href="tel:+254110046523"
+                    class="text-gray-300 hover:text-white transition-colors block"
+                    >+254 110 046 523</a
+                  >
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="flex items-start group">
+                <div
+                  class="w-10 h-10 rounded-lg bg-purple-600/10 flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-purple-600/20 transition-colors"
+                >
+                  <i class="fas fa-envelope text-purple-400"></i>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-500 mb-1">Email Us</p>
+                  <a
+                    href="mailto:info@techsafi.com"
+                    class="text-gray-300 hover:text-white transition-colors"
+                    >info@techsafi.com</a
+                  >
+                </div>
+              </div>
+
+              <!-- Working Hours -->
+              <div class="flex items-start group">
+                <div
+                  class="w-10 h-10 rounded-lg bg-blue-600/10 flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-blue-600/20 transition-colors"
+                >
+                  <i class="fas fa-clock text-blue-400"></i>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-500 mb-1">Working Hours</p>
+                  <p class="text-gray-300">Mon - Fri: 8AM - 6PM</p>
+                  <p class="text-gray-300">Sat: 9AM - 2PM</p>
+                </div>
+              </div>
+            </address>
+
+            <!-- CTA Button -->
+            <div class="mt-6">
+              <a
+                href="contact.html"
+                class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-600 to-purple-600 hover:from-primary-700 hover:to-purple-700 text-white rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
+                <i class="fas fa-paper-plane mr-2"></i>
+                Send Message
+              </a>
             </div>
+          </div>
         </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-gray-800 pt-8">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center gap-6"
+          >
+            <!-- Copyright -->
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-copyright text-primary-400"></i>
+              <p class="text-gray-400">
+                <span class="font-semibold text-white">2025 TechSafi</span> -
+                All rights reserved.
+                <span class="hidden sm:inline"
+                  >Crafted with
+                  <i class="fas fa-heart text-red-500 mx-1"></i> in Kenya</span
+                >
+              </p>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="flex flex-wrap justify-center gap-6">
+              <a
+                href="privacy-policy.html"
+                class="text-gray-400 hover:text-primary-400 transition-colors text-sm font-medium"
+                >Privacy Policy</a
+              >
+              <span class="text-gray-700">|</span>
+              <a
+                href="terms-of-service.html"
+                class="text-gray-400 hover:text-primary-400 transition-colors text-sm font-medium"
+                >Terms of Service</a
+              >
+              <span class="text-gray-700">|</span>
+              <a
+                href="cookie-policy.html"
+                class="text-gray-400 hover:text-primary-400 transition-colors text-sm font-medium"
+                >Cookie Policy</a
+              >
+              <span class="text-gray-700">|</span>
+              <a
+                href="sitemap.html"
+                class="text-gray-400 hover:text-primary-400 transition-colors text-sm font-medium"
+                >Sitemap</a
+              >
+            </div>
+          </div>
+
+          <!-- Made with love badge -->
+          <div class="text-center mt-6">
+            <p class="text-xs text-gray-500">
+              Powered by innovation • Driven by excellence • Built for the
+              future
+            </p>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <!-- Back to top button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 bg-gradient-to-r from-primary-600 to-primary-700 text-white p-4 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:from-primary-700 hover:to-primary-800 z-40">
-        <i class="fas fa-arrow-up"></i>
+    <button
+      id="back-to-top"
+      class="fixed bottom-8 right-8 bg-gradient-to-r from-primary-600 to-primary-700 text-white p-4 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:from-primary-700 hover:to-primary-800 z-40"
+    >
+      <i class="fas fa-arrow-up"></i>
     </button>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (mobileMenuButton && mobileMenu) {
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
 
-        // Back to top button
-        const backToTopButton = document.getElementById('back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('opacity-0', 'invisible');
-                backToTopButton.classList.add('opacity-100', 'visible');
-            } else {
-                backToTopButton.classList.remove('opacity-100', 'visible');
-                backToTopButton.classList.add('opacity-0', 'invisible');
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+      }
+
+      // Back to top button
+      const backToTopButton = document.getElementById("back-to-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.remove("opacity-0", "invisible");
+          backToTopButton.classList.add("opacity-100", "visible");
+        } else {
+          backToTopButton.classList.remove("opacity-100", "visible");
+          backToTopButton.classList.add("opacity-0", "invisible");
+        }
+      });
+
+      if (backToTopButton) {
+        backToTopButton.addEventListener("click", () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+      }
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80, // Adjust for fixed header
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.add("hidden");
             }
+          }
         });
-
-        if (backToTopButton) {
-            backToTopButton.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        }
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80, // Adjust for fixed header
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                    }
-                }
-            });
-        });
+      });
     </script>
 
     <!-- PWA Installation Script -->
     <script src="/pwa-init.js"></script>
-</body>
+  </body>
 </html>

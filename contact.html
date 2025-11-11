@@ -46,7 +46,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -192,7 +195,7 @@
       }
 
       // Initialize EmailJS when script loads
-      (function() {
+      (function () {
         emailjs.init("EThdtPp_be2LklqHh");
       })();
 
@@ -200,7 +203,7 @@
       function sendEmail(event) {
         event.preventDefault();
         event.stopPropagation();
-        
+
         console.log("Form submission triggered");
 
         // Get form values
@@ -229,7 +232,7 @@
           email: email,
           subject: subject,
           message: message,
-          year: new Date().getFullYear()
+          year: new Date().getFullYear(),
         };
 
         console.log("Sending email with params:", templateParams);
@@ -245,14 +248,16 @@
           loadingSpinner.classList.add("active");
         }
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+        submitBtn.innerHTML =
+          '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
 
         // Send email using EmailJS
-        emailjs.send("service_qdd8kok", "template_wdu0vsi", templateParams)
+        emailjs
+          .send("service_qdd8kok", "template_wdu0vsi", templateParams)
           .then(
-            function(response) {
+            function (response) {
               console.log("SUCCESS!", response.status, response.text);
-              
+
               // Hide loading
               if (loadingSpinner) {
                 loadingSpinner.classList.remove("active");
@@ -275,9 +280,9 @@
               submitBtn.disabled = false;
               submitBtn.innerHTML = "Send Message";
             },
-            function(error) {
+            function (error) {
               console.error("FAILED...", error);
-              
+
               // Hide loading
               if (loadingSpinner) {
                 loadingSpinner.classList.remove("active");
@@ -296,7 +301,7 @@
       }
 
       // Attach form handler when DOM is ready
-      document.addEventListener("DOMContentLoaded", function() {
+      document.addEventListener("DOMContentLoaded", function () {
         const contactForm = document.getElementById("contact-form");
         if (contactForm) {
           contactForm.onsubmit = sendEmail;
@@ -2066,7 +2071,7 @@
               </h5>
               <div class="flex flex-wrap gap-3">
                 <a
-                  href="#"
+                  href="https://web.facebook.com/profile.php?id=61583792336767"
                   class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-700 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-blue-500/50 transform hover:-translate-y-1"
                   title="Facebook"
                 >
@@ -2087,21 +2092,21 @@
                   <i class="fab fa-linkedin-in"></i>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/_techsafi/"
                   class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-pink-600 hover:to-purple-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-pink-500/50 transform hover:-translate-y-1"
                   title="Instagram"
                 >
                   <i class="fab fa-instagram"></i>
                 </a>
                 <a
-                  href="#"
+                  href="https://github.com/techsafi"
                   class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-gray-700 hover:to-gray-900 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-gray-700/50 transform hover:-translate-y-1"
                   title="GitHub"
                 >
                   <i class="fab fa-github"></i>
                 </a>
                 <a
-                  href="#"
+                  href="https://wa.me/254751380948"
                   class="group relative w-11 h-11 rounded-xl bg-dark-800 hover:bg-gradient-to-br hover:from-green-600 hover:to-green-700 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 shadow-lg hover:shadow-green-500/50 transform hover:-translate-y-1"
                   title="WhatsApp"
                 >
