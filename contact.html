@@ -572,10 +572,67 @@
           opacity: 1;
         }
       }
+
+      /* Prevent horizontal scroll */
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Ensure all sections respect container width */
+      section {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      /* Fix for any absolute positioned elements */
+      .absolute {
+        max-width: 100vw;
+      }
+
+      /* Ensure background elements don't overflow */
+      section {
+        position: relative;
+      }
+
+      section .absolute {
+        overflow: hidden;
+      }
+
+      /* Fix for blob animations on mobile - constrain to viewport */
+      @media (max-width: 768px) {
+        .absolute.w-72,
+        .absolute.w-96,
+        .absolute.w-80 {
+          max-width: 50vw;
+          max-height: 50vh;
+        }
+      }
+
+      /* Ensure images don't overflow */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Ensure containers respect viewport width */
+      .max-w-7xl,
+      .max-w-6xl,
+      .max-w-5xl,
+      .max-w-4xl,
+      .max-w-3xl {
+        max-width: 100%;
+      }
     </style>
   </head>
   <body
-    class="bg-white dark:bg-dark-900 text-gray-800 dark:text-gray-200 transition-colors duration-300 font-inter"
+    class="bg-white dark:bg-dark-900 text-gray-800 dark:text-gray-200 transition-colors duration-300 font-inter overflow-x-hidden"
   >
     <!-- Loading Spinner -->
     <div id="loading-spinner" class="loading-spinner">
